@@ -166,9 +166,9 @@ export default function About() {
                 <div className="md:col-span-2 overflow-hidden">
                   <div className="mx-auto max-w-md md:max-w-lg rounded-xl shadow-none md:shadow-xl overflow-hidden">
                     <div className="aspect-[4/5] relative">
-                      <img 
-                        src="/images/dr-sharon/portrait.jpg" 
-                        alt="Dr. Madhuri Sharon - Professional Portrait"
+                      <img
+                        src="/images/dr-sharon/academic.jpg"
+                        alt="Dr. Madhuri Sharon - Academic Portrait"
                         className="w-full h-full object-cover"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
@@ -199,7 +199,7 @@ export default function About() {
               className="bg-white rounded-xl shadow-xl p-8 md:p-12"
             >
               <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold text-gray-900 mb-2">Dr. Madhuri Sharon</h3>
+                <h3 className="text-3xl font-bold text-gray-900 mb-2">Prof. Sanjay Kumar Sharma</h3>
                 <p className="text-indian-red font-semibold text-lg">Founder & Director, VVES</p>
               </div>
 
