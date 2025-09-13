@@ -1,0 +1,24 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const auth_1 = __importDefault(require("./auth"));
+const users_1 = __importDefault(require("./users"));
+const courses_1 = __importDefault(require("./courses"));
+const events_1 = __importDefault(require("./events"));
+const admin_1 = __importDefault(require("./admin"));
+const contact_1 = __importDefault(require("./contact"));
+const upload_1 = __importDefault(require("./upload"));
+const analytics_1 = __importDefault(require("./analytics"));
+const api = (0, express_1.Router)();
+api.use('/auth', auth_1.default);
+api.use('/users', users_1.default);
+api.use('/courses', courses_1.default);
+api.use('/events', events_1.default);
+api.use('/admin', admin_1.default);
+api.use('/contact', contact_1.default);
+api.use('/upload', upload_1.default);
+api.use('/analytics', analytics_1.default);
+exports.default = api;
