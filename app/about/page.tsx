@@ -150,7 +150,7 @@ export default function About() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Distinguished Founder</h2>
-            <p className="text-xl text-gray-600">Dr. Madhuri Sharon - A Visionary Leader in Nanotechnology & Vedic Sciences</p>
+            <p className="text-xl text-gray-600">Prof. Sanjay Kumar Sharma - A Visionary Leader in Nanotechnology & Vedic Sciences</p>
           </div>
 
           <div className="max-w-7xl mx-auto">

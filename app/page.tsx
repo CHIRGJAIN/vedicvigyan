@@ -111,8 +111,8 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <div className="mb-8">
-              <div className="w-30 h-30 rounded-full flex items-center justify-center mx-auto mb-6 overflow-hidden bg-transparent">
-                <Image src="/vves-logo.png" alt="VVES logo" width={96} height={96} className="object-contain" />
+                <div className="w-30 h-30 rounded-full flex items-center justify-center mx-auto mb-6 overflow-hidden bg-transparent">
+                <Image src="/vves-logo(1).png" alt="VVES logo" width={190} height={96} className="object-contain" />
                 <span className="sr-only">Vedic Vigyanam Explorer Society</span>
               </div>
               <h1 className="text-5xl md:text-7xl font-bold mb-4 text-shadow">
@@ -173,7 +173,7 @@ export default function Home() {
                 </div>
               ) : (
                 <ReactPlayer
-                  url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" // Placeholder video
+                  url="/videos/Viman_shastra.mp4"
                   width="100%"
                   height="100%"
                   controls
@@ -377,53 +377,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Upcoming Events Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Upcoming Events</h2>
-            <p className="text-xl text-gray-600">Join our upcoming workshops and sessions</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {upcomingEvents.map((event, index) => (
-              <motion.div
-                key={event.title}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                className="card"
-              >
-                <h3 className="text-xl font-semibold mb-3 text-indian-red">{event.title}</h3>
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center text-gray-600">
-                    <Calendar size={16} className="mr-2" />
-                    <span>{format(new Date(event.date), 'dd/MM/yyyy')}</span>
-                  </div>
-                  <div className="flex items-center text-gray-600">
-                    <Clock size={16} className="mr-2" />
-                    <span>{event.time}</span>
-                  </div>
-                  <div className="flex items-center text-gray-600">
-                    <MapPin size={16} className="mr-2" />
-                    <span>{event.location}</span>
-                  </div>
-                </div>
-                <p className="text-gray-700 mb-4">{event.description}</p>
-                <Link href="/events" className="text-indian-red hover:text-indian-deepRed font-semibold flex items-center">
-                  Learn More <ArrowRight size={16} className="ml-1" />
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="/events" className="btn-primary text-lg px-8 py-4">
-              View All Events
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Upcoming Events Section removed per request */}
 
       {/* QR Code Registration Section */}
       <section className="section-padding bg-white">
