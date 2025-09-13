@@ -173,7 +173,7 @@ export default function Home() {
                 </div>
               ) : (
                 <ReactPlayer
-                  url="/videos/Viman_shastra.mp4"
+                  url="/videos/intro.mp4"
                   width="100%"
                   height="100%"
                   controls
