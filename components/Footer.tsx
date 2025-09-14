@@ -41,8 +41,8 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-20 h-12 flex items-center justify-center">
-                <Image src="/vves-logo.png" alt="VVES logo" width={48} height={48} className="object-contain" />
+              <div className="w-20 h-20 flex items-center justify-center">
+                <Image src="/vves-logo(1).png" alt="VVES logo" width={60} height={48} className="object-contain" />
               </div>
               <div>
                 <h3 className="text-xl font-bold">Vedic Vigyanam Explorer Society</h3>
@@ -53,7 +53,7 @@ const Footer = () => {
               Leading authority in the preservation and interpretation of Vedic Science, 
               integrating it into modern academic and cultural frameworks.
             </p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
@@ -66,7 +66,7 @@ const Footer = () => {
                   <social.icon size={20} />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
@@ -107,19 +107,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6 text-indian-gold">Contact Info</h4>
             <div className="space-y-4">
-              {/* OLD ADDRESS (commented out)
-              <div className="flex items-start space-x-3">
-                <MapPin size={20} className="text-indian-gold mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-gray-300">
-                    VVES Office<br />
-                    123 Vedic Path, Knowledge District<br />
-                    Mumbai, Maharashtra 400001<br />
-                    India
-                  </p>
-                </div>
-              </div>
-              */}
+              
 
               <div className="flex items-start space-x-3">
                 <MapPin size={20} className="text-indian-gold mt-1 flex-shrink-0" />
