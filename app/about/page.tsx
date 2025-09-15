@@ -1,62 +1,142 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { Award, Users, BookOpen, Target, Eye, Heart, Calendar, MapPin, Phone, Mail } from 'lucide-react'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Award, Users, BookOpen, Target, Eye, Heart, Calendar, MapPin, Phone, Mail, X, ChevronLeft, ChevronRight } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
+interface Founder {
+  name: string
+  designation: string
+  shortDescription: string
+  fullDescription: string
+  image: string
+}
+
 export default function About() {
-  const founders = [
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [selectedFounder, setSelectedFounder] = useState<Founder | null>(null)
+
+  const founders: Founder[] = [
     {
       name: 'Dr. Madhuri Sharon',
       designation: 'Founder & Director',
-      description: 'Renowned scholar in Vedic Sciences with over 25 years of research experience',
+      shortDescription: 'Internationally recognized scientist with PhD from Leicester University, UK, and postdoctoral research at Bolton Institute of Technology.',
+      fullDescription: 'Dr. Madhuri Sharon is an internationally recognized scientist with a PhD from Leicester University, UK, and postdoctoral research at Bolton Institute of Technology. She currently serves as Director of Sharon Institute of Nanotechnology, Visiting Professor at MNIT, Adjunct Faculty at SRIVIT, Marg-Darshak at Bhishma IKS, and Advisor to Bhishma Sanatan Vedic Hindu University in the US. She also holds senior industrial positions including MD of MONAD and Technical Director at Vasudhaiv and NanoWealth. Her expertise spans nanotechnology, biotechnology, Sanatana Dharma, spirituality, Vimaan Shastra, and the Vedas. She has authored 19 books, 251 research articles, and holds 18 patents, guiding 14 PhD students and over 180 postgraduate students.',
       image: '/images/founders/dr-madhuri-sharon.jpg'
     },
     {
-      name: 'Prof. Rajesh Verma',
-      designation: 'Co-Founder & Research Head',
-      description: 'Expert in Sanskrit literature and Vedic mathematics',
-      image: '/images/founders/prof-rajesh-verma.jpg'
+      name: 'Dr. Sanjay Kumar Sharma',
+      designation: 'Co-Founder',
+      shortDescription: 'Former Dean and Professor at Gautam Buddha University with extensive experience across ISRO, CSIR, DRDO, MHRD, IUAC and MoEFCC.',
+      fullDescription: 'Former Dean and Professor at Gautam Buddha University with extensive experience across ISRO, CSIR, DRDO, MHRD, IUAC and MoEFCC. He blends ancient and contemporary science, from AI to electronics, and is known as a living library of knowledge and ancient wisdom.',
+      image: '/images/founders/dr-sanjay-sharma.jpg'
     },
     {
-      name: 'Dr. Priya Sharma',
-      designation: 'Co-Founder & Academic Director',
-      description: 'Specialist in Vedic astronomy and ancient Indian sciences',
-      image: '/images/founders/dr-priya-sharma.jpg'
+      name: 'Dr. Anantha M.A',
+      designation: 'Co-Founder',
+      shortDescription: 'Ph.D. & M.A. (Nyaya Vidvat Uttama), Assistant Professor at CTKDSI, Trans Disciplinary University.',
+      fullDescription: 'Ph.D. & M.A. (Nyaya Vidvat Uttama), Assistant Professor at CTKDSI, Trans Disciplinary University. Expert in Sanskrit, Kannada, Hindi, and English, he has published and edited books and articles and is vital to Vimaan Shastra studies.',
+      image: '/images/founders/dr-anantha.jpg'
+    },
+    {
+      name: 'Dr. Mrunal Yawalkar',
+      designation: 'Co-Founder',
+      shortDescription: 'Ph.D. in Physics and Assistant Professor at RTM Nagpur University for eight years, now a freelance researcher.',
+      fullDescription: 'Ph.D. in Physics and Assistant Professor at RTM Nagpur University for eight years, now a freelance researcher. She has published multiple articles and a book chapter, with deep interest in ancient aeronautics and metallurgy.',
+      image: '/images/founders/dr-mrunal.jpg'
+    },
+    {
+      name: 'Ms. Anuradha Pandey-Dubey',
+      designation: 'Co-Founder',
+      shortDescription: 'M.Sc. in Biotechnology and 15 years as Assistant Professor. Author of a book and several chapters.',
+      fullDescription: 'M.Sc. in Biotechnology and 15 years as Assistant Professor. Author of a book and several chapters, she holds a patent and is pursuing a PhD in bionanotechnology while being a member of the Royal Society of Chemistry.',
+      image: '/images/founders/ms-anuradha.jpg'
+    },
+    {
+      name: 'Mr. Venkat Rangan M.C.',
+      designation: 'Co-Founder',
+      shortDescription: 'B.E. Electronics and Communication with PMP certification, expert in embedded software applications.',
+      fullDescription: 'B.E. Electronics and Communication with PMP certification, expert in embedded software applications in the automotive domain. A lifelong Vimaan enthusiast, he combines engineering expertise with a passion for Sanskrit and Puranas.',
+      image: '/images/founders/mr-venkat.jpg'
+    },
+    {
+      name: 'Mr. Vijay Khambete',
+      designation: 'Co-Founder',
+      shortDescription: 'An IT professional with an MBA and multiple postgraduate diplomas. He is the pillar of VVES.',
+      fullDescription: 'An IT professional with an MBA and multiple postgraduate diplomas. He is the pillar of VVES, passionately advocating for ancient Indian aeronautics and demonstrating remarkable project-management and recruitment skills.',
+      image: '/images/founders/mr-vijay-khambete.jpg'
+    },
+    {
+      name: 'Prof. (Dr.) Naresh Kumar Vats',
+      designation: 'Co-Founder',
+      shortDescription: 'Dean Academic and Finance Officer, former Registrar RGNUL Punjab, and Professor of Law.',
+      fullDescription: 'Dean Academic and Finance Officer, former Registrar RGNUL Punjab, and Professor of Law. With over 36 research papers, 160 conference presentations, and 32 edited books, he is a leading figure in law and academic leadership.',
+      image: '/images/founders/prof-naresh.jpg'
+    },
+    {
+      name: 'Mr. Vijay Madhukar Vadnere',
+      designation: 'Co-Founder',
+      shortDescription: 'Director at S.V. Ved Yantra Pvt. Ltd. with 39 years of experience in DOCSIS, CATV, and HFC networks.',
+      fullDescription: 'Director at S.V. Ved Yantra Pvt. Ltd. with 39 years of experience in DOCSIS, CATV, and HFC networks. He is also a Limca Book record holder and expert in network design and Ayurvedic engineering concepts.',
+      image: '/images/founders/mr-vijay-vadnere.jpg'
+    },
+    {
+      name: 'Aashish Kumar',
+      designation: 'Co-Founder',
+      shortDescription: 'Engineering student specializing in Electronics and Communication with AI and ML at Gautam Buddha University.',
+      fullDescription: 'Engineering student specializing in Electronics and Communication with AI and ML at Gautam Buddha University. Treasurer of VVES, he integrates traditional knowledge with modern technology through projects in IoT, aerospace, and 3D printing.',
+      image: '/images/founders/aashish-kumar.jpg'
     }
   ]
 
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % founders.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + founders.length) % founders.length)
+  }
+
+  const openModal = (founder: Founder) => {
+    setSelectedFounder(founder)
+  }
+
+  const closeModal = () => {
+    setSelectedFounder(null)
+  }
+
   const milestones = [
     {
-      year: '2018',
+      year: ' June 2023',
       title: 'Foundation',
-      description: 'VVES was established with the vision to preserve and promote Vedic knowledge'
+      description: 'Main Core members had undergone Viman Vidya course conducted by Bhisma School of Indic Studies with Dr. Madhuri Sharon as leading faculty.'
     },
     {
-      year: '2019',
+      year: 'October 2023',
       title: 'First Course Launch',
-      description: 'Successfully launched the inaugural course on Vedic Mathematics'
+      description: 'Under the guidance of Dr. Madhuri Sharon this group of 8 students out of 50 who attended that course decided to carry forward this knowledge by doing R & D work with main focus on Maharshi Bharadwaj’s Vaimanik Shastra'
     },
     {
-      year: '2020',
-      title: 'Research Initiative',
-      description: 'Started comprehensive research on Maharshi Bharadwaj\'s Vimaan Shastra'
-    },
-    {
-      year: '2021',
+      year: 'June 2024',
       title: 'International Recognition',
-      description: 'Received recognition from UNESCO for preservation of ancient knowledge'
+      description: 'Decided to form a group as a society with a mission to Explore, Interpret and Preserve the Vedic Science to Reinforce its Relevance and disseminate the knowledge in Modern Society'
     },
     {
-      year: '2022',
+      year: '2024',
       title: 'Digital Library',
       description: 'Launched comprehensive digital library with over 1000 Vedic texts'
     },
     {
-      year: '2023',
+      year: ' Jan 2025',
       title: 'Global Expansion',
-      description: 'Extended operations to 5 countries with 1000+ active members'
+      description: 'We officially registered as VEDIC VIGYANAM EXPLORER SOCIETY with office at Kurukshetra'
+    },
+    {
+      year: ' September 2025',
+      title: 'Global Expansion',
+      description: 'VVES is now in an advanced stage of rolling out a few in-depth courses based on Vedic systems.'
     }
   ]
 
@@ -274,34 +354,198 @@ export default function About() {
         </div>
       </section>
 
-      {/* Founders Section */}
-      <section className="section-padding">
+      {/* Founders Section - 3D Carousel */}
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Founders</h2>
             <p className="text-xl text-gray-600">Meet the visionary leaders behind VVES</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {founders.map((founder, index) => (
-              <motion.div
-                key={founder.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="card text-center"
-              >
-                <div className="w-32 h-32 bg-indian-red rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <span className="text-white text-3xl font-bold">
-                    {founder.name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{founder.name}</h3>
-                <p className="text-indian-red font-semibold mb-4">{founder.designation}</p>
-                <p className="text-gray-600">{founder.description}</p>
-              </motion.div>
-            ))}
+          {/* 3D Carousel Container */}
+          <div className="relative max-w-6xl mx-auto">
+            <div className="relative h-96 overflow-hidden">
+              {/* Carousel Track */}
+              <div className="flex transition-transform duration-500 ease-in-out" 
+                   style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+                {founders.map((founder, index) => (
+                  <div key={founder.name} className="w-full flex-shrink-0 px-4">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8, rotateY: 45 }}
+                      animate={{ 
+                        opacity: 1, 
+                        scale: 1, 
+                        rotateY: 0,
+                        z: 0
+                      }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      whileHover={{ 
+                        scale: 1.05, 
+                        rotateY: 5,
+                        z: 20,
+                        transition: { duration: 0.3 }
+                      }}
+                      className="bg-white rounded-2xl shadow-2xl p-8 text-center cursor-pointer transform-gpu"
+                      style={{
+                        transformStyle: 'preserve-3d',
+                        perspective: '1000px'
+                      }}
+                      onClick={() => openModal(founder)}
+                    >
+                      {/* Avatar */}
+                      <div className="relative mb-6">
+                        <div className="w-32 h-32 bg-gradient-to-br from-indian-red to-indian-gold rounded-full mx-auto flex items-center justify-center shadow-lg">
+                          <span className="text-white text-2xl font-bold">
+                            {founder.name.split(' ').map(n => n[0]).join('')}
+                          </span>
+                        </div>
+                        <div className="absolute -top-2 -right-2 w-8 h-8 bg-indian-gold rounded-full flex items-center justify-center">
+                          <span className="text-white text-sm font-bold">{index + 1}</span>
+                        </div>
+                      </div>
+
+                      {/* Content */}
+                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{founder.name}</h3>
+                      <p className="text-indian-red font-semibold mb-4 text-lg">{founder.designation}</p>
+                      <p className="text-gray-600 leading-relaxed text-sm">
+                        {founder.shortDescription}
+                      </p>
+                      
+                      {/* Click indicator */}
+                      <div className="mt-6 flex items-center justify-center text-indian-red">
+                        <span className="text-sm font-medium">Click to read more</span>
+                        <Eye size={16} className="ml-2" />
+                      </div>
+                    </motion.div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 transition-all duration-300 z-10"
+            >
+              <ChevronLeft size={24} className="text-indian-red" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 transition-all duration-300 z-10"
+            >
+              <ChevronRight size={24} className="text-indian-red" />
+            </button>
+
+            {/* Dots Indicator */}
+            <div className="flex justify-center mt-8 space-x-2">
+              {founders.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentIndex 
+                      ? 'bg-indian-red scale-125' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Modal for Founder Details */}
+      <AnimatePresence>
+        {selectedFounder && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+            onClick={closeModal}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="p-8">
+                {/* Header */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-indian-red to-indian-gold rounded-full flex items-center justify-center">
+                          <span className="text-white text-lg font-bold">
+                            {selectedFounder.name.split(' ').map((n: string) => n[0]).join('')}
+                          </span>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-900">{selectedFounder.name}</h3>
+                      <p className="text-indian-red font-semibold">{selectedFounder.designation}</p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={closeModal}
+                    className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                  >
+                    <X size={24} className="text-gray-500" />
+                  </button>
+                </div>
+
+                {/* Content */}
+                <div className="prose prose-lg max-w-none">
+                  <p className="text-gray-700 leading-relaxed">
+                    {selectedFounder.fullDescription}
+                  </p>
+                </div>
+
+                {/* Footer */}
+                <div className="mt-8 pt-6 border-t border-gray-200">
+                  <button
+                    onClick={closeModal}
+                    className="w-full bg-indian-red text-white py-3 px-6 rounded-lg hover:bg-indian-deepRed transition-colors duration-300"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Message from Founder Section */}
+      <section className="section-padding bg-indian-red text-white">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Message from Our Founder</h2>
+            <p className="text-xl opacity-90">Dr. Madhuri Sharon's vision for VVES</p>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="bg-white/10 backdrop-blur-custom rounded-2xl p-8 md:p-12">
+              <blockquote className="text-xl md:text-2xl leading-relaxed mb-8 italic text-center">
+                "The Vedic Vigyanam Explorer Society, conceived in 2023 and registered in 2025, 
+                explores and preserves Vedic science, fostering interdisciplinary dialogue, 
+                research, and collaborations to apply ancient Indian wisdom to modern challenges 
+                in science, philosophy, environment, health, and ethics."
+              </blockquote>
+              
+              <div className="text-center">
+                <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white text-2xl font-bold">MS</span>
+                </div>
+                <h4 className="text-xl font-semibold mb-2">Dr. Madhuri Sharon</h4>
+                <p className="text-indian-gold font-medium">Founder & Director, VVES</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

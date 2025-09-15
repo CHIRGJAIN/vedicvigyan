@@ -98,9 +98,13 @@ export default function Home() {
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background with Indian-inspired illustration */}
-        <div className="absolute inset-0 bg-gradient-to-br from-indian-red/20 via-indian-maroon/30 to-indian-gold/20">
-          <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-30"></div>
+        {/* Background with spiritual landscape */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[url('/images/spiritual.jpg')] bg-cover" style={{backgroundPosition: 'center bottom'}}></div>
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
+          {/* Additional gradient overlay for better text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-br from-indian-red/20 via-indian-maroon/30 to-indian-gold/20"></div>
         </div>
         
         {/* Content */}
@@ -115,13 +119,13 @@ export default function Home() {
                 <Image src="/vves-logo(1).png" alt="VVES logo" width={190} height={96} className="object-contain" />
                 <span className="sr-only">Vedic Vigyanam Explorer Society</span>
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-4 text-shadow">
+              <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)'}}>
                 Vedic Vigyanam Explorer Society
               </h1>
-              <p className="text-xl md:text-2xl mb-6 text-shadow">
+              <p className="text-xl md:text-2xl mb-6 text-white drop-shadow-lg" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.8)'}}>
                 Preserving and Interpreting Vedic Science
               </p>
-              <p className="text-lg mb-8 max-w-3xl mx-auto text-shadow">
+              <p className="text-lg mb-8 max-w-3xl mx-auto text-white drop-shadow-md" style={{textShadow: '1px 1px 2px rgba(0,0,0,0.8)'}}>
                 Leading authority in the preservation and interpretation of Vedic Science, 
                 integrating it into modern academic and cultural frameworks.
               </p>
@@ -141,9 +145,9 @@ export default function Home() {
             </div>
 
             {/* Visitor Counter */}
-            <div className="bg-white/10 backdrop-blur-custom rounded-lg p-6 max-w-md mx-auto">
-              <p className="text-lg mb-2">Total Visitors</p>
-              <div className="text-3xl font-bold text-indian-gold">
+            <div className="bg-white/20 backdrop-blur-md rounded-lg p-6 max-w-md mx-auto border border-white/30 shadow-2xl">
+              <p className="text-lg mb-2 text-white font-semibold drop-shadow-md">Total Visitors</p>
+              <div className="text-3xl font-bold text-indian-gold drop-shadow-lg" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.8)'}}>
                 <CountUp end={visitorCount} duration={2.5} separator="," />
               </div>
             </div>
