@@ -17,9 +17,9 @@ const Navigation = () => {
   const { user, isLoggedIn, logout } = useAuth()
 
   const navigation = [
-    { name: 'Home', href: '/course' },
+    { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
-    { name: 'Courses', href: '/' },
+    { name: 'Courses', href: '/courses' },
     { name: 'Events', href: '/events' },
     { name: 'Research', href: '/research' },
     { name: 'Library', href: '/library' },

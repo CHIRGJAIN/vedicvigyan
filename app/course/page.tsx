@@ -1,416 +1,369 @@
-'use client'
+"use client"
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import CountUp from 'react-countup'
-import ReactPlayer from 'react-player'
-import { Play, Users, BookOpen, Award, ArrowRight, Quote, Calendar, MapPin, Clock } from 'lucide-react'
-import Image from 'next/image'
-import Navigation from '@/components/Navigation'
-import { format } from 'date-fns'
-import Footer from '@/components/Footer'
+import { BookOpen, Clock, Users, DollarSign, Star, CheckCircle, UserPlus } from 'lucide-react'
+import Navigation from '../../components/Navigation'
+import Footer from '../../components/Footer'
+import toast from 'react-hot-toast'
+import CourseModal from '../../components/CourseModal'
 
-export default function Course() {
-  const [visitorCount, setVisitorCount] = useState(0)
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
-  const [currentSubhashit, setCurrentSubhashit] = useState(0)
+const CoursePage = () => {
+  // selectedCourse stores the full course object when modal is open
+  const [selectedCourse, setSelectedCourse] = useState<any | null>(null)
+  const [showRegistration, setShowRegistration] = useState(false)
+  const [registrationData, setRegistrationData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    profession: '',
+    organization: '',
+    selectedCourse: ''
+  })
 
-  const subhashits = [
+  const courses = [
     {
-      sanskrit: "विद्या ददाति विनयं विनयाद् याति पात्रताम्। पात्रत्वाद् धनमाप्नोति धनाद् धर्मं ततः सुखम्॥",
-      english: "Knowledge gives discipline, discipline gives worthiness, worthiness gives wealth, wealth gives righteousness, and righteousness gives happiness.",
-      meaning: "The path to happiness through knowledge and discipline"
+      id: 1,
+      name: 'Vedic Science Fundamentals',
+      description: 'A comprehensive introduction to the ancient wisdom of Vedic science, covering basic principles and foundational concepts.',
+      duration: '3 months',
+      students: 45,
+      price: 12000,
+      rating: 4.8,
+      features: [
+        'Live interactive sessions',
+        'Study materials and resources',
+        'Certificate upon completion',
+        '24/7 support',
+        'Access to VVES community'
+      ],
+      curriculum: [
+        'Introduction to Vedic Science',
+        'Ancient Indian Knowledge Systems',
+        'Vedic Mathematics Basics',
+        'Sanskrit Fundamentals',
+        'Practical Applications'
+      ]
     },
     {
-      sanskrit: "सत्यमेव जयते नानृतं सत्येन पन्था विततो देवयानः।",
-      english: "Truth alone triumphs, not falsehood. By truth, the divine path is spread wide.",
-      meaning: "The victory of truth over falsehood"
+      id: 2,
+      name: 'Sanskrit Basics',
+      description: 'Learn the ancient language of Sanskrit with modern teaching methods and practical applications.',
+      duration: '2 months',
+      students: 32,
+      price: 8000,
+      rating: 4.6,
+      features: [
+        'Grammar and vocabulary',
+        'Reading and writing practice',
+        'Cultural context',
+        'Online practice sessions',
+        'Progress tracking'
+      ],
+      curriculum: [
+        'Sanskrit Alphabet and Pronunciation',
+        'Basic Grammar Rules',
+        'Simple Texts and Stories',
+        'Cultural Significance',
+        'Modern Applications'
+      ]
     },
     {
-      sanskrit: "अहिंसा परमो धर्मः धर्मस्य प्रभुः परमः।",
-      english: "Non-violence is the highest duty, the highest duty is the supreme lord.",
-      meaning: "The principle of non-violence as the highest virtue"
+      id: 3,
+      name: 'Vedic Mathematics',
+      description: 'Master the ancient mathematical techniques that make complex calculations simple and efficient.',
+      duration: '4 months',
+      students: 28,
+      price: 15000,
+      rating: 4.9,
+      features: [
+        '16 Vedic sutras',
+        'Mental calculation techniques',
+        'Problem-solving strategies',
+        'Real-world applications',
+        'Advanced topics'
+      ],
+      curriculum: [
+        'Introduction to Vedic Sutras',
+        'Basic Operations',
+        'Multiplication Techniques',
+        'Division Methods',
+        'Advanced Applications'
+      ]
+    },
+    {
+      id: 4,
+      name: 'Vedic Philosophy',
+      description: 'Explore the profound philosophical concepts and spiritual wisdom of the Vedic tradition.',
+      duration: '3 months',
+      students: 38,
+      price: 10000,
+      rating: 4.7,
+      features: [
+        'Philosophical discussions',
+        'Text analysis',
+        'Meditation practices',
+        'Life application',
+        'Expert guidance'
+      ],
+      curriculum: [
+        'Vedic Worldview',
+        'Karma and Dharma',
+        'Moksha and Liberation',
+        'Ethics and Values',
+        'Modern Relevance'
+      ]
+    },
+    {
+      id: 5,
+      name: 'Advanced Sanskrit',
+      description: 'Advanced level Sanskrit course for those who have completed the basics and want to dive deeper.',
+      duration: '6 months',
+      students: 15,
+      price: 20000,
+      rating: 4.9,
+      features: [
+        'Advanced grammar',
+        'Classical texts',
+        'Poetry and literature',
+        'Research methodology',
+        'Academic writing'
+      ],
+      curriculum: [
+        'Advanced Grammar',
+        'Classical Literature',
+        'Vedic Texts Analysis',
+        'Poetry and Prosody',
+        'Research Projects'
+      ]
     }
   ]
 
-  // COMMENTED OUT: partners list - removed from rendered homepage but kept for easy restore
-  // const partners = [
-  //   { name: 'IIT Mumbai', logo: '/images/partners/iit-mumbai.png' },
-  //   { name: 'BHU Varanasi', logo: '/images/partners/bhu.png' },
-  //   { name: 'Sanskrit University', logo: '/images/partners/sanskrit-uni.png' },
-  //   { name: 'Vedic Research Institute', logo: '/images/partners/vri.png' },
-  // ]
+  // Open course details modal. Registration flow is triggered from inside the modal.
+  const handleCourseSelect = (courseId: number) => {
+    const course = courses.find(c => c.id === courseId) || null
+    setSelectedCourse(course)
+  }
 
-  const testimonials = [
-    {
-      name: 'Dr. Rajesh Kumar',
-      designation: 'Professor, Sanskrit Studies',
-      content: 'VVES has been instrumental in bridging the gap between ancient Vedic wisdom and modern scientific understanding.',
-      avatar: '/images/testimonials/dr-rajesh.jpg'
-    },
-    {
-      name: 'Prof. Priya Sharma',
-      designation: 'Research Scholar',
-      content: 'The courses offered by VVES have deepened my understanding of Vedic sciences and their practical applications.',
-      avatar: '/images/testimonials/prof-priya.jpg'
-    },
-    {
-      name: 'Amit Patel',
-      designation: 'Student Member',
-      content: 'Being part of VVES has opened new horizons in my understanding of our ancient knowledge systems.',
-      avatar: '/images/testimonials/amit-patel.jpg'
-    }
-  ]
+  const handleOpenRegistration = (courseId: number) => {
+    const course = courses.find(c => c.id === courseId)
+    setRegistrationData(prev => ({ ...prev, selectedCourse: course?.name || '' }))
+    setShowRegistration(true)
+  }
 
-  const upcomingEvents = [
-    {
-      title: 'Vedic Science Workshop',
-      date: '2024-02-15',
-      time: '10:00 AM',
-      location: 'VVES Auditorium',
-      description: 'Interactive workshop on Vedic mathematics and astronomy'
-    },
-    {
-      title: 'Sanskrit Learning Session',
-      date: '2024-02-20',
-      time: '2:00 PM',
-      location: 'Online',
-      description: 'Beginner-friendly Sanskrit learning session'
-    }
-  ]
-
-  useEffect(() => {
-    // Simulate visitor count
-    setVisitorCount(15420)
+  const handleRegistration = (e: React.FormEvent) => {
+    e.preventDefault()
     
-    // Rotate subhashit every 10 seconds
-    const interval = setInterval(() => {
-      setCurrentSubhashit((prev) => (prev + 1) % subhashits.length)
-    }, 10000)
-
-    return () => clearInterval(interval)
-  }, [subhashits.length])
+    // Generate unique user ID and password
+    const userId = `STU${Date.now().toString().slice(-6)}`
+    const password = `Vves@${Math.random().toString(36).slice(-4)}#${Date.now().toString().slice(-2)}`
+    
+    // Save to localStorage (in real app, this would go to database)
+    const userData = {
+      id: userId,
+      password,
+      ...registrationData,
+      enrollmentDate: new Date().toISOString().split('T')[0],
+      status: 'active',
+      courses: [registrationData.selectedCourse],
+      paymentStatus: 'pending'
+    }
+    
+    const existingUsers = JSON.parse(localStorage.getItem('vves-users') || '[]')
+    existingUsers.push(userData)
+    localStorage.setItem('vves-users', JSON.stringify(existingUsers))
+    
+    toast.success(`Registration successful! Your login credentials:\nUsername: ${userId}\nPassword: ${password}`)
+    setShowRegistration(false)
+    setRegistrationData({
+      name: '',
+      email: '',
+      phone: '',
+      profession: '',
+      organization: '',
+      selectedCourse: ''
+    })
+  }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50">
       <Navigation />
-      
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background with spiritual landscape */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[url('/images/spiritual_2.jpg')] bg-cover" style={{backgroundPosition: 'center bottom'}}></div>
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-black/40"></div>
-          {/* Additional gradient overlay for better text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-br from-indian-red/20 via-indian-maroon/30 to-indian-gold/20"></div>
-        </div>
-        
-        {/* Content */}
-        <div className="relative z-10 container-custom text-center text-white px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="mb-8">
-                <div className="w-30 h-30 rounded-full flex items-center justify-center mx-auto mb-6 overflow-hidden bg-transparent">
-                <Image src="/vves-logo(1).png" alt="VVES logo" width={190} height={96} className="object-contain" />
-                <span className="sr-only">Vedic Vigyanam Explorer Society</span>
-              </div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)'}}>
-                Vedic Vigyanam Explorer Society
-              </h1>
-              <p className="text-xl md:text-2xl mb-6 text-white drop-shadow-lg" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.8)'}}>
-                Preserving and Interpreting Vedic Science
-              </p>
-              <p className="text-lg mb-8 max-w-3xl mx-auto text-white drop-shadow-md" style={{textShadow: '1px 1px 2px rgba(0,0,0,0.8)'}}>
-                Leading authority in the preservation and interpretation of Vedic Science, 
-                integrating it into modern academic and cultural frameworks.
-              </p>
-            </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Link href="/" className="btn-primary text-lg px-8 py-4">
-                Explore Courses
-              </Link>
-              <Link href="/about" className="btn-secondary text-lg px-8 py-4">
-                Learn More
-              </Link>
-              <Link href="/contact" className="btn-accent text-lg px-8 py-4">
-                Join Us
-              </Link>
-            </div>
+      <div className="container-custom py-8">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-12"
+        >
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Courses</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Discover the ancient wisdom of Vedic science through our comprehensive courses designed for modern learners.
+          </p>
+        </motion.div>
 
-            {/* Visitor Counter */}
-            <div className="bg-white/20 backdrop-blur-md rounded-lg p-6 max-w-md mx-auto border border-white/30 shadow-2xl">
-              <p className="text-lg mb-2 text-white font-semibold drop-shadow-md">Total Visitors</p>
-              <div className="text-3xl font-bold text-indian-gold drop-shadow-lg" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.8)'}}>
-                <CountUp end={visitorCount} duration={2.5} separator="," />
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Video Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Welcome Message</h2>
-            <p className="text-xl text-gray-600">From Dr. Madhuri Sharon, Founder & Director</p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="relative bg-white rounded-xl shadow-xl overflow-hidden">
-              {!isVideoPlaying ? (
-                <div className="aspect-video bg-gray-900 flex items-center justify-center">
-                  <button
-                    onClick={() => setIsVideoPlaying(true)}
-                    className="flex items-center space-x-3 bg-indian-red text-white px-8 py-4 rounded-lg hover:bg-indian-deepRed transition-colors duration-300"
-                  >
-                    <Play size={24} />
-                    <span className="text-lg font-semibold">Watch Introduction</span>
-                  </button>
-                </div>
-              ) : (
-                <ReactPlayer
-                  url="/videos/intro.mp4"
-                  width="100%"
-                  height="100%"
-                  controls
-                  playing
-                  onEnded={() => setIsVideoPlaying(false)}
-                />
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Highlights Section */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Did You Know?</h2>
-            <p className="text-xl text-gray-600">Discover fascinating insights about Vedic Science</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Courses Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {courses.map((course, index) => (
             <motion.div
+              key={course.id}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="card text-center"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
             >
-              <div className="w-16 h-16 bg-indian-red rounded-full flex items-center justify-center mx-auto mb-4">
-                <BookOpen size={32} className="text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Ancient Knowledge</h3>
-              <p className="text-gray-600">
-                Vedic texts contain advanced mathematical concepts, astronomical calculations, 
-                and scientific principles that were discovered thousands of years ago.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="card text-center"
-            >
-              <div className="w-16 h-16 bg-indian-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award size={32} className="text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Modern Applications</h3>
-              <p className="text-gray-600">
-                Vedic principles are being applied in modern fields like architecture, 
-                medicine, psychology, and environmental science.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="card text-center"
-            >
-              <div className="w-16 h-16 bg-indian-maroon rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users size={32} className="text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Global Community</h3>
-              <p className="text-gray-600">
-                VVES connects scholars, researchers, and enthusiasts worldwide to explore 
-                and preserve Vedic knowledge for future generations.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Sanskrit Subhashit Section */}
-      <section className="section-padding bg-indian-maroon text-white">
-        <div className="container-custom text-center">
-          <h2 className="text-4xl font-bold mb-8">Daily Sanskrit Wisdom</h2>
-          <motion.div
-            key={currentSubhashit}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="bg-white/10 backdrop-blur-custom rounded-xl p-8 mb-6">
-              <p className="text-2xl mb-4 hindi-text leading-relaxed">
-                {subhashits[currentSubhashit].sanskrit}
-              </p>
-              <p className="text-lg mb-3 italic">
-                "{subhashits[currentSubhashit].english}"
-              </p>
-              <p className="text-sm text-gray-300">
-                {subhashits[currentSubhashit].meaning}
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* COMMENTED OUT: Partners Section - removed from homepage but kept for restoration
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Partners & Collaborators</h2>
-            <p className="text-xl text-gray-600">Working together to preserve and promote Vedic knowledge</p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {partners.map((partner, index) => (
-              <motion.div
-                key={partner.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="w-20 h-20 bg-gray-200 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-gray-500 font-semibold text-center text-sm">
-                    {partner.name}
-                  </span>
-                </div>
-                <p className="text-center font-medium text-gray-700">{partner.name}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-      */}
-
-      {/* Testimonials Section */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Members Say</h2>
-            <p className="text-xl text-gray-600">Testimonials from our community</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="card"
-              >
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-indian-red rounded-full flex items-center justify-center mr-4">
-                    <span className="text-white font-semibold">
-                      {testimonial.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-600">{testimonial.designation}</p>
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-bold text-gray-900">{course.name}</h3>
+                  <div className="flex items-center space-x-1">
+                    <Star size={16} className="text-yellow-400 fill-current" />
+                    <span className="text-sm font-medium">{course.rating}</span>
                   </div>
                 </div>
-                <Quote className="text-indian-red mb-3" size={24} />
-                <p className="text-gray-700 italic">"{testimonial.content}"</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Join VVES Section */}
-      <section className="section-padding bg-indian-red text-white">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Why Join VVES?</h2>
-            <p className="text-xl opacity-90">Discover the benefits of becoming a member</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { title: 'Expert Guidance', desc: 'Learn from renowned scholars and researchers' },
-              { title: 'Research Access', desc: 'Access to extensive library and research materials' },
-              { title: 'Networking', desc: 'Connect with like-minded individuals worldwide' },
-              { title: 'Skill Development', desc: 'Enhance your knowledge of Vedic sciences' }
-            ].map((benefit, index) => (
-              <motion.div
-                key={benefit.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold">{index + 1}</span>
+                
+                <p className="text-gray-600 mb-4">{course.description}</p>
+                
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-4 text-sm text-gray-600">
+                    <div className="flex items-center space-x-1">
+                      <Clock size={16} />
+                      <span>{course.duration}</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <Users size={16} />
+                      <span>{course.students} students</span>
+                    </div>
+                  </div>
+                  <div className="text-2xl font-bold text-indian-red">
+                    ₹{course.price.toLocaleString()}
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                <p className="opacity-90">{benefit.desc}</p>
-              </motion.div>
-            ))}
-          </div>
 
-          <div className="text-center mt-12">
-            <Link href="/contact" className="btn-accent text-lg px-8 py-4">
-              Become a Member
-            </Link>
-          </div>
+                <div className="mb-4">
+                  <h4 className="font-semibold text-gray-900 mb-2">What you'll learn:</h4>
+                  <ul className="space-y-1">
+                    {course.curriculum.slice(0, 3).map((item, idx) => (
+                      <li key={idx} className="flex items-center space-x-2 text-sm text-gray-600">
+                        <CheckCircle size={14} className="text-green-500" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <button
+                  onClick={() => handleCourseSelect(course.id)}
+                  className="w-full bg-indian-red text-white py-3 px-4 rounded-lg font-semibold hover:bg-indian-deepRed transition-colors flex items-center justify-center space-x-2"
+                >
+                  <UserPlus size={16} />
+                  <span>View Details</span>
+                </button>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </div>
 
-      {/* Upcoming Events Section removed per request */}
+      {/* Course Details Modal */}
+      {selectedCourse && (
+        <CourseModal
+          course={selectedCourse}
+          onClose={() => setSelectedCourse(null)}
+          onRegister={(courseId: number) => {
+            setSelectedCourse(null)
+            handleOpenRegistration(courseId)
+          }}
+        />
+      )}
 
-      {/* QR Code Registration Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Quick Registration</h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Scan the QR code to register for our courses and become a member
-            </p>
+      {/* Registration Modal */}
+      {showRegistration && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="bg-white rounded-xl shadow-2xl w-full max-w-md p-6"
+          >
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Course Registration</h2>
+            <p className="text-gray-600 mb-6">Complete your registration for: <strong>{registrationData.selectedCourse}</strong></p>
             
-            <div className="bg-gray-100 rounded-xl p-8 inline-block">
-              <div className="w-48 h-48 bg-white rounded-lg mx-auto mb-4 flex items-center justify-center border-2 border-dashed border-gray-300 overflow-hidden">
-                <img src="/images/qr-registration.jpg" alt="VVES Registration QR Code" className="w-full h-full object-cover" />
+            <form onSubmit={handleRegistration} className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                <input
+                  type="text"
+                  required
+                  value={registrationData.name}
+                  onChange={(e) => setRegistrationData(prev => ({ ...prev, name: e.target.value }))}
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indian-red focus:border-indian-red"
+                />
               </div>
-              <p className="text-sm text-gray-600">
-                Scan to access registration form
-              </p>
-            </div>
-
-            <div className="mt-8">
-              <Link href="/contact" className="btn-primary text-lg px-8 py-4">
-                Register Online
-              </Link>
-            </div>
-          </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <input
+                  type="email"
+                  required
+                  value={registrationData.email}
+                  onChange={(e) => setRegistrationData(prev => ({ ...prev, email: e.target.value }))}
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indian-red focus:border-indian-red"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                <input
+                  type="tel"
+                  required
+                  value={registrationData.phone}
+                  onChange={(e) => setRegistrationData(prev => ({ ...prev, phone: e.target.value }))}
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indian-red focus:border-indian-red"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Profession</label>
+                <input
+                  type="text"
+                  value={registrationData.profession}
+                  onChange={(e) => setRegistrationData(prev => ({ ...prev, profession: e.target.value }))}
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indian-red focus:border-indian-red"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Organization</label>
+                <input
+                  type="text"
+                  value={registrationData.organization}
+                  onChange={(e) => setRegistrationData(prev => ({ ...prev, organization: e.target.value }))}
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indian-red focus:border-indian-red"
+                />
+              </div>
+              
+              <div className="flex space-x-3 pt-4">
+                <button
+                  type="button"
+                  onClick={() => setShowRegistration(false)}
+                  className="flex-1 py-3 px-4 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="flex-1 bg-indian-red text-white py-3 px-4 rounded-lg font-semibold hover:bg-indian-deepRed"
+                >
+                  Register
+                </button>
+              </div>
+            </form>
+          </motion.div>
         </div>
-      </section>
+      )}
 
       <Footer />
     </div>
   )
 }
+
+export default CoursePage

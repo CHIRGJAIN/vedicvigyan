@@ -364,61 +364,103 @@ export default function About() {
 
           {/* 3D Carousel Container */}
           <div className="relative max-w-6xl mx-auto">
-            <div className="relative h-96 overflow-hidden">
-              {/* Carousel Track */}
-              <div className="flex transition-transform duration-500 ease-in-out" 
-                   style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-                {founders.map((founder, index) => (
-                  <div key={founder.name} className="w-full flex-shrink-0 px-4">
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.8, rotateY: 45 }}
-                      animate={{ 
-                        opacity: 1, 
-                        scale: 1, 
-                        rotateY: 0,
-                        z: 0
-                      }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
-                      whileHover={{ 
-                        scale: 1.05, 
-                        rotateY: 5,
-                        z: 20,
-                        transition: { duration: 0.3 }
-                      }}
-                      className="bg-white rounded-2xl shadow-2xl p-8 text-center cursor-pointer transform-gpu"
-                      style={{
-                        transformStyle: 'preserve-3d',
-                        perspective: '1000px'
-                      }}
-                      onClick={() => openModal(founder)}
-                    >
-                      {/* Avatar */}
-                      <div className="relative mb-6">
-                        <div className="w-32 h-32 bg-gradient-to-br from-indian-red to-indian-gold rounded-full mx-auto flex items-center justify-center shadow-lg">
-                          <span className="text-white text-2xl font-bold">
-                            {founder.name.split(' ').map(n => n[0]).join('')}
-                          </span>
-                        </div>
-                        <div className="absolute -top-2 -right-2 w-8 h-8 bg-indian-gold rounded-full flex items-center justify-center">
-                          <span className="text-white text-sm font-bold">{index + 1}</span>
-                        </div>
-                      </div>
+            <div className="relative h-96 flex items-center justify-center">
+              {/* Carousel Cards */}
+              <div className="relative w-full h-full flex items-center justify-center">
+                {founders.map((founder, index) => {
+                  const isActive = index === currentIndex;
+                  const isLeft = index === (currentIndex - 1 + founders.length) % founders.length;
+                  const isRight = index === (currentIndex + 1) % founders.length;
+                  const isVisible = isActive || isLeft || isRight;
+                  
+                  if (!isVisible) return null;
 
-                      {/* Content */}
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{founder.name}</h3>
-                      <p className="text-indian-red font-semibold mb-4 text-lg">{founder.designation}</p>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {founder.shortDescription}
-                      </p>
-                      
-                      {/* Click indicator */}
-                      <div className="mt-6 flex items-center justify-center text-indian-red">
-                        <span className="text-sm font-medium">Click to read more</span>
-                        <Eye size={16} className="ml-2" />
-                      </div>
+                  let cardStyle = '';
+                  let cardClass = '';
+                  
+                  if (isActive) {
+                    // Center card - full size and prominent
+                    cardStyle = 'transform: translateX(0) scale(1)';
+                    cardClass = 'z-30 opacity-100';
+                  } else if (isLeft) {
+                    // Left card - smaller and positioned behind
+                    cardStyle = 'transform: translateX(-60%) scale(0.8)';
+                    cardClass = 'z-10 opacity-70';
+                  } else if (isRight) {
+                    // Right card - smaller and positioned behind
+                    cardStyle = 'transform: translateX(60%) scale(0.8)';
+                    cardClass = 'z-10 opacity-70';
+                  }
+
+                  return (
+                    <motion.div
+                      key={founder.name}
+                      initial={{ opacity: 0, scale: 0.8, x: 0 }}
+                      animate={{ 
+                        opacity: isActive ? 1 : 0.7,
+                        scale: isActive ? 1 : 0.8,
+                        x: isActive ? 0 : isLeft ? -200 : 200
+                      }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
+                      className={`absolute ${cardClass} transition-all duration-500 ease-in-out`}
+                      style={{ 
+                        transformStyle: 'preserve-3d',
+                        perspective: '1000px',
+                        ...(isActive ? {} : { 
+                          filter: 'blur(1px)',
+                          transform: `${cardStyle} rotateY(${isLeft ? '15deg' : isRight ? '-15deg' : '0deg'})`
+                        })
+                      }}
+                    >
+                      <motion.div
+                        whileHover={{ 
+                          scale: isActive ? 1.05 : 0.85,
+                          rotateY: isActive ? 0 : isLeft ? '10deg' : '-10deg',
+                          transition: { duration: 0.3 }
+                        }}
+                        className="bg-white rounded-2xl shadow-2xl p-6 text-center cursor-pointer transform-gpu w-80"
+                        onClick={() => openModal(founder)}
+                      >
+                        {/* Avatar */}
+                        <div className="relative mb-4">
+                          <div className={`bg-gradient-to-br from-indian-red to-indian-gold rounded-full mx-auto flex items-center justify-center shadow-lg ${
+                            isActive ? 'w-24 h-24' : 'w-20 h-20'
+                          }`}>
+                            <span className={`text-white font-bold ${
+                              isActive ? 'text-xl' : 'text-lg'
+                            }`}>
+                              {founder.name.split(' ').map(n => n[0]).join('')}
+                            </span>
+                          </div>
+                          <div className="absolute -top-2 -right-2 w-6 h-6 bg-indian-gold rounded-full flex items-center justify-center">
+                            <span className="text-white text-xs font-bold">{index + 1}</span>
+                          </div>
+                        </div>
+
+                        {/* Content */}
+                        <h3 className={`font-bold text-gray-900 mb-2 ${
+                          isActive ? 'text-xl' : 'text-lg'
+                        }`}>{founder.name}</h3>
+                        <p className={`text-indian-red font-semibold mb-3 ${
+                          isActive ? 'text-base' : 'text-sm'
+                        }`}>{founder.designation}</p>
+                        <p className={`text-gray-600 leading-relaxed ${
+                          isActive ? 'text-sm' : 'text-xs'
+                        }`}>
+                          {founder.shortDescription}
+                        </p>
+                        
+                        {/* Click indicator */}
+                        {isActive && (
+                          <div className="mt-4 flex items-center justify-center text-indian-red">
+                            <span className="text-sm font-medium">Click to read more</span>
+                            <Eye size={16} className="ml-2" />
+                          </div>
+                        )}
+                      </motion.div>
                     </motion.div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 
