@@ -128,17 +128,17 @@ const Footer = () => {
                   href="tel:+919876543210" 
                   className="text-gray-300 hover:text-white transition-colors duration-300"
                 >
-                  +91 98765 43210
+                  +91 9845206819, <br />+91 9599080087
                 </a>
               </div>
               
               <div className="flex items-center space-x-3">
                 <Mail size={20} className="text-indian-gold flex-shrink-0" />
                 <a 
-                  href="mailto:info@vves.org" 
+                  href="mailto:info@vves.in" 
                   className="text-gray-300 hover:text-white transition-colors duration-300"
                 >
-                  info@vves.org
+                  info@vves.in
                 </a>
               </div>
               

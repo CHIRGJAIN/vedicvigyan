@@ -7,6 +7,8 @@ import admin from './admin'
 import contact from './contact'
 import upload from './upload'
 import analytics from './analytics'
+import notifications from './notifications'
+import announcements from './announcements'
 
 const api = Router()
 
@@ -18,5 +20,7 @@ api.use('/admin', admin)
 api.use('/contact', contact)
 api.use('/upload', upload)
 api.use('/analytics', analytics)
+api.use('/notifications', notifications)
+api.use('/announcements', announcements)
 
 export default api

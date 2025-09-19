@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: 'Vedic Vigyanam Explorer Society',
   description: 'Preserving and promoting Vedic wisdom through education and research',
   icons: {
-    icon: '/vves-logo.png'
+    icon: '/vves-logo(1).png'
   }
 }
 

@@ -88,5 +88,33 @@
       "createdAt": "2025-09-11T17:11:51.033Z"
     }
   ],
-  "enrollments": []
+  "enrollments": [],
+  "eventRegistrations": [],
+  "userProgress": [],
+  "notifications": [],
+  "announcements": [
+    {
+      "id": "fd97fe8f-677b-4d42-b477-36fcfa1182c8",
+      "title": "Welcome to VVES Learning Platform",
+      "message": "We are excited to announce the launch of our comprehensive learning platform for Vedic sciences.",
+      "type": "general",
+      "targetAudience": "all",
+      "isActive": true,
+      "createdBy": "fd53f6f1-9ca4-4aad-a805-f7b08c4c9168",
+      "createdAt": "2025-09-19T09:39:22.835Z",
+      "updatedAt": "2025-09-19T09:39:22.836Z"
+    },
+    {
+      "id": "a9f90a51-f3d2-4f9e-8b16-03427cf6f7c8",
+      "title": "New Course: Advanced Sanskrit",
+      "message": "Registration is now open for our Advanced Sanskrit course starting next month.",
+      "type": "course",
+      "targetAudience": "students",
+      "isActive": true,
+      "createdBy": "fd53f6f1-9ca4-4aad-a805-f7b08c4c9168",
+      "createdAt": "2025-09-19T09:39:22.836Z",
+      "updatedAt": "2025-09-19T09:39:22.836Z"
+    }
+  ],
+  "fileUploads": []
 }

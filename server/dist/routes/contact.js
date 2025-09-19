@@ -10,7 +10,18 @@ router.post('/', (req, res) => {
     if (!name || !email || !subject || !message)
         return res.status(400).json({ message: 'Missing fields' });
     const id = (0, uuid_1.v4)();
-    const contact = { id, name, email, phone, subject, message, status: 'new', createdAt: new Date().toISOString() };
+    const contact = {
+        id,
+        name,
+        email,
+        phone,
+        subject,
+        message,
+        status: 'new',
+        priority: 'medium',
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString()
+    };
     store_1.db.contacts.set(id, contact);
     res.status(201).json(contact);
 });

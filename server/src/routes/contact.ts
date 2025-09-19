@@ -9,7 +9,18 @@ router.post('/', (req: Request, res: Response) => {
   const { name, email, phone, subject, message } = req.body || {}
   if (!name || !email || !subject || !message) return res.status(400).json({ message: 'Missing fields' })
   const id = uuid()
-  const contact = { id, name, email, phone, subject, message, status: 'new' as const, createdAt: new Date().toISOString() }
+  const contact = { 
+    id, 
+    name, 
+    email, 
+    phone, 
+    subject, 
+    message, 
+    status: 'new' as const, 
+    priority: 'medium' as const,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+  }
   db.contacts.set(id, contact)
   res.status(201).json(contact)
 })

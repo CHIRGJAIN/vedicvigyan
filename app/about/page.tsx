@@ -24,70 +24,70 @@ export default function About() {
       designation: 'Founder & Director',
       shortDescription: 'Internationally recognized scientist with PhD from Leicester University, UK, and postdoctoral research at Bolton Institute of Technology.',
       fullDescription: 'Dr. Madhuri Sharon is an internationally recognized scientist with a PhD from Leicester University, UK, and postdoctoral research at Bolton Institute of Technology. She currently serves as Director of Sharon Institute of Nanotechnology, Visiting Professor at MNIT, Adjunct Faculty at SRIVIT, Marg-Darshak at Bhishma IKS, and Advisor to Bhishma Sanatan Vedic Hindu University in the US. She also holds senior industrial positions including MD of MONAD and Technical Director at Vasudhaiv and NanoWealth. Her expertise spans nanotechnology, biotechnology, Sanatana Dharma, spirituality, Vimaan Shastra, and the Vedas. She has authored 19 books, 251 research articles, and holds 18 patents, guiding 14 PhD students and over 180 postgraduate students.',
-      image: '/images/founders/dr-madhuri-sharon.jpg'
+      image: '/images/dr-sharon/portrait.jpg'
     },
     {
       name: 'Dr. Sanjay Kumar Sharma',
       designation: 'Co-Founder',
       shortDescription: 'Former Dean and Professor at Gautam Buddha University with extensive experience across ISRO, CSIR, DRDO, MHRD, IUAC and MoEFCC.',
       fullDescription: 'Former Dean and Professor at Gautam Buddha University with extensive experience across ISRO, CSIR, DRDO, MHRD, IUAC and MoEFCC. He blends ancient and contemporary science, from AI to electronics, and is known as a living library of knowledge and ancient wisdom.',
-      image: '/images/founders/dr-sanjay-sharma.jpg'
+      image: '/images/dr-sharon/image.png'
     },
     {
       name: 'Dr. Anantha M.A',
       designation: 'Co-Founder',
       shortDescription: 'Ph.D. & M.A. (Nyaya Vidvat Uttama), Assistant Professor at CTKDSI, Trans Disciplinary University.',
       fullDescription: 'Ph.D. & M.A. (Nyaya Vidvat Uttama), Assistant Professor at CTKDSI, Trans Disciplinary University. Expert in Sanskrit, Kannada, Hindi, and English, he has published and edited books and articles and is vital to Vimaan Shastra studies.',
-      image: '/images/founders/dr-anantha.jpg'
+      image: '/images/dr-sharon/image_1.png'
     },
     {
       name: 'Dr. Mrunal Yawalkar',
       designation: 'Co-Founder',
       shortDescription: 'Ph.D. in Physics and Assistant Professor at RTM Nagpur University for eight years, now a freelance researcher.',
       fullDescription: 'Ph.D. in Physics and Assistant Professor at RTM Nagpur University for eight years, now a freelance researcher. She has published multiple articles and a book chapter, with deep interest in ancient aeronautics and metallurgy.',
-      image: '/images/founders/dr-mrunal.jpg'
+      image: '/images/dr-sharon/image_2.png'
     },
     {
       name: 'Ms. Anuradha Pandey-Dubey',
       designation: 'Co-Founder',
       shortDescription: 'M.Sc. in Biotechnology and 15 years as Assistant Professor. Author of a book and several chapters.',
       fullDescription: 'M.Sc. in Biotechnology and 15 years as Assistant Professor. Author of a book and several chapters, she holds a patent and is pursuing a PhD in bionanotechnology while being a member of the Royal Society of Chemistry.',
-      image: '/images/founders/ms-anuradha.jpg'
+      image: '/images/dr-sharon/image_3.png'
     },
     {
       name: 'Mr. Venkat Rangan M.C.',
       designation: 'Co-Founder',
       shortDescription: 'B.E. Electronics and Communication with PMP certification, expert in embedded software applications.',
       fullDescription: 'B.E. Electronics and Communication with PMP certification, expert in embedded software applications in the automotive domain. A lifelong Vimaan enthusiast, he combines engineering expertise with a passion for Sanskrit and Puranas.',
-      image: '/images/founders/mr-venkat.jpg'
+      image: '/images/dr-sharon/image_4.png'
     },
     {
       name: 'Mr. Vijay Khambete',
       designation: 'Co-Founder',
       shortDescription: 'An IT professional with an MBA and multiple postgraduate diplomas. He is the pillar of VVES.',
       fullDescription: 'An IT professional with an MBA and multiple postgraduate diplomas. He is the pillar of VVES, passionately advocating for ancient Indian aeronautics and demonstrating remarkable project-management and recruitment skills.',
-      image: '/images/founders/mr-vijay-khambete.jpg'
+      image: '/images/dr-sharon/image_5.png'
     },
     {
       name: 'Prof. (Dr.) Naresh Kumar Vats',
       designation: 'Co-Founder',
       shortDescription: 'Dean Academic and Finance Officer, former Registrar RGNUL Punjab, and Professor of Law.',
       fullDescription: 'Dean Academic and Finance Officer, former Registrar RGNUL Punjab, and Professor of Law. With over 36 research papers, 160 conference presentations, and 32 edited books, he is a leading figure in law and academic leadership.',
-      image: '/images/founders/prof-naresh.jpg'
+      image: '/images/dr-sharon/image_6.png'
     },
     {
       name: 'Mr. Vijay Madhukar Vadnere',
       designation: 'Co-Founder',
       shortDescription: 'Director at S.V. Ved Yantra Pvt. Ltd. with 39 years of experience in DOCSIS, CATV, and HFC networks.',
       fullDescription: 'Director at S.V. Ved Yantra Pvt. Ltd. with 39 years of experience in DOCSIS, CATV, and HFC networks. He is also a Limca Book record holder and expert in network design and Ayurvedic engineering concepts.',
-      image: '/images/founders/mr-vijay-vadnere.jpg'
+      image: '/images/dr-sharon/image_7.png'
     },
     {
       name: 'Aashish Kumar',
       designation: 'Co-Founder',
       shortDescription: 'Engineering student specializing in Electronics and Communication with AI and ML at Gautam Buddha University.',
       fullDescription: 'Engineering student specializing in Electronics and Communication with AI and ML at Gautam Buddha University. Treasurer of VVES, he integrates traditional knowledge with modern technology through projects in IoT, aerospace, and 3D printing.',
-      image: '/images/founders/aashish-kumar.jpg'
+      image: '/images/dr-sharon/image_8.png'
     }
   ]
 
@@ -230,7 +230,7 @@ export default function About() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Distinguished Founder</h2>
-            <p className="text-xl text-gray-600">Prof. Sanjay Kumar Sharma - A Visionary Leader in Nanotechnology & Vedic Sciences</p>
+            <p className="text-xl text-gray-600"> Dr. Madhuri Sharon Section - A Visionary Leader in Nanotechnology & Vedic Sciences</p>
           </div>
 
           <div className="max-w-7xl mx-auto">
@@ -276,51 +276,223 @@ export default function About() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="bg-white rounded-xl shadow-xl p-8 md:p-12"
+              className="bg-white rounded-xl shadow-xl overflow-hidden"
             >
+              <div className="max-h-96 overflow-y-auto p-8 md:p-12">
               <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold text-gray-900 mb-2">Prof. Sanjay Kumar Sharma</h3>
+                <h3 className="text-3xl font-bold text-gray-900 mb-2"> Dr. Madhuri Sharon Section</h3>
                 <p className="text-indian-red font-semibold text-lg">Founder & Director, VVES</p>
               </div>
 
-              {/* Professional Positions */}
+              {/* Professional Information */}
               <div className="mb-8">
-                <h4 className="text-xl font-semibold text-gray-900 mb-6 text-center">Current & Past Positions</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-4">
-                    <div className="border-l-4 border-indian-red pl-4">
-                      <h5 className="font-semibold text-gray-900">Director</h5>
-                      <p className="text-gray-700">Sharon Institute of Nanotechnology (SINT), Jaipur, India</p>
+                <div className="text-center mb-6">
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2">Dr. Madhuri Sharon</h4>
+                  <p className="text-indian-red font-semibold">(ORCID ID: orcid.org/0000-0002-2558-3770)</p>
+                  <p className="text-gray-700">PhD Leicester University UK; Post-doc Bolton Institute of Technology, UK</p>
+                </div>
+
+                {/* Present Positions */}
+                <div className="mb-6">
+                  <h5 className="text-lg font-semibold text-gray-900 mb-4 border-b-2 border-indian-red pb-2">Present Positions</h5>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-3">
+                      <div className="bg-indian-red/10 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Director</p>
+                        <p className="text-gray-700">Sharon Institute of Nanotechnology</p>
+                      </div>
+                      <div className="bg-indian-gold/10 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Visiting Professor</p>
+                        <p className="text-gray-700">MNIT</p>
+                      </div>
+                      <div className="bg-indian-maroon/10 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Adjunct Faculty</p>
+                        <p className="text-gray-700">SRIVIT</p>
+                      </div>
                     </div>
-                    <div className="border-l-4 border-indian-gold pl-4">
-                      <h5 className="font-semibold text-gray-900">Director</h5>
-                      <p className="text-gray-700">Nano Wealth, Jaipur India</p>
-                    </div>
-                    <div className="border-l-4 border-indian-red pl-4">
-                      <h5 className="font-semibold text-gray-900">Director</h5>
-                      <p className="text-gray-700">Walchand Centre of Research in Nanotech & Bio-Nanotechnology</p>
-                    </div>
-                    <div className="border-l-4 border-indian-gold pl-4">
-                      <h5 className="font-semibold text-gray-900">Visiting Professor</h5>
-                      <p className="text-gray-700">MRC, MNIT Jaipur, India</p>
+                    <div className="space-y-3">
+                      <div className="bg-indian-red/10 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Marg-Darshak</p>
+                        <p className="text-gray-700">Bhishma IKS</p>
+                      </div>
+                      <div className="bg-indian-gold/10 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Advisor</p>
+                        <p className="text-gray-700">Bhishma Sanatan Vedic Hindu University, US</p>
+                      </div>
                     </div>
                   </div>
-                  <div className="space-y-4">
-                    <div className="border-l-4 border-indian-red pl-4">
-                      <h5 className="font-semibold text-gray-900">Managing Director</h5>
-                      <p className="text-gray-700">Monad Nanotech Pvt. Ltd. Mumbai, India</p>
+                </div>
+
+                {/* Industrial Positions */}
+                <div className="mb-6">
+                  <h5 className="text-lg font-semibold text-gray-900 mb-4 border-b-2 border-indian-gold pb-2">Industrial Positions</h5>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-indian-gold/10 p-3 rounded-lg">
+                      <p className="font-semibold text-gray-900">Managing Director</p>
+                      <p className="text-gray-700">MONAD</p>
                     </div>
-                    <div className="border-l-4 border-indian-gold pl-4">
-                      <h5 className="font-semibold text-gray-900">Professor Emeritus & Adjunct Professor</h5>
-                      <p className="text-gray-700">University of Mumbai & MGM University</p>
+                    <div className="bg-indian-gold/10 p-3 rounded-lg">
+                      <p className="font-semibold text-gray-900">Technical Director</p>
+                      <p className="text-gray-700">Vasudhaiv & NanoWealth</p>
                     </div>
-                    <div className="border-l-4 border-indian-red pl-4">
-                      <h5 className="font-semibold text-gray-900">Founder Member</h5>
-                      <p className="text-gray-700">Vedic Vigyanam Explorer Society</p>
+                  </div>
+                </div>
+
+                {/* Research Interests */}
+                <div className="mb-6">
+                  <h5 className="text-lg font-semibold text-gray-900 mb-4 border-b-2 border-indian-maroon pb-2">Research Interests</h5>
+                  <div className="bg-indian-maroon/10 p-4 rounded-lg">
+                    <p className="text-gray-700">Nanotechnology, Biotechnology, Sanatana & Spirituality, Vimaan Shastra, Veda through the eyes of a scientist</p>
+                  </div>
+                </div>
+
+                {/* Publications & Achievements */}
+                <div className="mb-6">
+                  <h5 className="text-lg font-semibold text-gray-900 mb-4 border-b-2 border-indian-red pb-2">Publications & Achievements</h5>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="bg-indian-red/10 p-3 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-indian-red">19</p>
+                      <p className="text-sm text-gray-700">Books</p>
                     </div>
-                    <div className="border-l-4 border-indian-gold pl-4">
-                      <h5 className="font-semibold text-gray-900">Professor and Dean</h5>
-                      <p className="text-gray-700">University School of ICT, Gautam Buddha University, Greater Noida-201312</p>
+                    <div className="bg-indian-gold/10 p-3 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-indian-gold">251</p>
+                      <p className="text-sm text-gray-700">Articles</p>
+                    </div>
+                    <div className="bg-indian-maroon/10 p-3 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-indian-maroon">18</p>
+                      <p className="text-sm text-gray-700">Patents</p>
+                    </div>
+                    <div className="bg-indian-red/10 p-3 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-indian-red">14</p>
+                      <p className="text-sm text-gray-700">PhD Guided</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 bg-gray-100 p-3 rounded-lg text-center">
+                    <p className="text-gray-700"><strong>180</strong> M. Tech. & M. Sc. students guided</p>
+                  </div>
+                </div>
+
+                {/* Past Positions */}
+                <div className="mb-6">
+                  <h5 className="text-lg font-semibold text-gray-900 mb-4 border-b-2 border-indian-gold pb-2">Past Positions</h5>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-3">
+                      <div className="bg-gray-100 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Director</p>
+                        <p className="text-gray-700">RELIANCE</p>
+                      </div>
+                      <div className="bg-gray-100 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Vice President</p>
+                        <p className="text-gray-700">GUFIC</p>
+                      </div>
+                      <div className="bg-gray-100 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Senior Manager</p>
+                        <p className="text-gray-700">EXCEL</p>
+                      </div>
+                      <div className="bg-gray-100 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Officer-in-charge</p>
+                        <p className="text-gray-700">Radiochemistry ICRISAT</p>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="bg-gray-100 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Director</p>
+                        <p className="text-gray-700">NSNRC</p>
+                      </div>
+                      <div className="bg-gray-100 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Director</p>
+                        <p className="text-gray-700">wcRnb</p>
+                      </div>
+                      <div className="bg-gray-100 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Principal</p>
+                        <p className="text-gray-700">SICES College</p>
+                      </div>
+                      <div className="bg-gray-100 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Lecturer</p>
+                        <p className="text-gray-700">Poona University & Bolton Technical College, UK</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Special Assignments */}
+                <div className="mb-6">
+                  <h5 className="text-lg font-semibold text-gray-900 mb-4 border-b-2 border-indian-maroon pb-2">Special Assignments</h5>
+                  <div className="space-y-3">
+                    <div className="bg-indian-maroon/10 p-3 rounded-lg">
+                      <p className="font-semibold text-gray-900">Senior Consultant</p>
+                      <p className="text-gray-700">UNO Asia Pacific for Nanotechnology</p>
+                    </div>
+                    <div className="bg-indian-maroon/10 p-3 rounded-lg">
+                      <p className="font-semibold text-gray-900">Senior Consultant</p>
+                      <p className="text-gray-700">BCIL India</p>
+                    </div>
+                    <div className="bg-indian-maroon/10 p-3 rounded-lg">
+                      <p className="font-semibold text-gray-900">Jury Member</p>
+                      <p className="text-gray-700">Swachcha Bharat projects</p>
+                    </div>
+                    <div className="bg-indian-maroon/10 p-3 rounded-lg">
+                      <p className="font-semibold text-gray-900">Member/Chairman</p>
+                      <p className="text-gray-700">Research Advisory Committee - GUJARAT STATE FERTILIZER CORPORATION</p>
+                    </div>
+                    <div className="bg-indian-maroon/10 p-3 rounded-lg">
+                      <p className="font-semibold text-gray-900">Expert</p>
+                      <p className="text-gray-700">DISASTER MANAGEMENT EXPERT FOR BIHAR STATE for Industrial, Chemical and Nuclear Disaster</p>
+                    </div>
+                    <div className="bg-indian-maroon/10 p-3 rounded-lg">
+                      <p className="font-semibold text-gray-900">Consultant</p>
+                      <p className="text-gray-700">SAARC Floriculture Survey</p>
+                    </div>
+                    <div className="bg-indian-maroon/10 p-3 rounded-lg">
+                      <p className="font-semibold text-gray-900">Report Author</p>
+                      <p className="text-gray-700">MNRE Report on Status & Road map till 2022 for Fuel-Cell in India</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Foreign Collaborations */}
+                <div className="mb-6">
+                  <h5 className="text-lg font-semibold text-gray-900 mb-4 border-b-2 border-indian-red pb-2">Foreign Collaborations</h5>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-3">
+                      <div className="bg-indian-red/10 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Visiting Professor</p>
+                        <p className="text-gray-700">MANA Tsukuba Japan</p>
+                      </div>
+                      <div className="bg-indian-red/10 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Visiting Professor</p>
+                        <p className="text-gray-700">Nagoya University</p>
+                      </div>
+                      <div className="bg-indian-red/10 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Visiting Professor & Ph.D. Guide</p>
+                        <p className="text-gray-700">Nagoya Institute of Technology</p>
+                      </div>
+                      <div className="bg-indian-red/10 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Cultural Exchange Program</p>
+                        <p className="text-gray-700">Nagoya for painting</p>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="bg-indian-gold/10 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Research Collaboration</p>
+                        <p className="text-gray-700">IIT Torino ITALY</p>
+                      </div>
+                      <div className="bg-indian-gold/10 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Research Collaboration</p>
+                        <p className="text-gray-700">Agricultural University Den Bosh, NETHERLAND</p>
+                      </div>
+                      <div className="bg-indian-gold/10 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Research Collaboration</p>
+                        <p className="text-gray-700">Universite De Versailles, Saint-Quentin-En-Yvelines Paris, FRANCE</p>
+                      </div>
+                      <div className="bg-indian-gold/10 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Research Collaboration</p>
+                        <p className="text-gray-700">Juarez Autonomous Univ. of Tabasco, United Mexican States, MEXICO</p>
+                      </div>
+                      <div className="bg-indian-gold/10 p-3 rounded-lg">
+                        <p className="font-semibold text-gray-900">Research Collaboration</p>
+                        <p className="text-gray-700">ICPP Beijing, CHINA</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -347,6 +519,17 @@ export default function About() {
                     "I invite you to join us in this noble endeavor of exploring, 
                     understanding, and preserving our rich Vedic heritage for future generations."
                   </p>
+                </div>
+              </div>
+              
+              {/* Scroll indicator */}
+              <div className="bg-gray-50 px-4 py-2 border-t border-gray-200">
+                <div className="flex items-center justify-center space-x-2 text-gray-500">
+                  <div className="w-1 h-1 bg-gray-400 rounded-full animate-bounce"></div>
+                  <div className="w-1 h-1 bg-gray-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+                  <div className="w-1 h-1 bg-gray-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                  <span className="text-xs ml-2">Scroll for more details</span>
+                </div>
                 </div>
               </div>
             </motion.div>
@@ -403,7 +586,7 @@ export default function About() {
                       }}
                       transition={{ duration: 0.5, ease: "easeInOut" }}
                       className={`absolute ${cardClass} transition-all duration-500 ease-in-out`}
-                      style={{ 
+                      style={{
                         transformStyle: 'preserve-3d',
                         perspective: '1000px',
                         ...(isActive ? {} : { 
@@ -419,25 +602,38 @@ export default function About() {
                           transition: { duration: 0.3 }
                         }}
                         className="bg-white rounded-2xl shadow-2xl p-6 text-center cursor-pointer transform-gpu w-80"
-                        onClick={() => openModal(founder)}
-                      >
-                        {/* Avatar */}
+                      onClick={() => openModal(founder)}
+                    >
+                      {/* Avatar */}
                         <div className="relative mb-4">
-                          <div className={`bg-gradient-to-br from-indian-red to-indian-gold rounded-full mx-auto flex items-center justify-center shadow-lg ${
+                          <div className={`bg-gradient-to-br from-indian-red to-indian-gold rounded-full mx-auto flex items-center justify-center shadow-lg overflow-hidden ${
                             isActive ? 'w-24 h-24' : 'w-20 h-20'
                           }`}>
+                            {(founder.name === 'Dr. Madhuri Sharon' || founder.name === 'Dr. Sanjay Kumar Sharma' || founder.name === 'Dr. Anantha M.A' || founder.name === 'Dr. Mrunal Yawalkar' || founder.name === 'Ms. Anuradha Pandey-Dubey' || founder.name === 'Mr. Venkat Rangan M.C.' || founder.name === 'Mr. Vijay Khambete' || founder.name === 'Prof. (Dr.) Naresh Kumar Vats' || founder.name === 'Mr. Vijay Madhukar Vadnere' || founder.name === 'Aashish Kumar') ? (
+                              <img
+                                src={founder.image}
+                                alt={founder.name}
+                                className="w-full h-full object-cover rounded-full"
+                                onError={(e) => {
+                                  const target = e.target as HTMLImageElement;
+                                  target.style.display = 'none';
+                                  const fallback = target.nextElementSibling as HTMLElement;
+                                  if (fallback) fallback.style.display = 'flex';
+                                }}
+                              />
+                            ) : null}
                             <span className={`text-white font-bold ${
                               isActive ? 'text-xl' : 'text-lg'
-                            }`}>
-                              {founder.name.split(' ').map(n => n[0]).join('')}
-                            </span>
-                          </div>
+                            } ${(founder.name === 'Dr. Madhuri Sharon' || founder.name === 'Dr. Sanjay Kumar Sharma' || founder.name === 'Dr. Anantha M.A' || founder.name === 'Dr. Mrunal Yawalkar' || founder.name === 'Ms. Anuradha Pandey-Dubey' || founder.name === 'Mr. Venkat Rangan M.C.' || founder.name === 'Mr. Vijay Khambete' || founder.name === 'Prof. (Dr.) Naresh Kumar Vats' || founder.name === 'Mr. Vijay Madhukar Vadnere' || founder.name === 'Aashish Kumar') ? 'hidden' : 'flex'}`}>
+                            {founder.name.split(' ').map(n => n[0]).join('')}
+                          </span>
+                        </div>
                           <div className="absolute -top-2 -right-2 w-6 h-6 bg-indian-gold rounded-full flex items-center justify-center">
                             <span className="text-white text-xs font-bold">{index + 1}</span>
-                          </div>
                         </div>
+                      </div>
 
-                        {/* Content */}
+                      {/* Content */}
                         <h3 className={`font-bold text-gray-900 mb-2 ${
                           isActive ? 'text-xl' : 'text-lg'
                         }`}>{founder.name}</h3>
@@ -447,15 +643,15 @@ export default function About() {
                         <p className={`text-gray-600 leading-relaxed ${
                           isActive ? 'text-sm' : 'text-xs'
                         }`}>
-                          {founder.shortDescription}
-                        </p>
-                        
-                        {/* Click indicator */}
+                        {founder.shortDescription}
+                      </p>
+                      
+                      {/* Click indicator */}
                         {isActive && (
                           <div className="mt-4 flex items-center justify-center text-indian-red">
-                            <span className="text-sm font-medium">Click to read more</span>
-                            <Eye size={16} className="ml-2" />
-                          </div>
+                        <span className="text-sm font-medium">Click to read more</span>
+                        <Eye size={16} className="ml-2" />
+                      </div>
                         )}
                       </motion.div>
                     </motion.div>

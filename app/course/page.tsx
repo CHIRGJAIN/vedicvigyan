@@ -22,8 +22,8 @@ const CoursePage = () => {
   })
 
   const courses = [
-    {
-      id: 1,
+      {
+        id: 1,
       name: 'Vedic Science Fundamentals',
       description: 'A comprehensive introduction to the ancient wisdom of Vedic science, covering basic principles and foundational concepts.',
       duration: '3 months',
@@ -67,9 +67,9 @@ const CoursePage = () => {
         'Cultural Significance',
         'Modern Applications'
       ]
-    },
-    {
-      id: 3,
+      },
+      {
+        id: 3,
       name: 'Vedic Mathematics',
       description: 'Master the ancient mathematical techniques that make complex calculations simple and efficient.',
       duration: '4 months',
@@ -188,27 +188,27 @@ const CoursePage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
-
+      
       <div className="container-custom py-8">
         {/* Header */}
-        <motion.div
+          <motion.div
           initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
-        >
+          >
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Courses</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Discover the ancient wisdom of Vedic science through our comprehensive courses designed for modern learners.
-          </p>
-        </motion.div>
+            </p>
+          </motion.div>
 
         {/* Courses Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {courses.map((course, index) => (
-            <motion.div
-              key={course.id}
+              <motion.div
+                key={course.id}
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
             >
@@ -220,7 +220,7 @@ const CoursePage = () => {
                     <span className="text-sm font-medium">{course.rating}</span>
                   </div>
                 </div>
-                
+
                 <p className="text-gray-600 mb-4">{course.description}</p>
                 
                 <div className="flex items-center justify-between mb-4">
@@ -237,7 +237,7 @@ const CoursePage = () => {
                   <div className="text-2xl font-bold text-indian-red">
                     ₹{course.price.toLocaleString()}
                   </div>
-                </div>
+          </div>
 
                 <div className="mb-4">
                   <h4 className="font-semibold text-gray-900 mb-2">What you'll learn:</h4>
@@ -258,11 +258,11 @@ const CoursePage = () => {
                   <UserPlus size={16} />
                   <span>View Details</span>
                 </button>
-              </div>
-            </motion.div>
-          ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
 
       {/* Course Details Modal */}
       {selectedCourse && (
@@ -349,12 +349,12 @@ const CoursePage = () => {
                 >
                   Cancel
                 </button>
-                <button
-                  type="submit"
+              <button
+                type="submit"
                   className="flex-1 bg-indian-red text-white py-3 px-4 rounded-lg font-semibold hover:bg-indian-deepRed"
-                >
+              >
                   Register
-                </button>
+              </button>
               </div>
             </form>
           </motion.div>

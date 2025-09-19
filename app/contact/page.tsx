@@ -220,7 +220,7 @@ export default function Contact() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a 
-                    href="mailto:info@vves.org"
+                    href="mailto:info@vves.in"
                     className="btn-primary flex items-center justify-center"
                   >
                     <Mail size={16} className="mr-2" />
@@ -271,10 +271,10 @@ export default function Contact() {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Email</h3>
                     <a 
-                      href="mailto:info@vves.org" 
+                      href="mailto:info@vves.in" 
                       className="text-gray-700 hover:text-indian-red transition-colors duration-300"
                     >
-                      info@vves.org
+                      info@vves.in
                     </a>
                     <p className="text-sm text-gray-600 mt-1">We'll respond within 24 hours</p>
                   </div>
@@ -440,7 +440,7 @@ export default function Contact() {
               </a>
               
               <a 
-                href="mailto:info@vves.org"
+                href="mailto:info@vves.in"
                 className="btn-secondary text-lg px-8 py-4 flex items-center"
               >
                 <Mail size={24} className="mr-2" />

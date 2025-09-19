@@ -20,7 +20,9 @@ router.post('/register', (req, res) => {
     studentId,
     role: 'user',
     passwordHash,
+    isActive: true,
     createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
   })
   const token = signToken(id, 'user')
   return res.json({ token, user: { _id: id, name, email, studentId, role: 'user' } })

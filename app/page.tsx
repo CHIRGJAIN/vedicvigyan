@@ -100,7 +100,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background with spiritual landscape */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[url('/images/spiritual_2.jpg')] bg-cover" style={{backgroundPosition: 'center bottom'}}></div>
+          <div className="absolute inset-0 bg-[url('/images/spiritual_1.jpg')] bg-cover" style={{backgroundPosition: 'center bottom'}}></div>
           {/* Dark overlay for text readability */}
           <div className="absolute inset-0 bg-black/40"></div>
           {/* Additional gradient overlay for better text contrast */}
