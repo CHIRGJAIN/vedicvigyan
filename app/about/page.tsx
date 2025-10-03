@@ -20,75 +20,187 @@ export default function About() {
 
   const founders: Founder[] = [
     {
-      name: 'Dr. Madhuri Sharon',
-      designation: 'Founder & Director',
-      shortDescription: 'Internationally recognized scientist with PhD from Leicester University, UK, and postdoctoral research at Bolton Institute of Technology.',
-      fullDescription: 'Dr. Madhuri Sharon is an internationally recognized scientist with a PhD from Leicester University, UK, and postdoctoral research at Bolton Institute of Technology. She currently serves as Director of Sharon Institute of Nanotechnology, Visiting Professor at MNIT, Adjunct Faculty at SRIVIT, Marg-Darshak at Bhishma IKS, and Advisor to Bhishma Sanatan Vedic Hindu University in the US. She also holds senior industrial positions including MD of MONAD and Technical Director at Vasudhaiv and NanoWealth. Her expertise spans nanotechnology, biotechnology, Sanatana Dharma, spirituality, Vimaan Shastra, and the Vedas. She has authored 19 books, 251 research articles, and holds 18 patents, guiding 14 PhD students and over 180 postgraduate students.',
-      image: '/images/dr-sharon/portrait.jpg'
+      name: 'Ashish Kumar',
+      designation: 'Treasurer',
+      shortDescription: 'Engineering student specializing in Electronics and Communication with AI and ML at Gautam Buddha University.',
+      fullDescription: 'Engineering student specializing in Electronics and Communication with AI and ML at Gautam Buddha University. Treasurer of VVES, he integrates traditional knowledge with modern technology through projects in IoT, aerospace, and 3D printing.',
+      image: '/images/dr-sharon/image_8.png'
     },
     {
-      name: 'Dr. Sanjay Kumar Sharma',
-      designation: 'Co-Founder',
-      shortDescription: 'Former Dean and Professor at Gautam Buddha University with extensive experience across ISRO, CSIR, DRDO, MHRD, IUAC and MoEFCC.',
-      fullDescription: 'Former Dean and Professor at Gautam Buddha University with extensive experience across ISRO, CSIR, DRDO, MHRD, IUAC and MoEFCC. He blends ancient and contemporary science, from AI to electronics, and is known as a living library of knowledge and ancient wisdom.',
-      image: '/images/dr-sharon/image.png'
+      name: 'Mr. Venkat Rangan M.C.',
+      designation: 'Executive Member',
+      shortDescription: 'B.E. Electronics & Communication, PMP - Expert in Embedded Software Applications and Aeronautic Engineer.',
+      fullDescription: `B.E. Electronics & Communication, PMP.
+
+Expert in Embedded Software Applications for various domains.
+Professional working in Automotive domain.
+
+He is our Aeronautic Engineer.
+
+A great Vimaan Fan since his High school days, with Ambition to build a Vimaan as per ancient scripture. Speciality is he can teach most difficult thing in very simple way.
+
+His interest in Sanskrit & Puranas has been a strong support for VVES.
+
+A Soft Spoken Focussed Person.
+
+HIS PERSONA REMINDS ME OF A DEEP CALM OCEAN WITH SO MUCH GEMS IN IT.
+
+His unique ability to simplify complex concepts, combined with his deep knowledge of Sanskrit and Puranas, makes him an exceptional educator and valuable member of VVES. His calm demeanor and focused approach, along with his passion for ancient aeronautics since high school, position him as our dedicated aeronautic engineer with the ambition to bring ancient Vimaan technology to life.`,
+      image: '/images/dr-sharon/image_4.png'
     },
     {
       name: 'Dr. Anantha M.A',
       designation: 'Co-Founder',
-      shortDescription: 'Ph.D. & M.A. (Nyaya Vidvat Uttama), Assistant Professor at CTKDSI, Trans Disciplinary University.',
-      fullDescription: 'Ph.D. & M.A. (Nyaya Vidvat Uttama), Assistant Professor at CTKDSI, Trans Disciplinary University. Expert in Sanskrit, Kannada, Hindi, and English, he has published and edited books and articles and is vital to Vimaan Shastra studies.',
+      shortDescription: 'Ph.D. & M.A. (Nyaya Vidvat Uttama) - We cannot read Vimaan Shastra without him. Expert in Sanskrit and traditional knowledge.',
+      fullDescription: `Ph.D. & M.A. (Nyaya Vidvat Uttama)
+
+We cannot read Vimaan Shastra without him.
+
+Proficient in Sanskrit, Kannada, Hindi, English
+
+Asst. Prof. in Centre for Traditional Knowledge Data Science and Informatics (CTKDSI), University of Trans Disciplinary Health Science &Technology (Trans Disciplinary University)
+
+Published & Edited books and many articles
+
+Attended many conferences and worked on several Projects.
+
+He has many Recognitions and Honors.
+
+We wouldn't have been able to venture in this BOOK without his support.
+
+His exceptional expertise in Sanskrit and traditional knowledge systems makes him an indispensable member of VVES. His ability to interpret and translate ancient texts, particularly Vimaan Shastra, is crucial to the society's mission of preserving and understanding Vedic sciences. His academic contributions and recognition in the field of traditional knowledge demonstrate his deep commitment to bridging ancient wisdom with contemporary understanding.`,
       image: '/images/dr-sharon/image_1.png'
     },
     {
-      name: 'Dr. Mrunal Yawalkar',
-      designation: 'Co-Founder',
-      shortDescription: 'Ph.D. in Physics and Assistant Professor at RTM Nagpur University for eight years, now a freelance researcher.',
-      fullDescription: 'Ph.D. in Physics and Assistant Professor at RTM Nagpur University for eight years, now a freelance researcher. She has published multiple articles and a book chapter, with deep interest in ancient aeronautics and metallurgy.',
-      image: '/images/dr-sharon/image_2.png'
+      name: 'Mr. Vijay Madhukar Vadnere',
+      designation: 'Executive Member',
+      shortDescription: 'Director at S.V. Ved Yantra Pvt. Ltd. with 39 years of experience in DOCSIS, CATV, and HFC networks.',
+      fullDescription: `Vijay Madhukar Vadnere has 39 years' experience in DOCSIS, CATV, CCTV, HFC and ISP network design, implementation and monitoring. He is an expert in CATV headend design, HFC networks and reverse path network design for DOCSIS 3+. As Assistant Vice President – Technical at Hathway Cable & Datacom, Pune, he managed over 6 lakh digital subscribers and 3 lakh DOCSIS subscribers.
+
+He designed structured networks for Magarpatta City and worked as consultant on HFC/Docsis networks, procurement, implementation and testing. He holds multiple professional certifications in Headend Architecture, Return Path and Fiber Optics and is a member of SCTE since 2002.
+
+Career Journey:
+• Diamond Group (1985–1994) - Senior Technician
+• S.V. Enterprises (1994–1998) - Network design and automation
+• Hathway Cable & Datacom (1998–2021) - 23 years heading HFC/Docsis/FTTH/Digital Cable operations
+• S.V. Ved Yantra Pvt. Ltd. (Since 2022) - Director developing automation instruments and Ayurvedic engineering concepts
+
+He owns a wide range of test instruments and a digital music studio for testing sound frequencies. His interests include reading, documentaries, collecting rare items and designing new gadgets. He is a Limca Book of Records holder and member of multiple organizations including Rotary Club of Pune Wisdom and ADMA.`,
+      image: '/images/dr-sharon/image_7.png'
     },
     {
       name: 'Ms. Anuradha Pandey-Dubey',
       designation: 'Co-Founder',
-      shortDescription: 'M.Sc. in Biotechnology and 15 years as Assistant Professor. Author of a book and several chapters.',
-      fullDescription: 'M.Sc. in Biotechnology and 15 years as Assistant Professor. Author of a book and several chapters, she holds a patent and is pursuing a PhD in bionanotechnology while being a member of the Royal Society of Chemistry.',
+      shortDescription: 'Academician and researcher in both Ancient & Contemporary science. Served as Asst Prof. Biotechnology for 15yrs.',
+      fullDescription: `An academician and researcher in both Ancient & Contemporary science. 
+Served as Asst Prof. Biotechnology for 15yrs
+
+Member of - Royal Society of Chemistry (London).
+
+Educational Qualifications:
+• Certificate Course: Study of Vimaan Vidya
+• B.Ed
+• Post Grad. Dip. In Nanobiotechnology
+
+Her Contribution to Science:
+• Has written a Book - Mandelic Acid (2017), Partridge Publishers
+• 4 Chapters in 4 books by Wiley, Elsevier & Springer
+• 16 International Paper Publications
+• 1 Indian Patent
+• Working as Research Associate and doing Ph D in Bionanotechnology
+
+THIS BEAUTIFUL GIRL IS A MOST FOCUSSED BRILLIANT RESEARCHER
+
+Her dedication to bridging ancient and contemporary science, combined with her extensive research experience and academic achievements, makes her a valuable asset to VVES. Her work in biotechnology and nanobiotechnology, along with her interest in Vimaan Vidya, demonstrates her commitment to exploring the intersection of traditional knowledge and modern scientific research.`,
       image: '/images/dr-sharon/image_3.png'
     },
     {
-      name: 'Mr. Venkat Rangan M.C.',
-      designation: 'Co-Founder',
-      shortDescription: 'B.E. Electronics and Communication with PMP certification, expert in embedded software applications.',
-      fullDescription: 'B.E. Electronics and Communication with PMP certification, expert in embedded software applications in the automotive domain. A lifelong Vimaan enthusiast, he combines engineering expertise with a passion for Sanskrit and Puranas.',
-      image: '/images/dr-sharon/image_4.png'
-    },
-    {
       name: 'Mr. Vijay Khambete',
-      designation: 'Co-Founder',
-      shortDescription: 'An IT professional with an MBA and multiple postgraduate diplomas. He is the pillar of VVES.',
-      fullDescription: 'An IT professional with an MBA and multiple postgraduate diplomas. He is the pillar of VVES, passionately advocating for ancient Indian aeronautics and demonstrating remarkable project-management and recruitment skills.',
+      designation: 'Executive Member',
+      shortDescription: 'The Pillar of VVES & Free Lance Recruiter - An IT Professional with MBA and multiple qualifications.',
+      fullDescription: `The Pillar of VVES & Free Lance Recruiter
+
+An IT Professional with MBA in Supply Chain & Retail, Post Graduate Diploma in Finance Management, Post Graduate Diploma in Programming and Project-management, B. Com.
+
+Has a Passion to demonstrate to the world that the ancient Vimaan Vidya is genuine, and that ancient India possessed remarkable technological prowess. 
+
+He is our HERFAN MOULA. HE SURPRISES ME WITH HIS ATTITUDE OF NOTHING IS IMPOSSIBLE FOR HIM…MOST RELIABLE PILLAR OF OUR GROUP
+
+His dedication to showcasing ancient Indian technological achievements and his unwavering commitment to proving the authenticity of Vimaan Vidya makes him an invaluable asset to VVES. His "nothing is impossible" attitude and reliability have earned him the title of the group's most dependable pillar.`,
       image: '/images/dr-sharon/image_5.png'
     },
     {
+      name: 'Dr. Madhuri Sharon',
+      designation: 'Vice-President',
+      shortDescription: 'Internationally recognized scientist with PhD from Leicester University, UK, and extensive research experience.',
+      fullDescription: `ORCID ID: orcid.org/0000-0002-2558-3770
+
+Education: PhD Leicester University UK; Post-doc Bolton Institute of Technology, UK
+
+Present Positions: Director Sharon Institute of Nanotechnology. Visiting Prof. MNIT. Adjunct Faculty SRIVIT. Marg-Darshak, Bhishma IKS. Advisor, Bhishma Sanatan Vedic Hindu University, US
+
+Industrial Positions: MD MONAD, Tech. Director Vasudhaiv & NanoWealth.
+
+Interests: Nanotechnology, Biotechnology, Sanatana & Spirituality, Vimaan Shastra, Veda through the eyes of a scientist.
+
+Publications: 
+• Books: 19
+• Articles: 251
+• Patents: 18
+• Guided: 14 PhDs & 180 M. Tech. & M. Sc.
+
+Positions Held: Director RELIANCE. VP GUFIC. Sr Manager EXCEL. Officer-in-charge Radiochemistry ICRISAT. Director NSNRC. Director wcRnb, Principal SICES College, Lecturer Poona University, Lecturer Bolton Technical College, UK
+
+Special Assignments: Senior consultant UNO Asia Pacific for Nanotechnology; Senior consultant BCIL India. Jury-Member of Swachcha Bharat projects; Member/Chairman Research Advisory Committee - GUJARAT STATE FERTILIZER CORPORATION. Expert DISASTER MANAGEMENT EXPERT FOR BIHAR STATE for Industrial, Chemical and Nuclear Disaster. SAARC Floriculture Survey Consultant, MNRE Report on Status & Road map till 2022 for Fuel-Cell in India
+
+Foreign Collaborations: Visiting Prof. MANA Tsukuba Japan; Visiting Prof Nagoya Univ. Visiting Prof. & Ph.D. Guide Nagoya Institute of Technology. Cultural Exchange Program Nagoya for painting. Research Collaboration IIT Torino ITALY. Agricultural University Den Bosh, NETHERLAND, Universite De Versailles, Saint-Quentin-En-Yvelines Paris, FRANCE. Juarez Autonomous Univ. of Tabasco, United Mexican States, MEXICO, ICPP Beijing, CHINA.`,
+      image: '/images/dr-sharon/portrait.jpg'
+    },
+    {
       name: 'Prof. (Dr.) Naresh Kumar Vats',
-      designation: 'Co-Founder',
-      shortDescription: 'Dean Academic and Finance Officer, former Registrar RGNUL Punjab, and Professor of Law.',
-      fullDescription: 'Dean Academic and Finance Officer, former Registrar RGNUL Punjab, and Professor of Law. With over 36 research papers, 160 conference presentations, and 32 edited books, he is a leading figure in law and academic leadership.',
+      designation: 'Secretary',
+      shortDescription: 'Dean Academic & Finance Officer; Former Registrar, RGNUL, Punjab with extensive experience in law and academic leadership.',
+      fullDescription: `Dean Academic & Finance Officer; Former Registrar, RGNUL, Punjab
+
+• Professor of Law and Dean Academic at RGNUL, Punjab
+• Former Officiating Vice-Chancellor, Registrar, RTI Appellate Authority at RGNUL
+• Leadership roles at Galgotias University, MNLU Nagpur, NLUJA Assam, BGC Trust University Bangladesh
+• 36+ research papers, 160+ conference presentations, 32 edited books
+• Supervised 7 Ph.D., 2 Post-Doctoral, 75+ LL.M. dissertations
+• Member of Academic/Executive/Finance Councils; Life Member Indian Law Institute
+• WIPO Academy Advanced Arbitration & Mediation; Trademark Law & Examination (WIPO–KIPO)
+• Book: Alternative Dispute Resolution – Prospects and Challenges (2020)
+• Visiting Professor IIM Rohtak; Chairman Mediation Committee, Central University Punjab
+• Edited volumes: IP in Modern Era (2024), International Law & Policy (2024), Uniform Civil Code (2024)
+• Ph.D., LL.M., B.A. (Kurukshetra University), LL.B. (Barkatullah University), UGC-NET (Law)
+• M.B.A. (HR), PGDPM & Labour Welfare, Interpretership Diploma (Sinhala)
+• Honoured by Babu Jagjivan Ram Kala Sanskriti & Sahitya Academy, Delhi`,
       image: '/images/dr-sharon/image_6.png'
     },
     {
-      name: 'Mr. Vijay Madhukar Vadnere',
-      designation: 'Co-Founder',
-      shortDescription: 'Director at S.V. Ved Yantra Pvt. Ltd. with 39 years of experience in DOCSIS, CATV, and HFC networks.',
-      fullDescription: 'Director at S.V. Ved Yantra Pvt. Ltd. with 39 years of experience in DOCSIS, CATV, and HFC networks. He is also a Limca Book record holder and expert in network design and Ayurvedic engineering concepts.',
-      image: '/images/dr-sharon/image_7.png'
+      name: 'Dr. Mrunal Yawalkar',
+      designation: 'Joint-Secretary',
+      shortDescription: 'Asst. Prof. at RTM Nagpur University for 8 years, now a Free Lance Researcher with interest in ancient aeronautics metallurgy.',
+      fullDescription: `Asst. Prof. at RTM Nagpur University for 8 years
+
+Certificate Course: Study of Vimaan Vidya
+
+Published 10 articles & One book chapter
+
+Participated in National & International conferences
+
+A Free Lance Researcher now, with profound interest in ancient aeronautics related Metallurgy
+
+HONOURS & ACHIEVEMENTS:
+• B.Ed Gold medalist
+• National Merit Scholarship
+• Appreciation Prize NCLA
+
+She is a beautiful brain-box.
+
+Her transition from academia to freelance research, combined with her deep interest in ancient aeronautics and metallurgy, makes her a unique contributor to VVES. Her academic background in physics and her gold medal achievements demonstrate her exceptional capabilities in both traditional education and innovative research approaches.`,
+      image: '/images/dr-sharon/image_2.png'
     },
-    {
-      name: 'Aashish Kumar',
-      designation: 'Co-Founder',
-      shortDescription: 'Engineering student specializing in Electronics and Communication with AI and ML at Gautam Buddha University.',
-      fullDescription: 'Engineering student specializing in Electronics and Communication with AI and ML at Gautam Buddha University. Treasurer of VVES, he integrates traditional knowledge with modern technology through projects in IoT, aerospace, and 3D printing.',
-      image: '/images/dr-sharon/image_8.png'
-    }
   ]
 
   const nextSlide = () => {
@@ -265,7 +377,11 @@ export default function About() {
                   
                   {/* Text Section */}
                   <div className="p-6 lg:p-8 flex flex-col justify-center lg:col-span-2">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision for Vedic Sciences</h3>
+                    <div className="mb-4">
+                      <h4 className="text-2xl font-bold text-gray-900 mb-1">Dr. Sanjay Kumar Sharma</h4>
+                      <p className="text-lg font-bold text-indian-red mb-4">President</p>
+                    </div>
+                    <h3 className="text-lg font-normal text-gray-900 mb-4">Our Vision for Vedic Sciences</h3>
                     <div className="space-y-3 text-gray-700 leading-relaxed">
                       <p>
                         The Vedic knowledge system represents one of humanity's most profound 
@@ -281,9 +397,6 @@ export default function About() {
                         today's context.
                       </p>
                     </div>
-                    <div className="pt-4">
-                      <p className="text-sm text-gray-600 italic">— Sanjay Kumar & Team VVES</p>
-                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -296,33 +409,38 @@ export default function About() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="bg-white rounded-xl shadow-xl overflow-hidden"
+                className="bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer hover:shadow-2xl transition-shadow duration-300"
+                onClick={() => openModal(founders.find(f => f.name === 'Dr. Madhuri Sharon')!)}
               >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                  {/* Image Section */}
-                  <div className="relative">
-                    <div className="aspect-[4/3] relative">
-                      <img
-                        src="/images/dr-sharon/image_1.png"
-                        alt="Vedic Sciences Image"
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = 'none';
-                          const fallback = target.nextElementSibling as HTMLElement;
-                          if (fallback) fallback.style.display = 'flex';
-                        }}
-                      />
-                      <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
-                        <span className="text-gray-500">Image not available</span>
-                      </div>
+                <div className="aspect-[4/3] relative">
+                  <img
+                    src="/images/dr-sharon/portrait.jpg"
+                    alt="Dr. Madhuri Sharon"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
+                    <span className="text-gray-500">Image not available</span>
+                  </div>
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="bg-white/90 rounded-full p-2">
+                      <Eye size={20} className="text-indian-red" />
                     </div>
                   </div>
-                  
-                  {/* Text Section */}
-                  <div className="p-4 flex flex-col justify-center">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Vedic Knowledge</h3>
-                    <p className="text-sm text-gray-600">Ancient wisdom for modern times</p>
+                </div>
+                <div className="p-4">
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">Dr. Madhuri Sharon</h3>
+                  <p className="text-sm text-indian-red font-semibold mb-2">Vice-President</p>
+                  <p className="text-xs text-gray-600 line-clamp-3">Vedic Knowledge - Ancient wisdom for modern times</p>
+                  <div className="mt-2 flex items-center text-indian-red text-xs">
+                    <span>Click to read more</span>
+                    <Eye size={12} className="ml-1" />
                   </div>
                 </div>
               </motion.div>
@@ -332,33 +450,38 @@ export default function About() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="bg-white rounded-xl shadow-xl overflow-hidden"
+                className="bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer hover:shadow-2xl transition-shadow duration-300"
+                onClick={() => openModal(founders.find(f => f.name === 'Prof. (Dr.) Naresh Kumar Vats')!)}
               >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                  {/* Image Section */}
-                  <div className="relative">
-                    <div className="aspect-[4/3] relative">
-                      <img
-                        src="/images/dr-sharon/image_2.png"
-                        alt="Research Image"
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = 'none';
-                          const fallback = target.nextElementSibling as HTMLElement;
-                          if (fallback) fallback.style.display = 'flex';
-                        }}
-                      />
-                      <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
-                        <span className="text-gray-500">Image not available</span>
-                      </div>
+                <div className="aspect-[4/3] relative">
+                  <img
+                    src="/images/dr-sharon/image_6.png"
+                    alt="Prof. (Dr.) Naresh Kumar Vats"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
+                    <span className="text-gray-500">Image not available</span>
+                  </div>
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="bg-white/90 rounded-full p-2">
+                      <Eye size={20} className="text-indian-red" />
                     </div>
                   </div>
-                  
-                  {/* Text Section */}
-                  <div className="p-4 flex flex-col justify-center">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Research Excellence</h3>
-                    <p className="text-sm text-gray-600">Bridging ancient and modern science</p>
+                </div>
+                <div className="p-4">
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">Prof. (Dr.) Naresh Kumar Vats</h3>
+                  <p className="text-sm text-indian-red font-semibold mb-2">Secretary</p>
+                  <p className="text-xs text-gray-600 line-clamp-3">Research Excellence - Bridging ancient and modern science</p>
+                  <div className="mt-2 flex items-center text-indian-red text-xs">
+                    <span>Click to read more</span>
+                    <Eye size={12} className="ml-1" />
                   </div>
                 </div>
               </motion.div>
@@ -368,47 +491,47 @@ export default function About() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="bg-white rounded-xl shadow-xl overflow-hidden"
+                className="bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer hover:shadow-2xl transition-shadow duration-300"
+                onClick={() => openModal(founders.find(f => f.name === 'Mr. Vijay Madhukar Vadnere')!)}
               >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                  {/* Image Section */}
-                  <div className="relative">
-                    <div className="aspect-[4/3] relative">
-                      <img
-                        src="/images/dr-sharon/image_4.png"
-                        alt="Education Image"
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = 'none';
-                          const fallback = target.nextElementSibling as HTMLElement;
-                          if (fallback) fallback.style.display = 'flex';
-                        }}
-                      />
-                      <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
-                        <span className="text-gray-500">Image not available</span>
-                      </div>
+                <div className="aspect-[4/3] relative">
+                  <img
+                    src="/images/dr-sharon/image_7.png"
+                    alt="Mr. Vijay Madhukar Vadnere"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
+                    <span className="text-gray-500">Image not available</span>
+                  </div>
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="bg-white/90 rounded-full p-2">
+                      <Eye size={20} className="text-indian-red" />
                     </div>
                   </div>
-                  
-                  {/* Text Section */}
-                  <div className="p-4 flex flex-col justify-center">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">Education & Learning</h3>
-                    <p className="text-sm text-gray-600">Empowering minds through Vedic knowledge</p>
+                </div>
+                <div className="p-4">
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">Mr. Vijay Madhukar Vadnere</h3>
+                  <p className="text-sm text-indian-red font-semibold mb-2">Executive Member</p>
+                  <p className="text-xs text-gray-600 line-clamp-3">Education & Learning - Empowering minds through Vedic knowledge</p>
+                  <div className="mt-2 flex items-center text-indian-red text-xs">
+                    <span>Click to read more</span>
+                    <Eye size={12} className="ml-1" />
                   </div>
                 </div>
               </motion.div>
               </div>
 
-              {/* Our Founders Grid */}
-              <div className="mt-16">
-                <div className="text-center mb-12">
-                  <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Founders</h2>
-                  <p className="text-xl text-gray-600">Meet the visionary leaders behind VVES</p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-                  {founders.slice(0, 5).map((founder, index) => (
+              {/* Additional Founder Cards */}
+              <div className="mt-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {founders.map((founder, index) => (
                     <motion.div
                       key={founder.name}
                       initial={{ opacity: 0, y: 30 }}
