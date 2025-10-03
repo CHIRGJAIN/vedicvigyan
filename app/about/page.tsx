@@ -129,78 +129,6 @@ He is our HERFAN MOULA. HE SURPRISES ME WITH HIS ATTITUDE OF NOTHING IS IMPOSSIB
 His dedication to showcasing ancient Indian technological achievements and his unwavering commitment to proving the authenticity of Vimaan Vidya makes him an invaluable asset to VVES. His "nothing is impossible" attitude and reliability have earned him the title of the group's most dependable pillar.`,
       image: '/images/dr-sharon/image_5.png'
     },
-    {
-      name: 'Dr. Madhuri Sharon',
-      designation: 'Vice-President',
-      shortDescription: 'Internationally recognized scientist with PhD from Leicester University, UK, and extensive research experience.',
-      fullDescription: `ORCID ID: orcid.org/0000-0002-2558-3770
-
-Education: PhD Leicester University UK; Post-doc Bolton Institute of Technology, UK
-
-Present Positions: Director Sharon Institute of Nanotechnology. Visiting Prof. MNIT. Adjunct Faculty SRIVIT. Marg-Darshak, Bhishma IKS. Advisor, Bhishma Sanatan Vedic Hindu University, US
-
-Industrial Positions: MD MONAD, Tech. Director Vasudhaiv & NanoWealth.
-
-Interests: Nanotechnology, Biotechnology, Sanatana & Spirituality, Vimaan Shastra, Veda through the eyes of a scientist.
-
-Publications: 
-• Books: 19
-• Articles: 251
-• Patents: 18
-• Guided: 14 PhDs & 180 M. Tech. & M. Sc.
-
-Positions Held: Director RELIANCE. VP GUFIC. Sr Manager EXCEL. Officer-in-charge Radiochemistry ICRISAT. Director NSNRC. Director wcRnb, Principal SICES College, Lecturer Poona University, Lecturer Bolton Technical College, UK
-
-Special Assignments: Senior consultant UNO Asia Pacific for Nanotechnology; Senior consultant BCIL India. Jury-Member of Swachcha Bharat projects; Member/Chairman Research Advisory Committee - GUJARAT STATE FERTILIZER CORPORATION. Expert DISASTER MANAGEMENT EXPERT FOR BIHAR STATE for Industrial, Chemical and Nuclear Disaster. SAARC Floriculture Survey Consultant, MNRE Report on Status & Road map till 2022 for Fuel-Cell in India
-
-Foreign Collaborations: Visiting Prof. MANA Tsukuba Japan; Visiting Prof Nagoya Univ. Visiting Prof. & Ph.D. Guide Nagoya Institute of Technology. Cultural Exchange Program Nagoya for painting. Research Collaboration IIT Torino ITALY. Agricultural University Den Bosh, NETHERLAND, Universite De Versailles, Saint-Quentin-En-Yvelines Paris, FRANCE. Juarez Autonomous Univ. of Tabasco, United Mexican States, MEXICO, ICPP Beijing, CHINA.`,
-      image: '/images/dr-sharon/portrait.jpg'
-    },
-    {
-      name: 'Prof. (Dr.) Naresh Kumar Vats',
-      designation: 'Secretary',
-      shortDescription: 'Dean Academic & Finance Officer; Former Registrar, RGNUL, Punjab with extensive experience in law and academic leadership.',
-      fullDescription: `Dean Academic & Finance Officer; Former Registrar, RGNUL, Punjab
-
-• Professor of Law and Dean Academic at RGNUL, Punjab
-• Former Officiating Vice-Chancellor, Registrar, RTI Appellate Authority at RGNUL
-• Leadership roles at Galgotias University, MNLU Nagpur, NLUJA Assam, BGC Trust University Bangladesh
-• 36+ research papers, 160+ conference presentations, 32 edited books
-• Supervised 7 Ph.D., 2 Post-Doctoral, 75+ LL.M. dissertations
-• Member of Academic/Executive/Finance Councils; Life Member Indian Law Institute
-• WIPO Academy Advanced Arbitration & Mediation; Trademark Law & Examination (WIPO–KIPO)
-• Book: Alternative Dispute Resolution – Prospects and Challenges (2020)
-• Visiting Professor IIM Rohtak; Chairman Mediation Committee, Central University Punjab
-• Edited volumes: IP in Modern Era (2024), International Law & Policy (2024), Uniform Civil Code (2024)
-• Ph.D., LL.M., B.A. (Kurukshetra University), LL.B. (Barkatullah University), UGC-NET (Law)
-• M.B.A. (HR), PGDPM & Labour Welfare, Interpretership Diploma (Sinhala)
-• Honoured by Babu Jagjivan Ram Kala Sanskriti & Sahitya Academy, Delhi`,
-      image: '/images/dr-sharon/image_6.png'
-    },
-    {
-      name: 'Dr. Mrunal Yawalkar',
-      designation: 'Joint-Secretary',
-      shortDescription: 'Asst. Prof. at RTM Nagpur University for 8 years, now a Free Lance Researcher with interest in ancient aeronautics metallurgy.',
-      fullDescription: `Asst. Prof. at RTM Nagpur University for 8 years
-
-Certificate Course: Study of Vimaan Vidya
-
-Published 10 articles & One book chapter
-
-Participated in National & International conferences
-
-A Free Lance Researcher now, with profound interest in ancient aeronautics related Metallurgy
-
-HONOURS & ACHIEVEMENTS:
-• B.Ed Gold medalist
-• National Merit Scholarship
-• Appreciation Prize NCLA
-
-She is a beautiful brain-box.
-
-Her transition from academia to freelance research, combined with her deep interest in ancient aeronautics and metallurgy, makes her a unique contributor to VVES. Her academic background in physics and her gold medal achievements demonstrate her exceptional capabilities in both traditional education and innovative research approaches.`,
-      image: '/images/dr-sharon/image_2.png'
-    },
   ]
 
   const nextSlide = () => {
@@ -409,8 +337,7 @@ Her transition from academia to freelance research, combined with her deep inter
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer hover:shadow-2xl transition-shadow duration-300"
-                onClick={() => openModal(founders.find(f => f.name === 'Dr. Madhuri Sharon')!)}
+                className="bg-white rounded-xl shadow-xl overflow-hidden"
               >
                 <div className="aspect-[4/3] relative">
                   <img
@@ -427,21 +354,11 @@ Her transition from academia to freelance research, combined with her deep inter
                   <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
                     <span className="text-gray-500">Image not available</span>
                   </div>
-                  {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="bg-white/90 rounded-full p-2">
-                      <Eye size={20} className="text-indian-red" />
-                    </div>
-                  </div>
                 </div>
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Dr. Madhuri Sharon</h3>
                   <p className="text-sm text-indian-red font-semibold mb-2">Vice-President</p>
                   <p className="text-xs text-gray-600 line-clamp-3">Vedic Knowledge - Ancient wisdom for modern times</p>
-                  <div className="mt-2 flex items-center text-indian-red text-xs">
-                    <span>Click to read more</span>
-                    <Eye size={12} className="ml-1" />
-                  </div>
                 </div>
               </motion.div>
 
@@ -450,8 +367,7 @@ Her transition from academia to freelance research, combined with her deep inter
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer hover:shadow-2xl transition-shadow duration-300"
-                onClick={() => openModal(founders.find(f => f.name === 'Prof. (Dr.) Naresh Kumar Vats')!)}
+                className="bg-white rounded-xl shadow-xl overflow-hidden"
               >
                 <div className="aspect-[4/3] relative">
                   <img
@@ -468,21 +384,11 @@ Her transition from academia to freelance research, combined with her deep inter
                   <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
                     <span className="text-gray-500">Image not available</span>
                   </div>
-                  {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="bg-white/90 rounded-full p-2">
-                      <Eye size={20} className="text-indian-red" />
-                    </div>
-                  </div>
                 </div>
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Prof. (Dr.) Naresh Kumar Vats</h3>
                   <p className="text-sm text-indian-red font-semibold mb-2">Secretary</p>
                   <p className="text-xs text-gray-600 line-clamp-3">Research Excellence - Bridging ancient and modern science</p>
-                  <div className="mt-2 flex items-center text-indian-red text-xs">
-                    <span>Click to read more</span>
-                    <Eye size={12} className="ml-1" />
-                  </div>
                 </div>
               </motion.div>
 
@@ -491,8 +397,7 @@ Her transition from academia to freelance research, combined with her deep inter
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer hover:shadow-2xl transition-shadow duration-300"
-                onClick={() => openModal(founders.find(f => f.name === 'Mr. Vijay Madhukar Vadnere')!)}
+                className="bg-white rounded-xl shadow-xl overflow-hidden"
               >
                 <div className="aspect-[4/3] relative">
                   <img
@@ -509,21 +414,11 @@ Her transition from academia to freelance research, combined with her deep inter
                   <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
                     <span className="text-gray-500">Image not available</span>
                   </div>
-                  {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="bg-white/90 rounded-full p-2">
-                      <Eye size={20} className="text-indian-red" />
-                    </div>
-                  </div>
                 </div>
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Mr. Vijay Madhukar Vadnere</h3>
                   <p className="text-sm text-indian-red font-semibold mb-2">Executive Member</p>
                   <p className="text-xs text-gray-600 line-clamp-3">Education & Learning - Empowering minds through Vedic knowledge</p>
-                  <div className="mt-2 flex items-center text-indian-red text-xs">
-                    <span>Click to read more</span>
-                    <Eye size={12} className="ml-1" />
-                  </div>
                 </div>
               </motion.div>
               </div>
