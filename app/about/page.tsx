@@ -17,6 +17,7 @@ interface Founder {
 export default function About() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedFounder, setSelectedFounder] = useState<Founder | null>(null)
+  const [selectedLeadershipCard, setSelectedLeadershipCard] = useState<'Dr. Madhuri Sharon' | 'Prof. (Dr.) Naresh Kumar Vats' | 'Mr. Vijay Madhukar Vadnere' | null>(null)
 
   const founders: Founder[] = [
     {
@@ -72,21 +73,19 @@ His exceptional expertise in Sanskrit and traditional knowledge systems makes hi
       image: '/images/dr-sharon/image_1.png'
     },
     {
-      name: 'Mr. Vijay Madhukar Vadnere',
+      name: 'Dr. Mrunal Yawalkar',
       designation: 'Executive Member',
       shortDescription: 'Director at S.V. Ved Yantra Pvt. Ltd. with 39 years of experience in DOCSIS, CATV, and HFC networks.',
-      fullDescription: `Vijay Madhukar Vadnere has 39 years' experience in DOCSIS, CATV, CCTV, HFC and ISP network design, implementation and monitoring. He is an expert in CATV headend design, HFC networks and reverse path network design for DOCSIS 3+. As Assistant Vice President – Technical at Hathway Cable & Datacom, Pune, he managed over 6 lakh digital subscribers and 3 lakh DOCSIS subscribers.
-
-He designed structured networks for Magarpatta City and worked as consultant on HFC/Docsis networks, procurement, implementation and testing. He holds multiple professional certifications in Headend Architecture, Return Path and Fiber Optics and is a member of SCTE since 2002.
-
-Career Journey:
-• Diamond Group (1985–1994) - Senior Technician
-• S.V. Enterprises (1994–1998) - Network design and automation
-• Hathway Cable & Datacom (1998–2021) - 23 years heading HFC/Docsis/FTTH/Digital Cable operations
-• S.V. Ved Yantra Pvt. Ltd. (Since 2022) - Director developing automation instruments and Ayurvedic engineering concepts
-
-He owns a wide range of test instruments and a digital music studio for testing sound frequencies. His interests include reading, documentaries, collecting rare items and designing new gadgets. He is a Limca Book of Records holder and member of multiple organizations including Rotary Club of Pune Wisdom and ADMA.`,
-      image: '/images/dr-sharon/image_7.png'
+      fullDescription: `Asst. Prof. at RTM Nagpur University for 8 years
+Certificate Course: Study of Vimaan Vidya
+Published 10 articles & One book chapter
+Participated in National & International conferences
+A Free Lance Researcher now, 
+With profound interest in ancient aeronautics related Metallurgy
+HONOURS & ACHIEVEMENTS 
+B.Ed Gold medalist, National Merit Scholarship & Appreciation Prize NCLA
+She is a beautiful brain-box.`,
+      image: '/images/dr-sharon/image_2.png'
     },
     {
       name: 'Ms. Anuradha Pandey-Dubey',
@@ -338,6 +337,7 @@ His dedication to showcasing ancient Indian technological achievements and his u
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
                 className="bg-white rounded-xl shadow-xl overflow-hidden"
+                onClick={() => setSelectedLeadershipCard('Dr. Madhuri Sharon')}
               >
                 <div className="aspect-[4/3] relative">
                   <img
@@ -368,6 +368,7 @@ His dedication to showcasing ancient Indian technological achievements and his u
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="bg-white rounded-xl shadow-xl overflow-hidden"
+                onClick={() => setSelectedLeadershipCard('Prof. (Dr.) Naresh Kumar Vats')}
               >
                 <div className="aspect-[4/3] relative">
                   <img
@@ -398,6 +399,7 @@ His dedication to showcasing ancient Indian technological achievements and his u
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="bg-white rounded-xl shadow-xl overflow-hidden"
+                onClick={() => setSelectedLeadershipCard('Mr. Vijay Madhukar Vadnere')}
               >
                 <div className="aspect-[4/3] relative">
                   <img
@@ -536,6 +538,75 @@ His dedication to showcasing ancient Indian technological achievements and his u
                 <div className="mt-8 pt-6 border-t border-gray-200">
                   <button
                     onClick={closeModal}
+                    className="w-full bg-indian-red text-white py-3 px-6 rounded-lg hover:bg-indian-deepRed transition-colors duration-300"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+
+        {selectedLeadershipCard && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+            onClick={() => setSelectedLeadershipCard(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="p-8">
+                {/* Header */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-indian-red to-indian-gold rounded-full flex items-center justify-center overflow-hidden">
+                      <img
+                        src={`/images/dr-sharon/${selectedLeadershipCard.toLowerCase().replace(/\s/g, '_')}.png`}
+                        alt={selectedLeadershipCard}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const fallback = target.nextElementSibling as HTMLElement;
+                          if (fallback) fallback.style.display = 'flex';
+                        }}
+                      />
+                      <span className="text-white text-lg font-bold hidden">
+                        {selectedLeadershipCard.split(' ').map((n: string) => n[0]).join('')}
+                      </span>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-900">{selectedLeadershipCard}</h3>
+                      <p className="text-indian-red font-semibold">{getDesignation(selectedLeadershipCard)}</p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => setSelectedLeadershipCard(null)}
+                    className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                  >
+                    <X size={24} className="text-gray-500" />
+                  </button>
+                </div>
+
+                {/* Content */}
+                <div className="prose prose-lg max-w-none">
+                  <p className="text-gray-700 leading-relaxed">
+                    {getLeadershipDescription(selectedLeadershipCard)}
+                  </p>
+                </div>
+
+                {/* Footer */}
+                <div className="mt-8 pt-6 border-t border-gray-200">
+                  <button
+                    onClick={() => setSelectedLeadershipCard(null)}
                     className="w-full bg-indian-red text-white py-3 px-6 rounded-lg hover:bg-indian-deepRed transition-colors duration-300"
                   >
                     Close
@@ -693,6 +764,88 @@ His dedication to showcasing ancient Indian technological achievements and his u
     </div>
   )
 }
+
+const getDesignation = (name: string) => {
+  switch (name) {
+    case 'Dr. Madhuri Sharon':
+      return 'Director Sharon Institute of Nanotechnology. Visiting Prof. MNIT. Adjunct Faculty SRIVIT. Marg-Darshak, Bhishma IKS. Advisor, Bhishma Sanatan Vedic Hindu University, US';
+    case 'Prof. (Dr.) Naresh Kumar Vats':
+      return 'Dean Academic & Finance Officer; Former Registrar, RGNUL, Punjab. Professor of Law and Dean Academic at RGNUL, Punjab. Former Officiating Vice-Chancellor, Registrar, RTI Appellate Authority at RGNUL. Leadership roles at Galgotias University, MNLU Nagpur, NLUJA Assam, BGC Trust University Bangladesh. 36+ research papers, 160+ conference presentations, 32 edited books. Supervised 7 Ph.D., 2 Post-Doctoral, 75+ LL.M. dissertations. Member of Academic/Executive/Finance Councils; Life Member Indian Law Institute. WIPO Academy Advanced Arbitration & Mediation; Trademark Law & Examination (WIPO–KIPO). Book: Alternative Dispute Resolution – Prospects and Challenges (2020). Visiting Professor IIM Rohtak; Chairman Mediation Committee, Central University Punjab. Edited volumes: IP in Modern Era (2024), International Law & Policy (2024), Uniform Civil Code (2024). Ph.D., LL.M., B.A. (Kurukshetra University), LL.B. (Barkatullah University), UGC-NET (Law). M.B.A. (HR), PGDPM & Labour Welfare, Interpretership Diploma (Sinhala). Honoured by Babu Jagjivan Ram Kala Sanskriti & Sahitya Academy, Delhi.';
+    case 'Mr. Vijay Madhukar Vadnere':
+      return 'Vijay Madhukar Vadnere has 39 years’ experience in DOCSIS, CATV, CCTV, HFC and ISP network design, implementation and monitoring. He is an expert in CATV headend design, HFC networks and reverse path network design for DOCSIS 3+. As Assistant Vice President – Technical at Hathway Cable & Datacom, Pune, he managed over 6 lakh digital subscribers and 3 lakh DOCSIS subscribers. He designed structured networks for Magarpatta City and worked as consultant on HFC/Docsis networks, procurement, implementation and testing. He holds multiple professional certifications in Headend Architecture, Return Path and Fiber Optics and is a member of SCTE since 2002. His career began at Diamond Group (1985–1994) as Senior Technician, then S.V. Enterprises (1994–1998) on network design and automation, followed by 23 years at Hathway Cable & Datacom (1998–2021) heading HFC/Docsis/FTTH/Digital Cable operations. Since 2022 he is Director at S.V. Ved Yantra Pvt. Ltd. developing automation instruments and Ayurvedic engineering concepts. He owns a wide range of test instruments and a digital music studio for testing sound frequencies. His interests include reading, documentaries, collecting rare items and designing new gadgets. He is a Limca Book of Records holder and member of multiple organizations including Rotary Club of Pune Wisdom and ADMA.';
+    default:
+      return '';
+  }
+};
+
+const getLeadershipDescription = (name: string) => {
+  switch (name) {
+    case 'Dr. Madhuri Sharon':
+      return `Dr. Madhuri Sharon:
+(ORCID ID- orcid.org/0000-0002-2558-3770) 
+PhD Leicester University UK; Post-doc Bolton Institute of Technology, UK 
+Present Positions Director Sharon Institute of Nanotechnology. 
+Visiting Prof. MNIT. Adjunct Faculty SRIVIT. 
+Marg-Darshak,  Bhishma IKS. Advisor, Bhishma Sanatan Vedic Hindu University, US
+Industrial positions: MD MONAD, Tech. Director Vasudhaiv & NanoWealth. 
+Interests- Nanotechnology, Biotechnology, Sanatana & Spirituality, Vimaan  Shastra, Veda through the eyes of a scientist.
+Publications -
+Books 19
+Articles 251. 
+Patents 18
+Guided 14PhDs. & 
+180 M. Tech. & M. Sc.  
+Positions held:  Director RELIANCE. 
+VP GUFIC. Sr Manager EXCEL. 
+Officer-in-charge Radiochemistry ICRISAT. 
+Director NSNRC. 
+Director wcRnb, 
+Principal SICES College, 
+Lecturer Poona University
+Lecturer Bolton Technical College, UK	
+Special Assignments-
+Senior consultant UNO Asia Pacific for Nanotechnology; 
+Senior consultant BCIL India. 
+Jury-Member of Swachcha Bharat projects; Member/Chairman Research Advisory Committee - GUJARAT STATE FERTILIZER CORPORATION. 
+Expert DISASTER MANAGEMENT EXPERT FOR BIHAR STATE for Industrial, Chemical and Nuclear Disaster.
+SAARC Floriculture Survey Consultant, 
+MNRE Report on Status & Road map till 2022 for Fuel-Cell in India  
+Foreign Collaborations -Visiting Prof. MANA Tsukuba Japan; 
+Visiting Prof Nagoya Univ. 
+Visiting Prof. & Ph.D. Guide Nagoya Institute of Technology. 
+Cultural Exchange Program Nagoya for painting. 
+Research Collaboration 
+IIT Torino ITALY. 
+Agricultural University Den Bosh, NETHERLAND, 
+Universite De Versailles, Saint-Quentin-En-Yvelines Paris, FRANCE. 
+Juarez Autonomous Univ. of Tabasco, United Mexican States, MEXICO
+ICPP Beijing, CHINA.`;
+    case 'Prof. (Dr.) Naresh Kumar Vats':
+      return `Prof. (Dr.) Naresh Kumar Vats:
+Dean Academic & Finance Officer; Former Registrar, RGNUL, Punjab
+• Professor of Law and Dean Academic at RGNUL, Punjab
+• Former Officiating Vice-Chancellor, Registrar, RTI Appellate Authority at RGNUL
+• Leadership roles at Galgotias University, MNLU Nagpur, NLUJA Assam, BGC Trust University Bangladesh
+• 36+ research papers, 160+ conference presentations, 32 edited books
+• Supervised 7 Ph.D., 2 Post-Doctoral, 75+ LL.M. dissertations
+• Member of Academic/Executive/Finance Councils; Life Member Indian Law Institute
+• WIPO Academy Advanced Arbitration & Mediation; Trademark Law & Examination (WIPO–KIPO)
+• Book: Alternative Dispute Resolution – Prospects and Challenges (2020)
+• Visiting Professor IIM Rohtak; Chairman Mediation Committee, Central University Punjab
+• Edited volumes: IP in Modern Era (2024), International Law & Policy (2024), Uniform Civil Code (2024)
+• Ph.D., LL.M., B.A. (Kurukshetra University), LL.B. (Barkatullah University), UGC-NET (Law)
+• M.B.A. (HR), PGDPM & Labour Welfare, Interpretership Diploma (Sinhala)
+• Honoured by Babu Jagjivan Ram Kala Sanskriti & Sahitya Academy, Delhi.`;
+    case 'Mr. Vijay Madhukar Vadnere':
+      return `Mr. Vijay Madhukar Vadnere:
+Vijay Madhukar Vadnere has 39 years’ experience in DOCSIS, CATV, CCTV, HFC and ISP network design, implementation and monitoring. He is an expert in CATV headend design, HFC networks and reverse path network design for DOCSIS 3+. As Assistant Vice President – Technical at Hathway Cable & Datacom, Pune, he managed over 6 lakh digital subscribers and 3 lakh DOCSIS subscribers.
+He designed structured networks for Magarpatta City and worked as consultant on HFC/Docsis networks, procurement, implementation and testing. He holds multiple professional certifications in Headend Architecture, Return Path and Fiber Optics and is a member of SCTE since 2002.
+His career began at Diamond Group (1985–1994) as Senior Technician, then S.V. Enterprises (1994–1998) on network design and automation, followed by 23 years at Hathway Cable & Datacom (1998–2021) heading HFC/Docsis/FTTH/Digital Cable operations. Since 2022 he is Director at S.V. Ved Yantra Pvt. Ltd. developing automation instruments and Ayurvedic engineering concepts.
+He owns a wide range of test instruments and a digital music studio for testing sound frequencies. His interests include reading, documentaries, collecting rare items and designing new gadgets. He is a Limca Book of Records holder and member of multiple organizations including Rotary Club of Pune Wisdom and ADMA.`;
+    default:
+      return '';
+  }
+};
 
 
 
