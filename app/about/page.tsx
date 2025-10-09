@@ -51,7 +51,7 @@ His unique ability to simplify complex concepts, combined with his deep knowledg
     },
     {
       name: 'Dr. Anantha M.A',
-      designation: 'Co-Founder',
+      designation: 'Executive Member',
       shortDescription: 'Ph.D. & M.A. (Nyaya Vidvat Uttama) - We cannot read Vimaan Shastra without him. Expert in Sanskrit and traditional knowledge.',
       fullDescription: `Ph.D. & M.A. (Nyaya Vidvat Uttama)
 
@@ -89,7 +89,7 @@ She is a beautiful brain-box.`,
     },
     {
       name: 'Ms. Anuradha Pandey-Dubey',
-      designation: 'Co-Founder',
+      designation: 'Executive Member',
       shortDescription: 'Academician and researcher in both Ancient & Contemporary science. Served as Asst Prof. Biotechnology for 15yrs.',
       fullDescription: `An academician and researcher in both Ancient & Contemporary science. 
 Served as Asst Prof. Biotechnology for 15yrs
@@ -768,11 +768,11 @@ His dedication to showcasing ancient Indian technological achievements and his u
 const getDesignation = (name: string) => {
   switch (name) {
     case 'Dr. Madhuri Sharon':
-      return 'Director Sharon Institute of Nanotechnology. Visiting Prof. MNIT. Adjunct Faculty SRIVIT. Marg-Darshak, Bhishma IKS. Advisor, Bhishma Sanatan Vedic Hindu University, US';
+      return 'Vice President';
     case 'Prof. (Dr.) Naresh Kumar Vats':
-      return 'Dean Academic & Finance Officer; Former Registrar, RGNUL, Punjab. Professor of Law and Dean Academic at RGNUL, Punjab. Former Officiating Vice-Chancellor, Registrar, RTI Appellate Authority at RGNUL. Leadership roles at Galgotias University, MNLU Nagpur, NLUJA Assam, BGC Trust University Bangladesh. 36+ research papers, 160+ conference presentations, 32 edited books. Supervised 7 Ph.D., 2 Post-Doctoral, 75+ LL.M. dissertations. Member of Academic/Executive/Finance Councils; Life Member Indian Law Institute. WIPO Academy Advanced Arbitration & Mediation; Trademark Law & Examination (WIPO–KIPO). Book: Alternative Dispute Resolution – Prospects and Challenges (2020). Visiting Professor IIM Rohtak; Chairman Mediation Committee, Central University Punjab. Edited volumes: IP in Modern Era (2024), International Law & Policy (2024), Uniform Civil Code (2024). Ph.D., LL.M., B.A. (Kurukshetra University), LL.B. (Barkatullah University), UGC-NET (Law). M.B.A. (HR), PGDPM & Labour Welfare, Interpretership Diploma (Sinhala). Honoured by Babu Jagjivan Ram Kala Sanskriti & Sahitya Academy, Delhi.';
+      return 'Secretary';
     case 'Mr. Vijay Madhukar Vadnere':
-      return 'Vijay Madhukar Vadnere has 39 years’ experience in DOCSIS, CATV, CCTV, HFC and ISP network design, implementation and monitoring. He is an expert in CATV headend design, HFC networks and reverse path network design for DOCSIS 3+. As Assistant Vice President – Technical at Hathway Cable & Datacom, Pune, he managed over 6 lakh digital subscribers and 3 lakh DOCSIS subscribers. He designed structured networks for Magarpatta City and worked as consultant on HFC/Docsis networks, procurement, implementation and testing. He holds multiple professional certifications in Headend Architecture, Return Path and Fiber Optics and is a member of SCTE since 2002. His career began at Diamond Group (1985–1994) as Senior Technician, then S.V. Enterprises (1994–1998) on network design and automation, followed by 23 years at Hathway Cable & Datacom (1998–2021) heading HFC/Docsis/FTTH/Digital Cable operations. Since 2022 he is Director at S.V. Ved Yantra Pvt. Ltd. developing automation instruments and Ayurvedic engineering concepts. He owns a wide range of test instruments and a digital music studio for testing sound frequencies. His interests include reading, documentaries, collecting rare items and designing new gadgets. He is a Limca Book of Records holder and member of multiple organizations including Rotary Club of Pune Wisdom and ADMA.';
+      return 'Executive Member';
     default:
       return '';
   }

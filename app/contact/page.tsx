@@ -227,7 +227,7 @@ export default function Contact() {
                     Email Us
                   </a>
                   <a 
-                    href="tel:+919876543210"
+                    href="tel:+919845206819, 9599080087"
                     className="btn-secondary flex items-center justify-center"
                   >
                     <Phone size={16} className="mr-2" />
@@ -254,10 +254,10 @@ export default function Contact() {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
                     <a 
-                      href="tel:+919876543210" 
+                      href="tel:+919845206819, 9599080087" 
                       className="text-gray-700 hover:text-indian-red transition-colors duration-300"
                     >
-                      +91 98765 43210
+                      +91 9845206819, <br />9599080087
                     </a>
                     <p className="text-sm text-gray-600 mt-1">Call us during office hours</p>
                   </div>
@@ -289,8 +289,6 @@ export default function Contact() {
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Office Address</h3>
                     <address className="text-gray-700 not-italic">
                       {/* VVES Office<br /> */}
-                      Vedic Vigyanam Explorer Society <br /> C/o
-                      Prof Dr Naresh Vats<br />
                       House No. 254 Sector-3
                       Urban Estate<br /> Kurukshetra
                       Pin-136118, Haryana- India
@@ -306,8 +304,8 @@ export default function Contact() {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Office Hours</h3>
                     <div className="text-gray-700">
-                      <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                      <p>Saturday: 9:00 AM - 2:00 PM</p>
+                      <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                      <p>Saturday: 9:00 AM - 12:00 PM</p>
                       <p className="text-sm text-gray-600 mt-1">Closed on Sundays and public holidays</p>
                     </div>
                   </div>

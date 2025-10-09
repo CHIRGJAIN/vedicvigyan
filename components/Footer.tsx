@@ -113,8 +113,6 @@ const Footer = () => {
                 <MapPin size={20} className="text-indian-gold mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300">
-                    Vedic Vigyanam Explorer Society C/o<br />
-                    Prof Dr Naresh Vats<br />
                     House No. 254 Sector-3<br />
                     Urban Estate Kurukshetra<br />
                     Pin-136118, Haryana- India
@@ -146,8 +144,8 @@ const Footer = () => {
                 <Clock size={20} className="text-indian-gold flex-shrink-0" />
                 <div>
                   <p className="text-gray-300">
-                    Mon - Fri: 9:00 AM - 6:00 PM<br />
-                    Sat: 9:00 AM - 2:00 PM
+                    Mon - Fri: 9:00 AM - 5:00 PM<br />
+                    Sat: 9:00 AM - 12:00 PM
                   </p>
                 </div>
               </div>
