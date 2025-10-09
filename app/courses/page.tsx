@@ -29,9 +29,9 @@ const CoursesPage = () => {
       description: 'Learn the ancient art and science of archery and warfare as described in the Vedic texts.',
       duration: '3 months',
       students: 25,
-      price: 12000,
+      price: 1500,
       online: true,
-      rating: 4.8,
+      // rating: 4.8,
       features: [
         'Live interactive sessions',
         'Study materials and resources',
@@ -40,11 +40,13 @@ const CoursesPage = () => {
         'Access to VVES community'
       ],
       curriculum: [
-        'Introduction to Dhanurveda',
-        'Ancient Warfare Techniques',
-        'Weaponry and Strategy',
-        'Physical and Mental Training',
-        'Historical Context'
+        'Brainstorming about TIA',
+        'Introduction to the subject',
+        'Pedagogy (Teaching techniques) through guru-shishya-parampara',
+        'Practical Application',
+        'Inter-disciplinary aspects',
+        'Multi-disciplinary aspect',
+        'Trans-disciplinary aspects'
       ]
     },
     {
@@ -54,9 +56,9 @@ const CoursesPage = () => {
       description: 'Explore the subtle life forces and energies as described in Vedic literature.',
       duration: '2 months',
       students: 32,
-      price: 8000,
+      price: 1500,
       online: true,
-      rating: 4.6,
+      // rating: 4.6,
       features: [
         'In-depth Vedic studies',
         'Energy and consciousness exploration',
@@ -65,11 +67,10 @@ const CoursesPage = () => {
         'Research materials'
       ],
       curriculum: [
-        'Concept of Sookshma Jivany',
-        'Vedic Energy Systems',
-        'Subtle Body Anatomy',
-        'Consciousness Studies',
-        'Modern Applications'
+        'Introduction to Microbiology (Modern Science)',
+        'Overview of Vedic Literature and Ayurveda',
+        'Ancient References to Invisible Life',
+        'Traditional Practices with Microbiological Relevance Limitations and Critical Thinking'
       ]
     },
     {
@@ -77,11 +78,11 @@ const CoursesPage = () => {
       name: 'The Cosmic Wisdom of the Sūrya Siddhānta',
       instructor: 'Dr. Mrunal Yawalkar',
       description: 'Master the ancient astronomical treatise and its profound cosmic insights.',
-      duration: '4 months',
+      duration: '4 hours',
       students: 28,
-      price: 15000,
+      price: 1500,
       online: true,
-      rating: 4.9,
+      // rating: 4.9,
       features: [
         'Ancient astronomy principles',
         'Mathematical calculations',
@@ -91,10 +92,10 @@ const CoursesPage = () => {
       ],
       curriculum: [
         'Introduction to Sūrya Siddhānta',
-        'Astronomical Calculations',
-        'Cosmic Cycles and Time',
-        'Planetary Movements',
-        'Modern Astronomy Connections'
+        'Astronomical Principles',
+        'Cosmological Framework',
+        'Mathematical Techniques',
+        'Relevance and Legacy'
       ]
     },
     {
@@ -102,11 +103,11 @@ const CoursesPage = () => {
       name: 'Indian Knowledge System',
       instructor: 'Prof. Sanjay Kumar Sharma',
       description: 'Comprehensive study of traditional Indian knowledge systems and their contemporary relevance.',
-      duration: '3 months',
+      duration: '4 hours',
       students: 38,
-      price: 10000,
+      price: 1000,
       online: true,
-      rating: 4.7,
+      // rating: 4.7,
       features: [
         'Traditional knowledge exploration',
         'Modern relevance analysis',
@@ -115,11 +116,7 @@ const CoursesPage = () => {
         'Expert guidance'
       ],
       curriculum: [
-        'Foundations of IKS',
-        'Traditional Sciences',
-        'Philosophical Systems',
-        'Cultural Context',
-        'Contemporary Applications'
+        'We will give the syllabus only to enrolled students at the beginning of each course.'
       ]
     },
     {
@@ -127,11 +124,11 @@ const CoursesPage = () => {
       name: 'Sristi and Samskritam',
       instructor: 'Venkat Rangan M.C',
       description: 'Understanding creation theories and the role of Sanskrit in preserving ancient wisdom.',
-      duration: '3 months',
-      students: 35,
-      price: 11000,
+      duration: '4 hours',
+      students: 50,
+      price: 1500,
       online: true,
-      rating: 4.8,
+      // rating: 4.8,
       features: [
         'Creation theories study',
         'Sanskrit language focus',
@@ -140,11 +137,10 @@ const CoursesPage = () => {
         'Language applications'
       ],
       curriculum: [
-        'Vedic Creation Theories',
-        'Sanskrit Grammar and Usage',
-        'Ancient Text Analysis',
-        'Language Preservation',
-        'Modern Applications'
+        'Basic Concepts',
+        'States of Evolution',
+        'Sanskrit and Creation',
+        'Science Concepts'
       ]
     },
     {
@@ -152,11 +148,11 @@ const CoursesPage = () => {
       name: 'Nyaya Shastra',
       instructor: 'Vijay Khambete & Anantha+Naresh',
       description: 'Master the ancient Indian system of logic and reasoning.',
-      duration: '4 months',
-      students: 22,
-      price: 13000,
+      duration: '36 hours',
+      students: 50,
+      price: 6000,
       online: true,
-      rating: 4.9,
+      // rating: 4.9,
       features: [
         'Logical reasoning systems',
         'Ancient Indian logic',
@@ -165,11 +161,9 @@ const CoursesPage = () => {
         'Expert instruction'
       ],
       curriculum: [
-        'Introduction to Nyaya',
-        'Logical Principles',
-        'Reasoning Methods',
-        'Debate Techniques',
-        'Modern Logic Connections'
+        'Introduction to Nyāyashāstra, Pratyakṣa & Anumāna in workplace decisions.',
+	      'Tarka & Vāda for conflict resolution, recognizing Hetvābhāsa through interactive case studies.',
+        'Practical applications in HR—simulated appraisals, feedback models, and structured reasoning practice.',
       ]
     },
     {
@@ -177,24 +171,19 @@ const CoursesPage = () => {
       name: 'Yuga Concept (Time calculations)',
       instructor: 'Vijay Vadnere',
       description: 'Understanding the Vedic concept of time cycles and their calculations.',
-      duration: '2 months',
-      students: 30,
-      price: 9000,
+      duration: '4 days',
+      students: 50,
+      price: 1500,
       online: true,
-      rating: 4.5,
+      // rating: 4.5,
       features: [
-        'Time cycle studies',
-        'Mathematical calculations',
-        'Historical context',
-        'Predictive methods',
-        'Practical applications'
+        'Basic Time Calculation.',
+        'Concept of Yuga.',
+        'Concept of Yuga. ',
+        'Kaliyuga.'
       ],
       curriculum: [
-        'Vedic Time Concepts',
-        'Yuga Calculations',
-        'Cyclical Time Theory',
-        'Historical Applications',
-        'Modern Relevance'
+        'Introduction of Time calculation in different Yuga.'
       ]
     },
     {
@@ -202,24 +191,21 @@ const CoursesPage = () => {
       name: 'Veda and Sacred Symbolism',
       instructor: 'Dr. Madhuri Sharon',
       description: 'Explore the profound symbolism embedded in Vedic texts and their deeper meanings.',
-      duration: '3 months',
-      students: 40,
-      price: 12000,
+      duration: '5 hours',
+      students: 50,
+      price: 1500,
       online: true,
-      rating: 4.8,
+      // rating: 4.8,
       features: [
-        'Symbolic interpretation',
-        'Vedic text analysis',
-        'Spiritual insights',
-        'Cultural understanding',
-        'Expert guidance'
+        'Encoding the Infinite in the Finite.',
+        'Preserving Esoteric Knowledge.',
+        'Ritual as Cosmic Drama.',  
+        'Multiple Layers of Meaning.',
+        'Facilitating Inner Transformation.'
       ],
       curriculum: [
-        'Introduction to Vedic Symbolism',
-        'Sacred Symbols and Meanings',
-        'Textual Analysis',
-        'Spiritual Applications',
-        'Cultural Significance'
+        'We will give the syllabus only to enrolled students at the beginning of each course.'
+        
       ]
     },
     {
@@ -227,24 +213,20 @@ const CoursesPage = () => {
       name: 'Prasthānatrayī',
       instructor: 'Dr. Madhuri Sharon',
       description: 'Study of the three foundational texts of Vedanta philosophy.',
-      duration: '6 months',
-      students: 18,
-      price: 20000,
+      duration: '5 hours',
+      students: 50,
+      price: 1500,
       online: true,
-      rating: 4.9,
+      // rating: 4.9,
       features: [
-        'Advanced philosophical study',
-        'Three foundational texts',
-        'Vedanta principles',
-        'Deep textual analysis',
-        'Spiritual guidance'
+        'What Is the Prasthanatrayi?',
+        'Why Study the Prasthanatrayi?',
+        'To Integrate Knowledge, Action, and Devotion.',
+        'To Cultivate Ethical and Spiritual Leadership. ',
+        'To Bridge Ancient Wisdom with Modern Inquiry.'
       ],
       curriculum: [
-        'Introduction to Prasthānatrayī',
-        'Upanishads Study',
-        'Bhagavad Gita Analysis',
-        'Brahma Sutras',
-        'Vedanta Philosophy'
+        'We will give the syllabus only to enrolled students at the beginning of each course.'
       ]
     },
     {
@@ -252,11 +234,11 @@ const CoursesPage = () => {
       name: 'Origin of Universe through the Eyes of Veda',
       instructor: 'Dr. Madhuri Sharon',
       description: 'Understanding the Vedic perspective on the origin and evolution of the universe.',
-      duration: '4 months',
-      students: 25,
-      price: 15000,
+      duration: '22 hours',
+      students: 50,
+      price: 5000,
       online: true,
-      rating: 4.7,
+      // rating: 4.7,
       features: [
         'Cosmological studies',
         'Vedic universe theories',
@@ -265,11 +247,7 @@ const CoursesPage = () => {
         'Research methodology'
       ],
       curriculum: [
-        'Vedic Cosmology',
-        'Universe Origin Theories',
-        'Evolution Concepts',
-        'Scientific Parallels',
-        'Philosophical Implications'
+        'We will give the syllabus only to enrolled students at the beginning of each course.'
       ]
     },
     {
@@ -277,11 +255,11 @@ const CoursesPage = () => {
       name: 'Science & Technology in Vimaan Shastra',
       instructor: 'VVES Group',
       description: 'Explore the ancient science of aerial vehicles and advanced technology as described in Vedic texts.',
-      duration: '5 months',
-      students: 20,
-      price: 18000,
+      duration: '34 hours',
+      students: 50,
+      price: 6000,
       online: true,
-      rating: 4.8,
+      // rating: 4.8,
       features: [
         'Ancient technology study',
         'Aerospace principles',
@@ -290,11 +268,7 @@ const CoursesPage = () => {
         'Modern applications'
       ],
       curriculum: [
-        'Introduction to Vimaan Shastra',
-        'Ancient Aerospace Technology',
-        'Engineering Principles',
-        'Historical Context',
-        'Modern Technology Connections'
+        'We will give the syllabus only to enrolled students at the beginning of each course.'
       ]
     }
   ]
