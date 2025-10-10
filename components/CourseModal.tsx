@@ -86,7 +86,12 @@ export default function CourseModal({ course, onClose, onRegister }: Props) {
               <h4 className="font-semibold mb-2">Course Metadata</h4>
               <ul className="text-sm text-gray-700 space-y-2">
                 <li className="flex items-center space-x-2"><span className="font-medium">Instructor:</span> <span className="text-indian-red">{course.instructor}</span></li>
-                <li className="flex items-center space-x-2"><Monitor size={14} /> <span className="text-green-600 font-medium">Online Course</span></li>
+                <li className="flex items-center space-x-2">
+                  <Monitor size={14} />
+                  <span className={`font-medium ${course?.online ? 'text-green-600' : 'text-indigo-600'}`}>
+                    {course?.online ? 'Online Course' : 'Offline Course'}
+                  </span>
+                </li>
                 <li className="flex items-center space-x-2"><Clock size={14} /> <span>{course.duration}</span></li>
               </ul>
             </div>
