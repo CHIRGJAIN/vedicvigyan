@@ -1,15 +1,17 @@
 "use client"
 
 import { useEffect, useRef } from 'react'
-import { X, Clock, DollarSign, CheckCircle, Monitor } from 'lucide-react'
+import { X, Clock, CheckCircle, Monitor } from 'lucide-react'
 
 type Props = {
   course: any
   onClose: () => void
-  onRegister?: (courseId: number) => void
 }
 
-export default function CourseModal({ course, onClose, onRegister }: Props) {
+const REGISTRATION_FORM_URL =
+  'https://docs.google.com/forms/d/e/1FAIpQLSctZ4UY-YsU6DBuXKAN3SYk7jOY-pT4gieRPr_LCxxllE8-Qg/viewform?usp=header'
+
+export default function CourseModal({ course, onClose }: Props) {
   const overlayRef = useRef<HTMLDivElement | null>(null)
   const closeBtnRef = useRef<HTMLButtonElement | null>(null)
 
@@ -127,7 +129,10 @@ export default function CourseModal({ course, onClose, onRegister }: Props) {
             </button>
 
             <button
-              onClick={() => { onRegister?.(course.id) }}
+              onClick={() => {
+                window.open(REGISTRATION_FORM_URL, '_blank', 'noopener,noreferrer')
+                onClose()
+              }}
               className="py-2 px-4 bg-indian-red text-white rounded-md hover:bg-indian-deepRed focus:outline-none focus:ring-2 focus:ring-indian-red"
             >
               Register for this course

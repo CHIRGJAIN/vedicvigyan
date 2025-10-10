@@ -5,21 +5,11 @@ import { motion } from 'framer-motion'
 import { BookOpen, Clock, DollarSign, CheckCircle, UserPlus } from 'lucide-react'
 import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
-import toast from 'react-hot-toast'
 import CourseModal from '../../components/CourseModal'
 
 const CoursesPage = () => {
   // selectedCourse stores the full course object when modal is open
   const [selectedCourse, setSelectedCourse] = useState<any | null>(null)
-  const [showRegistration, setShowRegistration] = useState(false)
-  const [registrationData, setRegistrationData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    profession: '',
-    organization: '',
-    selectedCourse: ''
-  })
 
   const courses = [
     {
@@ -279,46 +269,6 @@ const CoursesPage = () => {
     setSelectedCourse(course)
   }
 
-  const handleOpenRegistration = (courseId: number) => {
-    const course = courses.find(c => c.id === courseId)
-    setRegistrationData(prev => ({ ...prev, selectedCourse: course?.name || '' }))
-    setShowRegistration(true)
-  }
-
-  const handleRegistration = (e: React.FormEvent) => {
-    e.preventDefault()
-    
-    // Generate unique user ID and password
-    const userId = `STU${Date.now().toString().slice(-6)}`
-    const password = `Vves@${Math.random().toString(36).slice(-4)}#${Date.now().toString().slice(-2)}`
-    
-    // Save to localStorage (in real app, this would go to database)
-    const userData = {
-      id: userId,
-      password,
-      ...registrationData,
-      enrollmentDate: new Date().toISOString().split('T')[0],
-      status: 'active',
-      courses: [registrationData.selectedCourse],
-      paymentStatus: 'pending'
-    }
-    
-    const existingUsers = JSON.parse(localStorage.getItem('vves-users') || '[]')
-    existingUsers.push(userData)
-    localStorage.setItem('vves-users', JSON.stringify(existingUsers))
-    
-    toast.success(`Registration successful! Your login credentials:\nUsername: ${userId}\nPassword: ${password}`)
-    setShowRegistration(false)
-    setRegistrationData({
-      name: '',
-      email: '',
-      phone: '',
-      profession: '',
-      organization: '',
-      selectedCourse: ''
-    })
-  }
-
   return (
     <div className="min-h-screen bg-gray-50">
       <Navigation />
@@ -399,96 +349,7 @@ const CoursesPage = () => {
         <CourseModal
           course={selectedCourse}
           onClose={() => setSelectedCourse(null)}
-          onRegister={(courseId: number) => {
-            setSelectedCourse(null)
-            handleOpenRegistration(courseId)
-          }}
         />
-      )}
-
-      {/* Registration Modal */}
-      {showRegistration && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="bg-white rounded-xl shadow-2xl w-full max-w-md p-6"
-          >
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Course Registration</h2>
-            <p className="text-gray-600 mb-6">Complete your registration for: <strong>{registrationData.selectedCourse}</strong></p>
-            
-            <form onSubmit={handleRegistration} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                <input
-                  type="text"
-                  required
-                  value={registrationData.name}
-                  onChange={(e) => setRegistrationData(prev => ({ ...prev, name: e.target.value }))}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indian-red focus:border-indian-red"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                <input
-                  type="email"
-                  required
-                  value={registrationData.email}
-                  onChange={(e) => setRegistrationData(prev => ({ ...prev, email: e.target.value }))}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indian-red focus:border-indian-red"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
-                <input
-                  type="tel"
-                  required
-                  value={registrationData.phone}
-                  onChange={(e) => setRegistrationData(prev => ({ ...prev, phone: e.target.value }))}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indian-red focus:border-indian-red"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Profession</label>
-                <input
-                  type="text"
-                  value={registrationData.profession}
-                  onChange={(e) => setRegistrationData(prev => ({ ...prev, profession: e.target.value }))}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indian-red focus:border-indian-red"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Organization</label>
-                <input
-                  type="text"
-                  value={registrationData.organization}
-                  onChange={(e) => setRegistrationData(prev => ({ ...prev, organization: e.target.value }))}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indian-red focus:border-indian-red"
-                />
-              </div>
-              
-              <div className="flex space-x-3 pt-4">
-                <button
-                  type="button"
-                  onClick={() => setShowRegistration(false)}
-                  className="flex-1 py-3 px-4 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="flex-1 bg-indian-red text-white py-3 px-4 rounded-lg font-semibold hover:bg-indian-deepRed"
-                >
-                  Register
-                </button>
-              </div>
-            </form>
-          </motion.div>
-        </div>
       )}
 
       <Footer />
