@@ -203,17 +203,18 @@ Her dedication to bridging ancient and contemporary science, combined with her e
                 <div className="w-12 h-12 bg-indian-red rounded-full flex items-center justify-center mr-4">
                   <Target size={24} className="text-white" />
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">Our Mission</h2>
+                <h2 className="text-3xl font-bold text-gray-900">Vision</h2>
               </div>
+            
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                To preserve, research, and disseminate the ancient wisdom of Vedic sciences, 
-                making this knowledge accessible to modern scholars, researchers, and enthusiasts 
-                while maintaining the authenticity and depth of traditional understanding.
+                To become a leading authority in the preservation and interpretation 
+                of Vedic Science, integrating it into modern academic and cultural frameworks.
               </p>
+              
               <p className="text-lg text-gray-700 leading-relaxed">
-                We strive to bridge the gap between ancient Vedic knowledge and contemporary 
-                scientific understanding, fostering a deeper appreciation for India's rich 
-                intellectual heritage.
+                We envision a world where Vedic knowledge is recognized as a valuable resource 
+                for addressing contemporary challenges, contributing to global understanding 
+                of science, philosophy, and human potential.
               </p>
             </motion.div>
 
@@ -226,16 +227,17 @@ Her dedication to bridging ancient and contemporary science, combined with her e
                 <div className="w-12 h-12 bg-indian-gold rounded-full flex items-center justify-center mr-4">
                   <Eye size={24} className="text-white" />
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900">Our Vision</h2>
+                <h2 className="text-3xl font-bold text-gray-900">Mission</h2>
               </div>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                <strong>"To become a leading authority in the preservation and interpretation 
-                of Vedic Science, integrating it into modern academic and cultural frameworks."</strong>
+                To preserve, research, and disseminate the ancient wisdom of Vedic sciences, 
+                making this knowledge accessible to modern scholars, researchers, and enthusiasts 
+                while maintaining the authenticity and depth of traditional understanding.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                We envision a world where Vedic knowledge is recognized as a valuable resource 
-                for addressing contemporary challenges, contributing to global understanding 
-                of science, philosophy, and human potential.
+                We strive to bridge the gap between ancient Vedic knowledge and contemporary 
+                scientific understanding, fostering a deeper appreciation for India's rich 
+                intellectual heritage.
               </p>
             </motion.div>
           </div>
