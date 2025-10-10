@@ -33,23 +33,8 @@ Passionate about creating sustainable innovation pipelines that keep Vedic scien
     {
       name: 'Mr. Venkat Rangan M.C.',
       designation: 'Executive Member',
-      shortDescription: 'B.E. Electronics & Communication, PMP - Expert in Embedded Software Applications and Aeronautic Engineer.',
-      fullDescription: `B.E. Electronics & Communication, PMP.
-
-Expert in Embedded Software Applications for various domains.
-Professional working in Automotive domain.
-
-He is our Aeronautic Engineer.
-
-A great Vimaan Fan since his High school days, with Ambition to build a Vimaan as per ancient scripture. Speciality is he can teach most difficult thing in very simple way.
-
-His interest in Sanskrit & Puranas has been a strong support for VVES.
-
-A Soft Spoken Focussed Person.
-
-HIS PERSONA REMINDS ME OF A DEEP CALM OCEAN WITH SO MUCH GEMS IN IT.
-
-His unique ability to simplify complex concepts, combined with his deep knowledge of Sanskrit and Puranas, makes him an exceptional educator and valuable member of VVES. His calm demeanor and focused approach, along with his passion for ancient aeronautics since high school, position him as our dedicated aeronautic engineer with the ambition to bring ancient Vimaan technology to life.`,
+      shortDescription: 'B.E. Electronics and Communication with PMP certification, expert in automotive embedded software.',
+      fullDescription: `B.E. Electronics and Communication with PMP certification, expert in embedded software applications in the automotive domain. A lifelong Vimaan enthusiast, he combines engineering expertise with a passion for Sanskrit and Puranas.`,
       image: '/images/dr-sharon/image_4.png'
     },
     {
@@ -117,16 +102,8 @@ Her dedication to bridging ancient and contemporary science, combined with her e
     {
       name: 'Mr. Vijay Khambete',
       designation: 'Executive Member',
-      shortDescription: 'The Pillar of VVES & Free Lance Recruiter - An IT Professional with MBA and multiple qualifications.',
-      fullDescription: `The Pillar of VVES & Free Lance Recruiter
-
-An IT Professional with MBA in Supply Chain & Retail, Post Graduate Diploma in Finance Management, Post Graduate Diploma in Programming and Project-management, B. Com.
-
-Has a Passion to demonstrate to the world that the ancient Vimaan Vidya is genuine, and that ancient India possessed remarkable technological prowess. 
-
-He is our HERFAN MOULA. HE SURPRISES ME WITH HIS ATTITUDE OF NOTHING IS IMPOSSIBLE FOR HIM…MOST RELIABLE PILLAR OF OUR GROUP
-
-His dedication to showcasing ancient Indian technological achievements and his unwavering commitment to proving the authenticity of Vimaan Vidya makes him an invaluable asset to VVES. His "nothing is impossible" attitude and reliability have earned him the title of the group's most dependable pillar.`,
+      shortDescription: 'An IT professional with an MBA and multiple postgraduate diplomas, championing ancient Indian aeronautics.',
+      fullDescription: `An IT professional with an MBA and multiple postgraduate diplomas. He is the pillar of VVES, passionately advocating for ancient Indian aeronautics and demonstrating remarkable project-management and recruitment skills.`,
       image: '/images/dr-sharon/image_5.png'
     },
   ]
@@ -813,44 +790,7 @@ const getLeadershipDescription = (name: string) => {
   switch (name) {
     case 'Dr. Madhuri Sharon':
       return `Dr. Madhuri Sharon:
-(ORCID ID- orcid.org/0000-0002-2558-3770) 
-PhD Leicester University UK; Post-doc Bolton Institute of Technology, UK 
-Present Positions Director Sharon Institute of Nanotechnology. 
-Visiting Prof. MNIT. Adjunct Faculty SRIVIT. 
-Marg-Darshak,  Bhishma IKS. Advisor, Bhishma Sanatan Vedic Hindu University, US
-Industrial positions: MD MONAD, Tech. Director Vasudhaiv & NanoWealth. 
-Interests- Nanotechnology, Biotechnology, Sanatana & Spirituality, Vimaan  Shastra, Veda through the eyes of a scientist.
-Publications -
-Books 19
-Articles 251. 
-Patents 18
-Guided 14PhDs. & 
-180 M. Tech. & M. Sc.  
-Positions held:  Director RELIANCE. 
-VP GUFIC. Sr Manager EXCEL. 
-Officer-in-charge Radiochemistry ICRISAT. 
-Director NSNRC. 
-Director wcRnb, 
-Principal SICES College, 
-Lecturer Poona University
-Lecturer Bolton Technical College, UK	
-Special Assignments-
-Senior consultant UNO Asia Pacific for Nanotechnology; 
-Senior consultant BCIL India. 
-Jury-Member of Swachcha Bharat projects; Member/Chairman Research Advisory Committee - GUJARAT STATE FERTILIZER CORPORATION. 
-Expert DISASTER MANAGEMENT EXPERT FOR BIHAR STATE for Industrial, Chemical and Nuclear Disaster.
-SAARC Floriculture Survey Consultant, 
-MNRE Report on Status & Road map till 2022 for Fuel-Cell in India  
-Foreign Collaborations -Visiting Prof. MANA Tsukuba Japan; 
-Visiting Prof Nagoya Univ. 
-Visiting Prof. & Ph.D. Guide Nagoya Institute of Technology. 
-Cultural Exchange Program Nagoya for painting. 
-Research Collaboration 
-IIT Torino ITALY. 
-Agricultural University Den Bosh, NETHERLAND, 
-Universite De Versailles, Saint-Quentin-En-Yvelines Paris, FRANCE. 
-Juarez Autonomous Univ. of Tabasco, United Mexican States, MEXICO
-ICPP Beijing, CHINA.`;
+Dr. Madhuri Sharon is an internationally recognized scientist with a PhD from Leicester University, UK, and postdoctoral research at Bolton Institute of Technology. She currently serves as Director of Sharon Institute of Nanotechnology, Visiting Professor at MNIT, Adjunct Faculty at SRIVIT, Marg-Darshak at Bhishma IKS, and Advisor to Bhishma Sanatan Vedic Hindu University in the US. She also holds senior industrial positions including MD of MONAD and Technical Director at Vasudhaiv and NanoWealth. Her expertise spans nanotechnology, biotechnology, Sanatana Dharma, spirituality, Vimaan Shastra, and the Vedas. She has authored 19 books, 251 research articles, and holds 18 patents, guiding 14 PhD students and over 180 postgraduate students. Her previous roles include Director at Reliance and NSNRC, VP at Gufic, senior managerial and academic posts across India and the UK, and consultant for the UN, BCIL, and the Government of India. She has served as a jury member for Swachcha Bharat projects and as an expert in industrial, chemical, and nuclear disaster management for Bihar State. Dr. Sharon has also contributed to national reports like MNRE's roadmap for fuel cells and undertaken international collaborations with leading institutions in Japan, France, Italy, the Netherlands, China, and Mexico. Her distinguished career bridges cutting-edge science, ancient Indian knowledge systems, and global cultural exchange.`;
     case 'Prof. (Dr.) Naresh Kumar Vats':
       return `Prof. (Dr.) Naresh Kumar Vats:
 Dean Academic & Finance Officer; Former Registrar, RGNUL, Punjab
