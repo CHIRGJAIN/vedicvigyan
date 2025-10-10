@@ -17,14 +17,17 @@ interface Founder {
 export default function About() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedFounder, setSelectedFounder] = useState<Founder | null>(null)
-  const [selectedLeadershipCard, setSelectedLeadershipCard] = useState<'Dr. Madhuri Sharon' | 'Prof. (Dr.) Naresh Kumar Vats' | 'Mr. Vijay Madhukar Vadnere' | null>(null)
+  const [selectedLeadershipCard, setSelectedLeadershipCard] = useState<'Dr. Madhuri Sharon' | 'Prof. (Dr.) Naresh Kumar Vats' | 'Dr. Mrunal Yawalkar' | null>(null)
 
   const founders: Founder[] = [
     {
       name: 'Ashish Kumar',
       designation: 'Treasurer',
-      shortDescription: 'Engineering student specializing in Electronics and Communication with AI and ML at Gautam Buddha University.',
-      fullDescription: 'Engineering student specializing in Electronics and Communication with AI and ML at Gautam Buddha University. Treasurer of VVES, he integrates traditional knowledge with modern technology through projects in IoT, aerospace, and 3D printing.',
+      shortDescription: 'Innovation & Finance - Merging Vedic wisdom with modern technology initiatives.',
+      fullDescription: `Engineering student specializing in Electronics and Communication with AI and ML at Gautam Buddha University.
+Treasurer of VVES, spearheading initiatives that merge traditional knowledge with modern technology.
+Leads IoT, aerospace, and 3D printing projects to translate Vedic concepts into contemporary applications.
+Passionate about creating sustainable innovation pipelines that keep Vedic sciences relevant for future generations.`,
       image: '/images/dr-sharon/image_8.png'
     },
     {
@@ -73,19 +76,17 @@ His exceptional expertise in Sanskrit and traditional knowledge systems makes hi
       image: '/images/dr-sharon/image_1.png'
     },
     {
-      name: 'Dr. Mrunal Yawalkar',
+      name: 'Mr. Vijay Madhukar Vadnere',
       designation: 'Executive Member',
-      shortDescription: 'Director at S.V. Ved Yantra Pvt. Ltd. with 39 years of experience in DOCSIS, CATV, and HFC networks.',
-      fullDescription: `Asst. Prof. at RTM Nagpur University for 8 years
-Certificate Course: Study of Vimaan Vidya
-Published 10 articles & One book chapter
-Participated in National & International conferences
-A Free Lance Researcher now, 
-With profound interest in ancient aeronautics related Metallurgy
-HONOURS & ACHIEVEMENTS 
-B.Ed Gold medalist, National Merit Scholarship & Appreciation Prize NCLA
-She is a beautiful brain-box.`,
-      image: '/images/dr-sharon/image_2.png'
+      shortDescription: 'Veteran DOCSIS, CATV, and HFC network specialist with 39 years of experience driving large-scale telecom operations.',
+      fullDescription: `Vijay Madhukar Vadnere has 39 years of experience in DOCSIS, CATV, CCTV, HFC and ISP network design, implementation and monitoring. As Assistant Vice President - Technical at Hathway Cable & Datacom, Pune, he managed over 6 lakh digital subscribers and 3 lakh DOCSIS subscribers.
+
+He designed structured networks for Magarpatta City and worked as a consultant on HFC/Docsis networks, procurement, implementation and testing. He holds multiple professional certifications in Headend Architecture, Return Path and Fiber Optics and is a member of SCTE since 2002.
+
+His career began at Diamond Group (1985-1994) as Senior Technician, then S.V. Enterprises (1994-1998) on network design and automation, followed by 23 years at Hathway Cable & Datacom (1998-2021) heading HFC/Docsis/FTTH/Digital Cable operations. Since 2022 he is Director at S.V. Ved Yantra Pvt. Ltd. developing automation instruments and Ayurvedic engineering concepts.
+
+He owns a wide range of test instruments and a digital music studio for testing sound frequencies. His interests include reading, documentaries, collecting rare items and designing new gadgets. He is a Limca Book of Records holder and member of multiple organizations including Rotary Club of Pune Wisdom and ADMA.`,
+      image: '/images/dr-sharon/image_7.png'
     },
     {
       name: 'Ms. Anuradha Pandey-Dubey',
@@ -279,16 +280,16 @@ His dedication to showcasing ancient Indian technological achievements and his u
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="bg-white rounded-xl shadow-xl overflow-hidden"
+                className="bg-white rounded-xl shadow-xl overflow-hidden transition-shadow duration-300 hover:shadow-2xl"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
                   {/* Image Section */}
                   <div className="relative lg:col-span-1">
-                    <div className="aspect-[4/3] relative">
+                    <div className="relative h-64 sm:h-80 lg:h-full overflow-hidden">
                       <img
                         src="/images/dr-sharon/academic.jpg"
                         alt="Academic Image"
-                        className="w-full h-full object-cover"
+                        className="absolute inset-0 w-full h-full object-cover"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.style.display = 'none';
@@ -336,7 +337,7 @@ His dedication to showcasing ancient Indian technological achievements and his u
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="bg-white rounded-xl shadow-xl overflow-hidden"
+                className="bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
                 onClick={() => setSelectedLeadershipCard('Dr. Madhuri Sharon')}
               >
                 <div className="aspect-[4/3] relative">
@@ -354,6 +355,11 @@ His dedication to showcasing ancient Indian technological achievements and his u
                   <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
                     <span className="text-gray-500">Image not available</span>
                   </div>
+                  <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="bg-white/90 rounded-full p-2">
+                      <Eye size={20} className="text-indian-red" />
+                    </div>
+                  </div>
                 </div>
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Dr. Madhuri Sharon</h3>
@@ -367,7 +373,7 @@ His dedication to showcasing ancient Indian technological achievements and his u
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="bg-white rounded-xl shadow-xl overflow-hidden"
+                className="bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
                 onClick={() => setSelectedLeadershipCard('Prof. (Dr.) Naresh Kumar Vats')}
               >
                 <div className="aspect-[4/3] relative">
@@ -385,6 +391,11 @@ His dedication to showcasing ancient Indian technological achievements and his u
                   <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
                     <span className="text-gray-500">Image not available</span>
                   </div>
+                  <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="bg-white/90 rounded-full p-2">
+                      <Eye size={20} className="text-indian-red" />
+                    </div>
+                  </div>
                 </div>
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Prof. (Dr.) Naresh Kumar Vats</h3>
@@ -393,18 +404,18 @@ His dedication to showcasing ancient Indian technological achievements and his u
                 </div>
               </motion.div>
 
-              {/* Card 4 - Education & Learning */}
+              {/* Card 4 - Joint Secretary */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="bg-white rounded-xl shadow-xl overflow-hidden"
-                onClick={() => setSelectedLeadershipCard('Mr. Vijay Madhukar Vadnere')}
+                className="bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                onClick={() => setSelectedLeadershipCard('Dr. Mrunal Yawalkar')}
               >
                 <div className="aspect-[4/3] relative">
                   <img
-                    src="/images/dr-sharon/image_7.png"
-                    alt="Mr. Vijay Madhukar Vadnere"
+                    src="/images/dr-sharon/image_2.png"
+                    alt="Dr. Mrunal Yawalkar"
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
@@ -416,11 +427,16 @@ His dedication to showcasing ancient Indian technological achievements and his u
                   <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
                     <span className="text-gray-500">Image not available</span>
                   </div>
+                  <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="bg-white/90 rounded-full p-2">
+                      <Eye size={20} className="text-indian-red" />
+                    </div>
+                  </div>
                 </div>
                 <div className="p-4">
-                  <h3 className="text-lg font-bold text-gray-900 mb-1">Mr. Vijay Madhukar Vadnere</h3>
-                  <p className="text-sm text-indian-red font-semibold mb-2">Executive Member</p>
-                  <p className="text-xs text-gray-600 line-clamp-3">Education & Learning - Empowering minds through Vedic knowledge</p>
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">Dr. Mrunal Yawalkar</h3>
+                  <p className="text-sm text-indian-red font-semibold mb-2">Joint Secretary</p>
+                  <p className="text-xs text-gray-600 line-clamp-3">Ancient Aeronautics & Metallurgy - Championing research on Vedic sciences</p>
                 </div>
               </motion.div>
               </div>
@@ -569,7 +585,7 @@ His dedication to showcasing ancient Indian technological achievements and his u
                   <div className="flex items-center space-x-4">
                     <div className="w-16 h-16 bg-gradient-to-br from-indian-red to-indian-gold rounded-full flex items-center justify-center overflow-hidden">
                       <img
-                        src={`/images/dr-sharon/${selectedLeadershipCard.toLowerCase().replace(/\s/g, '_')}.png`}
+                        src={getLeadershipImage(selectedLeadershipCard)}
                         alt={selectedLeadershipCard}
                         className="w-full h-full object-cover"
                         onError={(e) => {
@@ -765,14 +781,29 @@ His dedication to showcasing ancient Indian technological achievements and his u
   )
 }
 
+const getLeadershipImage = (name: string) => {
+  switch (name) {
+    case 'Dr. Madhuri Sharon':
+      return '/images/dr-sharon/portrait.jpg';
+    case 'Prof. (Dr.) Naresh Kumar Vats':
+      return '/images/dr-sharon/image_6.png';
+    case 'Mr. Vijay Madhukar Vadnere':
+      return '/images/dr-sharon/image_7.png';
+    case 'Dr. Mrunal Yawalkar':
+      return '/images/dr-sharon/image_2.png';
+    default:
+      return '/images/dr-sharon/portrait.jpg';
+  }
+};
+
 const getDesignation = (name: string) => {
   switch (name) {
     case 'Dr. Madhuri Sharon':
       return 'Vice President';
     case 'Prof. (Dr.) Naresh Kumar Vats':
       return 'Secretary';
-    case 'Mr. Vijay Madhukar Vadnere':
-      return 'Executive Member';
+    case 'Dr. Mrunal Yawalkar':
+      return 'Joint Secretary';
     default:
       return '';
   }
@@ -836,6 +867,13 @@ Dean Academic & Finance Officer; Former Registrar, RGNUL, Punjab
 • Ph.D., LL.M., B.A. (Kurukshetra University), LL.B. (Barkatullah University), UGC-NET (Law)
 • M.B.A. (HR), PGDPM & Labour Welfare, Interpretership Diploma (Sinhala)
 • Honoured by Babu Jagjivan Ram Kala Sanskriti & Sahitya Academy, Delhi.`;
+    case 'Dr. Mrunal Yawalkar':
+      return `Dr. Mrunal Yawalkar:
+Asst. Prof. at RTM Nagpur University for 8 years with a Certificate Course in Vimaan Vidya.
+Published 10 articles and a book chapter; regular participant in national and international conferences.
+Currently an independent researcher with deep focus on ancient aeronautics-related metallurgy.
+Honours include B.Ed Gold Medalist, National Merit Scholarship, and the Appreciation Prize from NCLA.
+Committed to translating Vedic science into actionable modern research as Joint Secretary of VVES.`;
     case 'Mr. Vijay Madhukar Vadnere':
       return `Mr. Vijay Madhukar Vadnere:
 Vijay Madhukar Vadnere has 39 years’ experience in DOCSIS, CATV, CCTV, HFC and ISP network design, implementation and monitoring. He is an expert in CATV headend design, HFC networks and reverse path network design for DOCSIS 3+. As Assistant Vice President – Technical at Hathway Cable & Datacom, Pune, he managed over 6 lakh digital subscribers and 3 lakh DOCSIS subscribers.
@@ -846,6 +884,3 @@ He owns a wide range of test instruments and a digital music studio for testing 
       return '';
   }
 };
-
-
-
