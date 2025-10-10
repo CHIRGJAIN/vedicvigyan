@@ -802,7 +802,13 @@ const getLeadershipDescription = (name: string) => {
   switch (name) {
     case 'Dr. Sanjay Kumar Sharma':
       return `Dr. Sanjay Kumar Sharma:
-Former Dean and Professor at Gautam Buddha University with extensive experience across ISRO, CSIR, DRDO, MHRD, IUAC and MoEFCC. He blends ancient and contemporary science, from AI to electronics, and is known as a living library of knowledge and ancient wisdom.`;
+"Formal Dean & Prof. Gautam Buddha University
+A book-worm & Store of Knowledge - Our Library
+A researcher of Ancient & Contemporary science- AI to Electronics
+Multifarious Personality diverging from Academic, Research,
+Administration, holding umpteen position in Govt. (ISRO, CSIR, DRDO, MHRD, IUAC & MoEFCC). & Industry.
+A bank of Ancient Wisdom and most Sthit-Pragya Person I have come across.
+If you ask me what I appreciate the best in him - It is the Aura that his personality emits"`;
     case 'Dr. Madhuri Sharon':
       return `Dr. Madhuri Sharon:
 Dr. Madhuri Sharon is an internationally recognized scientist with a PhD from Leicester University, UK, and postdoctoral research at Bolton Institute of Technology. She currently serves as Director of Sharon Institute of Nanotechnology, Visiting Professor at MNIT, Adjunct Faculty at SRIVIT, Marg-Darshak at Bhishma IKS, and Advisor to Bhishma Sanatan Vedic Hindu University in the US. She also holds senior industrial positions including MD of MONAD and Technical Director at Vasudhaiv and NanoWealth. Her expertise spans nanotechnology, biotechnology, Sanatana Dharma, spirituality, Vimaan Shastra, and the Vedas. She has authored 19 books, 251 research articles, and holds 18 patents, guiding 14 PhD students and over 180 postgraduate students. Her previous roles include Director at Reliance and NSNRC, VP at Gufic, senior managerial and academic posts across India and the UK, and consultant for the UN, BCIL, and the Government of India. She has served as a jury member for Swachcha Bharat projects and as an expert in industrial, chemical, and nuclear disaster management for Bihar State. Dr. Sharon has also contributed to national reports like MNRE's roadmap for fuel cells and undertaken international collaborations with leading institutions in Japan, France, Italy, the Netherlands, China, and Mexico. Her distinguished career bridges cutting-edge science, ancient Indian knowledge systems, and global cultural exchange.`;
