@@ -17,7 +17,7 @@ interface Founder {
 export default function About() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedFounder, setSelectedFounder] = useState<Founder | null>(null)
-  const [selectedLeadershipCard, setSelectedLeadershipCard] = useState<'Dr. Madhuri Sharon' | 'Prof. (Dr.) Naresh Kumar Vats' | 'Dr. Mrunal Yawalkar' | null>(null)
+  const [selectedLeadershipCard, setSelectedLeadershipCard] = useState<'Dr. Sanjay Kumar Sharma' | 'Dr. Madhuri Sharon' | 'Prof. (Dr.) Naresh Kumar Vats' | 'Dr. Mrunal Yawalkar' | null>(null)
 
   const founders: Founder[] = [
     {
@@ -257,7 +257,8 @@ Her dedication to bridging ancient and contemporary science, combined with her e
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="bg-white rounded-xl shadow-xl overflow-hidden transition-shadow duration-300 hover:shadow-2xl"
+                className="bg-white rounded-xl shadow-xl overflow-hidden transition-shadow duration-300 hover:shadow-2xl cursor-pointer"
+                onClick={() => setSelectedLeadershipCard('Dr. Sanjay Kumar Sharma')}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
                   {/* Image Section */}
@@ -276,6 +277,11 @@ Her dedication to bridging ancient and contemporary science, combined with her e
                       />
                       <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
                         <span className="text-gray-500">Image not available</span>
+                      </div>
+                      <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div className="bg-white/90 rounded-full p-2">
+                          <Eye size={20} className="text-indian-red" />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -764,6 +770,8 @@ const getLeadershipImage = (name: string) => {
       return '/images/dr-sharon/portrait.jpg';
     case 'Prof. (Dr.) Naresh Kumar Vats':
       return '/images/dr-sharon/image_6.png';
+    case 'Dr. Sanjay Kumar Sharma':
+      return '/images/dr-sharon/academic.jpg';
     case 'Mr. Vijay Madhukar Vadnere':
       return '/images/dr-sharon/image_7.png';
     case 'Dr. Mrunal Yawalkar':
@@ -779,6 +787,8 @@ const getDesignation = (name: string) => {
       return 'Vice President';
     case 'Prof. (Dr.) Naresh Kumar Vats':
       return 'Secretary';
+    case 'Dr. Sanjay Kumar Sharma':
+      return 'President';
     case 'Dr. Mrunal Yawalkar':
       return 'Joint Secretary';
     default:
@@ -788,6 +798,9 @@ const getDesignation = (name: string) => {
 
 const getLeadershipDescription = (name: string) => {
   switch (name) {
+    case 'Dr. Sanjay Kumar Sharma':
+      return `Dr. Sanjay Kumar Sharma:
+Former Dean and Professor at Gautam Buddha University with extensive experience across ISRO, CSIR, DRDO, MHRD, IUAC and MoEFCC. He blends ancient and contemporary science, from AI to electronics, and is known as a living library of knowledge and ancient wisdom.`;
     case 'Dr. Madhuri Sharon':
       return `Dr. Madhuri Sharon:
 Dr. Madhuri Sharon is an internationally recognized scientist with a PhD from Leicester University, UK, and postdoctoral research at Bolton Institute of Technology. She currently serves as Director of Sharon Institute of Nanotechnology, Visiting Professor at MNIT, Adjunct Faculty at SRIVIT, Marg-Darshak at Bhishma IKS, and Advisor to Bhishma Sanatan Vedic Hindu University in the US. She also holds senior industrial positions including MD of MONAD and Technical Director at Vasudhaiv and NanoWealth. Her expertise spans nanotechnology, biotechnology, Sanatana Dharma, spirituality, Vimaan Shastra, and the Vedas. She has authored 19 books, 251 research articles, and holds 18 patents, guiding 14 PhD students and over 180 postgraduate students. Her previous roles include Director at Reliance and NSNRC, VP at Gufic, senior managerial and academic posts across India and the UK, and consultant for the UN, BCIL, and the Government of India. She has served as a jury member for Swachcha Bharat projects and as an expert in industrial, chemical, and nuclear disaster management for Bihar State. Dr. Sharon has also contributed to national reports like MNRE's roadmap for fuel cells and undertaken international collaborations with leading institutions in Japan, France, Italy, the Netherlands, China, and Mexico. Her distinguished career bridges cutting-edge science, ancient Indian knowledge systems, and global cultural exchange.`;
