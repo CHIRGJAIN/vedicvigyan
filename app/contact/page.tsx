@@ -227,7 +227,7 @@ export default function Contact() {
                     Email Us
                   </a>
                   <a 
-                    href="tel:+919845206819, 9599080087"
+                    href="tel:+919845206819"
                     className="btn-secondary flex items-center justify-center"
                   >
                     <Phone size={16} className="mr-2" />
@@ -254,10 +254,10 @@ export default function Contact() {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
                     <a 
-                      href="tel:+919845206819, 9599080087" 
+                      href="tel:+919845206819" 
                       className="text-gray-700 hover:text-indian-red transition-colors duration-300"
                     >
-                      +91 9845206819, <br />9599080087
+                      +91 9845206819
                     </a>
                     <p className="text-sm text-gray-600 mt-1">Call us during office hours</p>
                   </div>

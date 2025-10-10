@@ -159,8 +159,8 @@ export default function Home() {
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Welcome Message</h2>
-            <p className="text-xl text-gray-600">Welcome lecture from Dr. Madhuri Sharon</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Welcome Lecture</h2>
+            <p className="text-xl text-gray-600">from Dr. Madhuri Sharon</p>
           </div>
           
           <div className="max-w-4xl mx-auto">
