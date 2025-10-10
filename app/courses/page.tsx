@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { BookOpen, Clock, DollarSign, CheckCircle, UserPlus } from 'lucide-react'
+import { Clock, CheckCircle, UserPlus } from 'lucide-react'
 import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import CourseModal from '../../components/CourseModal'
@@ -10,6 +10,10 @@ import CourseModal from '../../components/CourseModal'
 const CoursesPage = () => {
   // selectedCourse stores the full course object when modal is open
   const [selectedCourse, setSelectedCourse] = useState<any | null>(null)
+
+  const formatPrice = (value: number) =>
+    new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(value)
+
 
   const courses = [
     {
@@ -294,37 +298,40 @@ const CoursesPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              className="relative bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:-translate-y-1"
             >
-              <div className="p-6">
-                <div className="mb-2">
-                  <h3 className="text-xl font-bold text-gray-900">{course.name}</h3>
-                </div>
-                
-                <div className="mb-3">
-                  <p className="text-sm text-indian-red font-semibold">Instructor: {course.instructor}</p>
-                </div>
-                
-                <p className="text-gray-600 mb-4">{course.description}</p>
-                
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-4 text-sm text-gray-600">
-                    <div className="flex items-center space-x-1">
-                      <Clock size={16} />
-                      <span>{course.duration}</span>
-                    </div>
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-indian-red via-indian-gold to-indian-maroon" />
+              <div className="p-6 flex flex-col h-full">
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900">{course.name}</h3>
+                    <p className="text-sm text-indian-red font-medium mt-1">Instructor: {course.instructor}</p>
                   </div>
-                  <div className="text-2xl font-bold text-indian-red">
-                    ₹{course.price.toLocaleString()}
-                  </div>
+                  <span className="bg-indian-red/10 text-indian-red font-semibold text-sm px-3 py-1 rounded-full whitespace-nowrap">
+                    {formatPrice(course.price)}
+                  </span>
                 </div>
 
-                <div className="mb-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">What you'll learn:</h4>
-                  <ul className="space-y-1">
+                <p className="text-gray-600 mb-4 leading-relaxed">{course.description}</p>
+
+                <div className="flex items-center gap-2 text-sm text-gray-500 mb-5">
+                  <div className="flex items-center gap-1 px-3 py-1 rounded-full bg-gray-100">
+                    <Clock size={14} />
+                    <span>{course.duration}</span>
+                  </div>
+                  {course.online && (
+                    <span className="px-3 py-1 rounded-full bg-green-50 text-green-600 font-medium text-xs uppercase tracking-wide">
+                      Online
+                    </span>
+                  )}
+                </div>
+
+                <div className="mb-6">
+                  <h4 className="font-semibold text-gray-900 mb-2">What you'll learn</h4>
+                  <ul className="space-y-2">
                     {course.curriculum.slice(0, 3).map((item, idx) => (
-                      <li key={idx} className="flex items-center space-x-2 text-sm text-gray-600">
-                        <CheckCircle size={14} className="text-green-500" />
+                      <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
+                        <CheckCircle size={16} className="mt-0.5 text-green-500" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -333,7 +340,7 @@ const CoursesPage = () => {
 
                 <button
                   onClick={() => handleCourseSelect(course.id)}
-                  className="w-full bg-indian-red text-white py-3 px-4 rounded-lg font-semibold hover:bg-indian-deepRed transition-colors flex items-center justify-center space-x-2"
+                  className="mt-auto inline-flex items-center justify-center gap-2 w-full rounded-lg bg-gradient-to-r from-indian-red to-indian-deepRed text-white font-semibold py-3 transition-all duration-300 hover:from-indian-deepRed hover:to-indian-maroon"
                 >
                   <UserPlus size={16} />
                   <span>View Details</span>

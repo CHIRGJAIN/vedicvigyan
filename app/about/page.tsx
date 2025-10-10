@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Award, Users, BookOpen, Target, Eye, Heart, Calendar, MapPin, Phone, Mail, X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Users, BookOpen, Target, Eye, Calendar, MapPin, Phone, Mail, X, ChevronLeft, ChevronRight, ShieldCheck, HeartHandshake } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
@@ -211,11 +211,6 @@ Her dedication to bridging ancient and contemporary science, combined with her e
                 of Vedic Science, integrating it into modern academic and cultural frameworks.
               </p>
               
-              <p className="text-lg text-gray-700 leading-relaxed">
-                We envision a world where Vedic knowledge is recognized as a valuable resource 
-                for addressing contemporary challenges, contributing to global understanding 
-                of science, philosophy, and human potential.
-              </p>
             </motion.div>
 
             <motion.div
@@ -230,14 +225,7 @@ Her dedication to bridging ancient and contemporary science, combined with her e
                 <h2 className="text-3xl font-bold text-gray-900">Mission</h2>
               </div>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                To preserve, research, and disseminate the ancient wisdom of Vedic sciences, 
-                making this knowledge accessible to modern scholars, researchers, and enthusiasts 
-                while maintaining the authenticity and depth of traditional understanding.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                We strive to bridge the gap between ancient Vedic knowledge and contemporary 
-                scientific understanding, fostering a deeper appreciation for India's rich 
-                intellectual heritage.
+                Explore, Interpret and preserve the vedic science to Reinforce its Relevance and disseminate the knowledge in modern Society.
               </p>
             </motion.div>
           </div>
@@ -702,24 +690,24 @@ Her dedication to bridging ancient and contemporary science, combined with her e
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
+                icon: ShieldCheck,
+                title: 'Honesty & Integrity',
+                description: 'We remain truthful, transparent, and ethical in all our actions.'
+              },
+              {
                 icon: BookOpen,
-                title: 'Authenticity',
-                description: 'Maintaining the purity and accuracy of Vedic knowledge'
+                title: 'Wisdom & Knowledge',
+                description: 'We seek, preserve, and share timeless wisdom, blending it with modern understanding.'
+              },
+              {
+                icon: HeartHandshake,
+                title: 'Trust',
+                description: 'We build confidence through sincerity, consistency, and authenticity.'
               },
               {
                 icon: Users,
-                title: 'Inclusivity',
-                description: 'Making Vedic knowledge accessible to all seekers'
-              },
-              {
-                icon: Award,
-                title: 'Excellence',
-                description: 'Pursuing the highest standards in research and education'
-              },
-              {
-                icon: Heart,
-                title: 'Preservation',
-                description: 'Safeguarding ancient wisdom for future generations'
+                title: 'Respect',
+                description: 'We honor diverse perspectives, traditions, and the dignity of every individual.'
               }
             ].map((value, index) => (
               <motion.div

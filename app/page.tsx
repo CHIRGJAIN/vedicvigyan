@@ -210,8 +210,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold mb-3">Ancient Knowledge</h3>
               <p className="text-gray-600">
-                Vedic texts contain advanced mathematical concepts, astronomical calculations, 
-                and scientific principles that were discovered thousands of years ago.
+                Within our Vedas and Puranas lie hidden nuggets of knowledge - their science still waiting to be unearthed.
               </p>
             </motion.div>
 
@@ -226,8 +225,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold mb-3">Modern Applications</h3>
               <p className="text-gray-600">
-                Vedic principles are being applied in modern fields like architecture, 
-                medicine, psychology, and environmental science.
+                Validation of the ancient wisdom preserved in the Vedas, Puranas, Scriptures, and Treatises, uncovering their scientific wisdom and revealing its relevance to modern fields and sustainable innovations through contemporary scientific methods.
               </p>
             </motion.div>
 
