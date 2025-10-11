@@ -63,12 +63,12 @@ const Navigation = () => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-10">
             {navigation.map((item) => (
               <a
                   key={item.name}
                   href={item.href}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-sm font-semibold px-2 py-1.5 transition-colors ${
                     pathname === item.href
                       ? 'text-indian-red'
                     : 'text-gray-700 hover:text-indian-red'
@@ -245,6 +245,7 @@ const Navigation = () => {
 }
 
 export default Navigation
+
 
 
 

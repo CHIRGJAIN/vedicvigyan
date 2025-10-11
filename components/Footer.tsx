@@ -181,9 +181,18 @@ const Footer = () => {
       {/* Hindi Text */}
       <div className="bg-black/20 py-3">
         <div className="container-custom text-center">
-          <p className="hindi-text text-gray-300">
-            वेदिक विज्ञान अन्वेषण समाज - वेदिक ज्ञान का संरक्षण और प्रसार
-          </p>
+          <div className="flex items-center justify-center space-x-3">
+            <Image
+              src="/vves-logo(1).png"
+              alt="VVES logo"
+              width={36}
+              height={36}
+              className="object-contain"
+            />
+            <p className="hindi-text text-gray-300">
+              वेदिक विज्ञान आवेषक्क समाज - वैदिकविज्ञान आवेषक्क वै प्रचार
+            </p>
+          </div>
         </div>
       </div>
     </footer>
