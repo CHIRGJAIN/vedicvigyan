@@ -190,7 +190,7 @@ const Footer = () => {
               className="object-contain"
             />
             <p className="hindi-text text-gray-300">
-              वेदिक विज्ञान आवेषक्क समाज - वैदिकविज्ञान आवेषक्क वै प्रचार
+              वेदिक विज्ञान आवेषक्क संस्था - वैदिकविज्ञान आवेषक्क वै प्रचार
             </p>
           </div>
         </div>

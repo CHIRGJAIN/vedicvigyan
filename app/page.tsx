@@ -82,7 +82,7 @@ export default function Home() {
 
   useEffect(() => {
     // Simulate visitor count
-    setVisitorCount(15420)
+    setVisitorCount(15450)
     
     // Rotate subhashit every 10 seconds
     const interval = setInterval(() => {
