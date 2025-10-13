@@ -6,6 +6,7 @@ import { X, Clock, CheckCircle, Monitor } from 'lucide-react'
 type Props = {
   course: any
   onClose: () => void
+  onRegister?: (courseId: number) => void
 }
 
 const REGISTRATION_FORM_URL =
@@ -20,7 +21,7 @@ const normalizeSyllabusPlaceholder = (value: string) =>
 const isSyllabusPlaceholder = (value: string) =>
   normalizeSyllabusPlaceholder(value) === SYLLABUS_PLACEHOLDER_TEXT
 
-export default function CourseModal({ course, onClose }: Props) {
+export default function CourseModal({ course, onClose, onRegister }: Props) {
   const overlayRef = useRef<HTMLDivElement | null>(null)
   const closeBtnRef = useRef<HTMLButtonElement | null>(null)
 
@@ -118,8 +119,8 @@ export default function CourseModal({ course, onClose }: Props) {
             <h4 className="font-semibold mb-2">What you'll learn</h4>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
               {Array.isArray(course.features) ? course.features.map((f: string, i: number) => (
-                <li key={i} className="flex items-start space-x-2 text-gray-700">
-                  <CheckCircle className="text-green-500 mt-1" size={16} />
+                <li key={i} className="flex items-start gap-3 text-gray-700 leading-relaxed">
+                  <CheckCircle size={18} strokeWidth={2.4} className="mt-0.5 text-green-500 flex-shrink-0" />
                   <span>{f}</span>
                 </li>
               )) : null}
@@ -133,8 +134,15 @@ export default function CourseModal({ course, onClose }: Props) {
                 const isPlaceholder = isSyllabusPlaceholder(entry)
                 const displayText = isPlaceholder ? SYLLABUS_PLACEHOLDER_TEXT : entry
                 return (
-                  <li key={idx}>
-                    {isPlaceholder ? <strong>{displayText}</strong> : displayText}
+                  <li key={idx} className={isPlaceholder ? 'list-none' : undefined}>
+                    {isPlaceholder ? (
+                      <span className="flex items-start gap-2">
+                        <span aria-hidden className="leading-tight text-gray-500">&#8226;</span>
+                        <span className="font-semibold italic">{displayText}</span>
+                      </span>
+                    ) : (
+                      displayText
+                    )}
                   </li>
                 )
               })}
@@ -151,7 +159,11 @@ export default function CourseModal({ course, onClose }: Props) {
 
             <button
               onClick={() => {
-                window.open(REGISTRATION_FORM_URL, '_blank', 'noopener,noreferrer')
+                if (onRegister) {
+                  onRegister(course.id)
+                } else {
+                  window.open(REGISTRATION_FORM_URL, '_blank', 'noopener,noreferrer')
+                }
                 onClose()
               }}
               className="py-2 px-4 bg-indian-red text-white rounded-md hover:bg-indian-deepRed focus:outline-none focus:ring-2 focus:ring-indian-red"

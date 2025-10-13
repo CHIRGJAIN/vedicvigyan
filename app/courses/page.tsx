@@ -337,14 +337,14 @@ const CoursesPage = () => {
                 <div className="mb-6">
                   <h4 className="font-semibold text-gray-900 mb-2">What you'll learn</h4>
                   <ul className="space-y-2">
-                    {course.curriculum.slice(0, 3).map((item, idx) => {
+                    {(Array.isArray(course.features) ? course.features.slice(0, 3) : []).map((item, idx) => {
                       const isPlaceholder = isSyllabusPlaceholder(item)
                       const displayText = isPlaceholder ? SYLLABUS_PLACEHOLDER_TEXT : item
 
                       return (
-                        <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
-                          <CheckCircle size={16} className="mt-0.5 text-green-500" />
-                          <span className={isPlaceholder ? 'font-semibold' : undefined}>{displayText}</span>
+                        <li key={idx} className="flex items-start gap-3 text-sm text-gray-600 leading-relaxed">
+                          <CheckCircle size={18} strokeWidth={2.4} className="mt-0.5 text-green-500 flex-shrink-0" />
+                          <span className={isPlaceholder ? 'font-semibold italic' : undefined}>{displayText}</span>
                         </li>
                       )
                     })}
