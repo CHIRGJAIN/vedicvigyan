@@ -31,7 +31,7 @@ const CoursesPage = () => {
       instructor: 'Anantha M.A',
       description: 'Learn the ancient art and science of archery and warfare as described in the Vedic texts.',
       duration: '6 hours',
-      students: 25,
+      students: 50,
       price: 1500,
       online: true,
       // rating: 4.8,
@@ -58,7 +58,7 @@ const CoursesPage = () => {
       instructor: 'Anuradha Dubey',
       description: 'Explore the subtle life forces and energies as described in Vedic literature.',
       duration:  '4 hours',
-      students: 32,
+      students: 50,
       price: 1500,
       online: true,
       // rating: 4.6,
@@ -83,7 +83,7 @@ const CoursesPage = () => {
       instructor: 'Dr. Mrunal Yawalkar',
       description: 'Master the ancient astronomical treatise and its profound cosmic insights.',
       duration: '4 hours',
-      students: 28,
+      students: 50,
       price: 1500,
       online: true,
       // rating: 4.9,
@@ -108,7 +108,7 @@ const CoursesPage = () => {
       instructor: 'Prof. Sanjay Kumar Sharma',
       description: 'Comprehensive study of traditional Indian knowledge systems and their contemporary relevance.',
       duration: '4 hours',
-      students: 38,
+      students: 50,
       price: 1000,
       online: true,
       // rating: 4.7,
@@ -130,9 +130,9 @@ const CoursesPage = () => {
       online: true,
       // rating: 4.8,
       features: [
-        '1. Basic concepts and terminologies',
-        '2. Scientific comparison',
-        '3. Less known aspects from scriptures.'
+        'Basic concepts and terminologies',
+        'Scientific comparison',
+        'Less known aspects from scriptures.'
       ],
       curriculum: [
         'Basic Concepts',
@@ -175,10 +175,10 @@ const CoursesPage = () => {
       online: true,
       // rating: 4.5,
       features: [
-        '1. Basic Time Calculation.',
-        '2. Concept of Yuga.',
-        '3. Concept of Yuga.',
-        '4. Kaliyuga.'
+        'Basic Time Calculation.',
+        'Concept of Yuga.',
+        'Concept of Yuga.',
+        'Kaliyuga.'
       ],
       curriculum: [
         'Introduction of Time calculation in different Yuga.'
@@ -195,11 +195,11 @@ const CoursesPage = () => {
       online: true,
       // rating: 4.8,
       features: [
-        '1. Encoding the Infinite in the Finite.',
-        '2. Preserving Esoteric Knowledge.',
-        '3. Ritual as Cosmic Drama.',
-        '4. Multiple Layers of Meaning.',
-        '5. Facilitating Inner Transformation.'
+        'Encoding the Infinite in the Finite.',
+        'Preserving Esoteric Knowledge.',
+        'Ritual as Cosmic Drama.',
+        'Multiple Layers of Meaning.',
+        'Facilitating Inner Transformation.'
       ],
       curriculum: [
         'We will give the syllabus only to enrolled students at the beginning of each course.'
@@ -217,11 +217,11 @@ const CoursesPage = () => {
       online: true,
       // rating: 4.9,
       features: [
-        '1. What Is the Prasthanatrayi?',
-        '2. Why Study the Prasthanatrayi?',
-        '3. To Integrate Knowledge, Action, and Devotion.',
-        '4. To Cultivate Ethical and Spiritual Leadership.',
-        '5. To Bridge Ancient Wisdom with Modern Inquiry.'
+        'What Is the Prasthanatrayi?',
+        'Why Study the Prasthanatrayi?',
+        'To Integrate Knowledge, Action, and Devotion.',
+        'To Cultivate Ethical and Spiritual Leadership.',
+        'To Bridge Ancient Wisdom with Modern Inquiry.'
       ],
       curriculum: [
         'We will give the syllabus only to enrolled students at the beginning of each course.'
@@ -238,11 +238,11 @@ const CoursesPage = () => {
       online: true,
       // rating: 4.7,
       features: [
-        '1. Modern theories of origin of universe.',
-        '2. Naad Brahma and the Big Bang theory of origin of the universe.',
-        '3. Quest through Nasadiya Sukta, conversion of energy to matter via Pourush Suktam, and creation via Hiranyagarbha Suktam from the 10th Mandal of Rig Veda.',
-        '4. Philosophical depth and scientific interpretation of creation as an ongoing process and Multiverse theory.',
-        '5. Integration with modern inquiry.'
+        'Modern theories of origin of universe.',
+        'Naad Brahma and the Big Bang theory of origin of the universe.',
+        'Quest through Nasadiya Sukta, conversion of energy to matter via Pourush Suktam, and creation via Hiranyagarbha Suktam from the 10th Mandal of Rig Veda.',
+        'Philosophical depth and scientific interpretation of creation as an ongoing process and Multiverse theory.',
+        'Integration with modern inquiry.'
       ],
       curriculum: [
         'We will give the syllabus only to enrolled students at the beginning of each course.'
@@ -259,11 +259,11 @@ const CoursesPage = () => {
       online: true,
       // rating: 4.8,
       features: [
-        '1. Aerospace concepts ahead of their time.',
-        '2. Materials science and metallurgy.',
-        '3. Advanced energy systems.',
-        '4. Cognitive and symbolic modelling.',
-        '5. Cultural and ethical innovation.'
+        'Aerospace concepts ahead of their time.',
+        'Materials science and metallurgy.',
+        'Advanced energy systems.',
+        'Cognitive and symbolic modelling.',
+        'Cultural and ethical innovation.'
       ],
       curriculum: [
         'We will give the syllabus only to enrolled students at the beginning of each course.'
