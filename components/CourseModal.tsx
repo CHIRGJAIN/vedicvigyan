@@ -11,6 +11,15 @@ type Props = {
 const REGISTRATION_FORM_URL =
   'https://docs.google.com/forms/d/e/1FAIpQLSctZ4UY-YsU6DBuXKAN3SYk7jOY-pT4gieRPr_LCxxllE8-Qg/viewform?usp=header'
 
+const SYLLABUS_PLACEHOLDER_TEXT =
+  'We will give the syllabus only to enrolled students at the beginning of each course.'
+
+const normalizeSyllabusPlaceholder = (value: string) =>
+  value.replace(/^\d+\.?\s*/, '').trim()
+
+const isSyllabusPlaceholder = (value: string) =>
+  normalizeSyllabusPlaceholder(value) === SYLLABUS_PLACEHOLDER_TEXT
+
 export default function CourseModal({ course, onClose }: Props) {
   const overlayRef = useRef<HTMLDivElement | null>(null)
   const closeBtnRef = useRef<HTMLButtonElement | null>(null)
@@ -37,6 +46,12 @@ export default function CourseModal({ course, onClose }: Props) {
   }
 
   if (!course) return null
+
+  const curriculumItems: string[] = Array.isArray(course.curriculum)
+    ? course.curriculum
+    : course.curriculum
+      ? [String(course.curriculum)]
+      : []
 
   return (
     <div
@@ -114,9 +129,15 @@ export default function CourseModal({ course, onClose }: Props) {
           <div>
             <h4 className="font-semibold mb-2">Curriculum / Syllabus</h4>
             <ol className="list-decimal list-inside text-gray-700 space-y-1">
-              {Array.isArray(course.curriculum) ? course.curriculum.map((c: string, idx: number) => (
-                <li key={idx}>{c}</li>
-              )) : <li>{course.curriculum}</li>}
+              {curriculumItems.map((entry: string, idx: number) => {
+                const isPlaceholder = isSyllabusPlaceholder(entry)
+                const displayText = isPlaceholder ? SYLLABUS_PLACEHOLDER_TEXT : entry
+                return (
+                  <li key={idx}>
+                    {isPlaceholder ? <strong>{displayText}</strong> : displayText}
+                  </li>
+                )
+              })}
             </ol>
           </div>
 

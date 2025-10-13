@@ -7,6 +7,15 @@ import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import CourseModal from '../../components/CourseModal'
 
+const SYLLABUS_PLACEHOLDER_TEXT =
+  'We will give the syllabus only to enrolled students at the beginning of each course.'
+
+const normalizeSyllabusPlaceholder = (value: string) =>
+  value.replace(/^\d+\.?\s*/, '').trim()
+
+const isSyllabusPlaceholder = (value: string) =>
+  normalizeSyllabusPlaceholder(value) === SYLLABUS_PLACEHOLDER_TEXT
+
 const CoursesPage = () => {
   // selectedCourse stores the full course object when modal is open
   const [selectedCourse, setSelectedCourse] = useState<any | null>(null)
@@ -27,11 +36,11 @@ const CoursesPage = () => {
       online: true,
       // rating: 4.8,
       features: [
-        'Live interactive sessions',
-        'Study materials and resources',
-        'Certificate upon completion',
-        '24/7 support',
-        'Access to VVES community'
+        'Mastery of traditional bows, arrows, and shooting techniques from Dhanurveda.',
+        'Understanding of historical weaponry, warrior ethics, and cultural heritage.',
+        'Development of focus, balance, strength, and precision through practice.',
+        'Knowledge of arrow types, flight dynamics, and ancient training methods.',
+        "Combines martial discipline with cultural enrichment, connecting to India's ancient legacy."
       ],
       curriculum: [
         'Brainstorming about TIA',
@@ -54,11 +63,12 @@ const CoursesPage = () => {
       online: true,
       // rating: 4.6,
       features: [
-        'In-depth Vedic studies',
-        'Energy and consciousness exploration',
-        'Practical applications',
-        'Expert guidance',
-        'Research materials'
+        'Understand basic microbiological principles.',
+        'Identify Ayurvedic and Vedic references to subtle life forms.',
+        "Analyze ancient Indian texts' concepts of disease and health.",
+        'Compare ancient healing practices with modern microbiological insights.',
+        'Appreciate intuitive knowledge of ancient seers while applying modern scientific rigor.',
+        'Think critically about integrating traditional and modern knowledge.'
       ],
       curriculum: [
         'Introduction to Microbiology (Modern Science)',
@@ -78,11 +88,11 @@ const CoursesPage = () => {
       online: true,
       // rating: 4.9,
       features: [
-        'Ancient astronomy principles',
-        'Mathematical calculations',
-        'Cosmic cycles understanding',
-        'Real-world applications',
-        'Advanced topics'
+        'Compare ancient methods with modern astronomy and recognize continuities and differences.',
+        'Appreciate the cosmological vision (yugas, time cycles).',
+        'Apply selected computational methods (e.g., sine table, planetary positions, and eclipse prediction).',
+        'Understand and interpret the astronomical framework (planetary motions, eclipses, calendars).',
+        'The significance and historical development of the Sūrya Siddhānta within the Siddhānta tradition.'
       ],
       curriculum: [
         'Introduction to Sūrya Siddhānta',
@@ -103,11 +113,7 @@ const CoursesPage = () => {
       online: true,
       // rating: 4.7,
       features: [
-        'Traditional knowledge exploration',
-        'Modern relevance analysis',
-        'Research methodology',
-        'Academic perspective',
-        'Expert guidance'
+        'Need of the course, philosophy, present status of IKS-related literature, and areas to be explored.'
       ],
       curriculum: [
         'We will give the syllabus only to enrolled students at the beginning of each course.'
@@ -124,11 +130,9 @@ const CoursesPage = () => {
       online: true,
       // rating: 4.8,
       features: [
-        'Creation theories study',
-        'Sanskrit language focus',
-        'Ancient texts analysis',
-        'Cultural preservation',
-        'Language applications'
+        '1. Basic concepts and terminologies',
+        '2. Scientific comparison',
+        '3. Less known aspects from scriptures.'
       ],
       curriculum: [
         'Basic Concepts',
@@ -148,11 +152,11 @@ const CoursesPage = () => {
       online: false,
       // rating: 4.9,
       features: [
-        'Logical reasoning systems',
-        'Ancient Indian logic',
-        'Problem-solving methods',
-        'Critical thinking',
-        'Expert instruction'
+        'Understand the foundations of Nyāyashāstra—its purpose, reasoning methods, and role in decision-making.',
+        'Apply Pratyakṣa (perception) and Anumāna (inference) in professional and personal judgments.',
+        'Use Tarka (debate) and Vāda (dialogue) for conflict resolution and collaborative problem-solving.',
+        'Identify and avoid Hetvābhāsa (logical fallacies) in academic and workplace situations.',
+        'Practice structured thinking through real-world case studies and performance evaluations.'
       ],
       curriculum: [
         'Introduction to Nyāyashāstra, Pratyakṣa & Anumāna in workplace decisions.',
@@ -171,10 +175,10 @@ const CoursesPage = () => {
       online: true,
       // rating: 4.5,
       features: [
-        'Basic Time Calculation.',
-        'Concept of Yuga.',
-        'Concept of Yuga. ',
-        'Kaliyuga.'
+        '1. Basic Time Calculation.',
+        '2. Concept of Yuga.',
+        '3. Concept of Yuga.',
+        '4. Kaliyuga.'
       ],
       curriculum: [
         'Introduction of Time calculation in different Yuga.'
@@ -191,11 +195,11 @@ const CoursesPage = () => {
       online: true,
       // rating: 4.8,
       features: [
-        'Encoding the Infinite in the Finite.',
-        'Preserving Esoteric Knowledge.',
-        'Ritual as Cosmic Drama.',  
-        'Multiple Layers of Meaning.',
-        'Facilitating Inner Transformation.'
+        '1. Encoding the Infinite in the Finite.',
+        '2. Preserving Esoteric Knowledge.',
+        '3. Ritual as Cosmic Drama.',
+        '4. Multiple Layers of Meaning.',
+        '5. Facilitating Inner Transformation.'
       ],
       curriculum: [
         'We will give the syllabus only to enrolled students at the beginning of each course.'
@@ -213,11 +217,11 @@ const CoursesPage = () => {
       online: true,
       // rating: 4.9,
       features: [
-        'What Is the Prasthanatrayi?',
-        'Why Study the Prasthanatrayi?',
-        'To Integrate Knowledge, Action, and Devotion.',
-        'To Cultivate Ethical and Spiritual Leadership. ',
-        'To Bridge Ancient Wisdom with Modern Inquiry.'
+        '1. What Is the Prasthanatrayi?',
+        '2. Why Study the Prasthanatrayi?',
+        '3. To Integrate Knowledge, Action, and Devotion.',
+        '4. To Cultivate Ethical and Spiritual Leadership.',
+        '5. To Bridge Ancient Wisdom with Modern Inquiry.'
       ],
       curriculum: [
         'We will give the syllabus only to enrolled students at the beginning of each course.'
@@ -234,11 +238,11 @@ const CoursesPage = () => {
       online: true,
       // rating: 4.7,
       features: [
-        'Cosmological studies',
-        'Vedic universe theories',
-        'Scientific connections',
-        'Philosophical insights',
-        'Research methodology'
+        '1. Modern theories of origin of universe.',
+        '2. Naad Brahma and the Big Bang theory of origin of the universe.',
+        '3. Quest through Nasadiya Sukta, conversion of energy to matter via Pourush Suktam, and creation via Hiranyagarbha Suktam from the 10th Mandal of Rig Veda.',
+        '4. Philosophical depth and scientific interpretation of creation as an ongoing process and Multiverse theory.',
+        '5. Integration with modern inquiry.'
       ],
       curriculum: [
         'We will give the syllabus only to enrolled students at the beginning of each course.'
@@ -255,11 +259,11 @@ const CoursesPage = () => {
       online: true,
       // rating: 4.8,
       features: [
-        'Ancient technology study',
-        'Aerospace principles',
-        'Advanced engineering concepts',
-        'Historical analysis',
-        'Modern applications'
+        '1. Aerospace concepts ahead of their time.',
+        '2. Materials science and metallurgy.',
+        '3. Advanced energy systems.',
+        '4. Cognitive and symbolic modelling.',
+        '5. Cultural and ethical innovation.'
       ],
       curriculum: [
         'We will give the syllabus only to enrolled students at the beginning of each course.'
@@ -319,22 +323,31 @@ const CoursesPage = () => {
                     <Clock size={14} />
                     <span>{course.duration}</span>
                   </div>
-                  {course.online && (
-                    <span className="px-3 py-1 rounded-full bg-green-50 text-green-600 font-medium text-xs uppercase tracking-wide">
-                      Online
-                    </span>
-                  )}
+                  <span
+                    className={`px-3 py-1 rounded-full font-medium text-xs uppercase tracking-wide ${
+                      course.online
+                        ? 'bg-green-50 text-green-600'
+                        : 'bg-red-50 text-red-600'
+                    }`}
+                  >
+                    {course.online ? 'Online' : 'Offline'}
+                  </span>
                 </div>
 
                 <div className="mb-6">
                   <h4 className="font-semibold text-gray-900 mb-2">What you'll learn</h4>
                   <ul className="space-y-2">
-                    {course.curriculum.slice(0, 3).map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
-                        <CheckCircle size={16} className="mt-0.5 text-green-500" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
+                    {course.curriculum.slice(0, 3).map((item, idx) => {
+                      const isPlaceholder = isSyllabusPlaceholder(item)
+                      const displayText = isPlaceholder ? SYLLABUS_PLACEHOLDER_TEXT : item
+
+                      return (
+                        <li key={idx} className="flex items-start gap-2 text-sm text-gray-600">
+                          <CheckCircle size={16} className="mt-0.5 text-green-500" />
+                          <span className={isPlaceholder ? 'font-semibold' : undefined}>{displayText}</span>
+                        </li>
+                      )
+                    })}
                   </ul>
                 </div>
 
