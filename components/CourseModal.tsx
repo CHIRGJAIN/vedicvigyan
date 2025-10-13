@@ -84,7 +84,7 @@ export default function CourseModal({ course, onClose, onRegister }: Props) {
 
         <div className="p-6 space-y-6">
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold">Full Description</h3>
+            <h3 className="text-lg font-semibold">Description</h3>
             <p className="text-gray-700">{course.description}</p>
           </div>
 
@@ -136,10 +136,7 @@ export default function CourseModal({ course, onClose, onRegister }: Props) {
                 return (
                   <li key={idx} className={isPlaceholder ? 'list-none' : undefined}>
                     {isPlaceholder ? (
-                      <span className="flex items-start gap-2">
-                        <span aria-hidden className="leading-tight text-gray-500">&#8226;</span>
-                        <span className="font-semibold italic">{displayText}</span>
-                      </span>
+                      <span className="font-semibold italic">{displayText}</span>
                     ) : (
                       displayText
                     )}
