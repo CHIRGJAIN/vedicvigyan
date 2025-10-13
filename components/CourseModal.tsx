@@ -10,7 +10,7 @@ type Props = {
 }
 
 const REGISTRATION_FORM_URL =
-  'https://docs.google.com/forms/d/e/1FAIpQLSctZ4UY-YsU6DBuXKAN3SYk7jOY-pT4gieRPr_LCxxllE8-Qg/viewform?usp=header'
+  'https://docs.google.com/forms/d/e/1FAIpQLScloqq-UA5iKEN2IduxOzE6sSA645C1fdWT09RFPqyIyO8rIg/viewform?usp=header'
 
 const SYLLABUS_PLACEHOLDER_TEXT =
   'We will give the syllabus only to enrolled students at the beginning of each course.'
