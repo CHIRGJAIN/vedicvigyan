@@ -129,7 +129,7 @@ export default function CourseModal({ course, onClose, onRegister }: Props) {
 
           <div>
             <h4 className="font-semibold mb-2">Curriculum / Syllabus</h4>
-            <ol className="list-decimal list-inside text-gray-700 space-y-1">
+            <ul className="list-disc list-inside text-gray-700 space-y-1">
               {curriculumItems.map((entry: string, idx: number) => {
                 const isPlaceholder = isSyllabusPlaceholder(entry)
                 const displayText = isPlaceholder ? SYLLABUS_PLACEHOLDER_TEXT : entry
@@ -143,7 +143,7 @@ export default function CourseModal({ course, onClose, onRegister }: Props) {
                   </li>
                 )
               })}
-            </ol>
+            </ul>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-end">
