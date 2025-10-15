@@ -123,7 +123,7 @@ const CoursesPage = () => {
       id: 5,
       name: 'Sristi and Samskritam',
       instructor: 'Venkat Rangan M.C',
-      description: 'Understanding creation theories and the role of Sanskrit in preserving ancient wisdom.',
+      description: 'This course gives an introduction to the concepts of Creation as per scriptures (puranas, shastras, tantras) and the role of sanskrit language in creation.',
       duration: '4 hours',
       students: 50,
       price: 1500,
