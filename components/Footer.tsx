@@ -40,7 +40,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-20 h-20 flex items-center justify-center">
-                <Image src="/vves-logo(1).png" alt="VVES logo" width={60} height={48} className="object-contain" />
+                <Image src="/vves-logo(1).png" alt="VVES logo" width={80} height={64} className="object-contain" />
               </div>
               <div>
                 <h3 className="text-xl font-bold">Vedic Vigyanam Explorer Society</h3>
