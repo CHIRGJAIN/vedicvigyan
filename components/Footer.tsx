@@ -17,7 +17,7 @@ const Footer = () => {
 
   const quickLinks = [
     { name: 'About Us', href: '/about' },
-    { name: 'Our Courses', href: '/course' },
+    { name: 'Our Courses', href: '/courses' },
     { name: 'Research', href: '/research' },
     { name: 'Library', href: '/library' },
     { name: 'Events', href: '/events' },
@@ -29,8 +29,6 @@ const Footer = () => {
     { name: 'Publications', href: '/library' },
     { name: 'Newsletter', href: '/library#newsletter' },
     { name: 'Blog', href: '/library#blog' },
-    { name: 'FAQ', href: '/contact#faq' },
-    { name: 'Privacy Policy', href: '/privacy' },
   ]
 
   return (
@@ -164,9 +162,6 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex items-center space-x-6 text-sm">
-              <Link href="/privacy" className="text-gray-300 hover:text-white transition-colors duration-300">
-                Privacy Policy
-              </Link>
               <Link href="/terms" className="text-gray-300 hover:text-white transition-colors duration-300">
                 Terms of Service
               </Link>
