@@ -34,6 +34,7 @@ const CoursesPage = () => {
       students: 50,
       price: 1500,
       online: true,
+  formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSf00UqEoKicWdQkPH4OcPvKjUN6YTlxnQV7ep_EM2DliJy1Pg/viewform?usp=publish-editor',
       // rating: 4.8,
       features: [
         'Mastery of traditional bows, arrows, and shooting techniques from Dhanurveda.',
@@ -61,6 +62,7 @@ const CoursesPage = () => {
       students: 50,
       price: 1500,
       online: true,
+  formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeYbdg2miuslu3DEymTFglFNpG8dT7nH8xBnmGo_29PhN1WLA/viewform?usp=publish-editor',
       // rating: 4.6,
       features: [
         'Understand basic microbiological principles.',
@@ -86,6 +88,7 @@ const CoursesPage = () => {
       students: 50,
       price: 1500,
       online: true,
+  formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdkbwk28tFGeC7tJzUcRIk2gkzk5fVcqcjmxEnt5BJcfcv2ng/viewform?usp=header',
       // rating: 4.9,
       features: [
         'Compare ancient methods with modern astronomy and recognize continuities and differences.',
@@ -111,6 +114,7 @@ const CoursesPage = () => {
       students: 50,
       price: 1000,
       online: true,
+  formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSf4erNZJFboHZhB5vYgXWL2lO7f9ppxZgALppu-tU0c6yDlfw/viewform?usp=publish-editor',
       // rating: 4.7,
       features: [
         'Need of the course, philosophy, present status of IKS-related literature, and areas to be explored.'
@@ -128,6 +132,7 @@ const CoursesPage = () => {
       students: 50,
       price: 1500,
       online: true,
+  formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSeDqMJq1777zRc6eoNmz4Bjq5gTnyBkaZgk3eflGxngGK3LWw/viewform?usp=publish-editor',
       // rating: 4.8,
       features: [
         'Basic concepts and terminologies',
@@ -150,6 +155,7 @@ const CoursesPage = () => {
       students: 50,
       price: 6000,
       online: false,
+  formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfVPkkHUVneCFcbUHA4nAwUeO12N-CDHRg93g1HUpPPksCoGw/viewform?usp=publish-editor',
       // rating: 4.9,
       features: [
         'Understand the foundations of Nyāyashāstra—its purpose, reasoning methods, and role in decision-making.',
@@ -173,6 +179,7 @@ const CoursesPage = () => {
       students: 50,
       price: 1500,
       online: true,
+  formLink: 'https://docs.google.com/forms/d/e/1FAIpQLScpGszAzjobysXkoGUJwz7V1P5EhkB6Fs0L63-Y7abISVXOvQ/viewform?usp=publish-editor',
       // rating: 4.5,
       features: [
         'Basic Time Calculation.',
@@ -193,6 +200,7 @@ const CoursesPage = () => {
       students: 50,
       price: 1500,
       online: true,
+  formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSf1GIQdIV8q4Jr3QQpyZcDGQggkSWwNGNJfH67fFY2gsLOdiA/viewform?usp=publish-editor',
       // rating: 4.8,
       features: [
         'Encoding the Infinite in the Finite.',
@@ -215,6 +223,7 @@ const CoursesPage = () => {
       students: 50,
       price: 1500,
       online: true,
+  formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSdNDVeNGYG2nONwDaKW_u2wMV0lqtBLY9mxObmiUmt9C4N3Hg/viewform?usp=publish-editor',
       // rating: 4.9,
       features: [
         'What Is the Prasthanatrayi?',
@@ -236,6 +245,7 @@ const CoursesPage = () => {
       students: 50,
       price: 5000,
       online: true,
+  formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSc_s9eorZlIafW-7YUt_Z_kuHq9tqXvInRg0a4jDid8ri5x2A/viewform?usp=publish-editor',
       // rating: 4.7,
       features: [
         'Modern theories of origin of universe.',
@@ -257,6 +267,7 @@ const CoursesPage = () => {
       students: 50,
       price: 6000,
       online: true,
+  formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSfly6aw5IF2zabcBHmE1kLgXUdcHhWy1Dzmoo0OOzWbMetr2g/viewform?usp=publish-editor',
       // rating: 4.8,
       features: [
         'Aerospace concepts ahead of their time.',
