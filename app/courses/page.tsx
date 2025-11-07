@@ -25,6 +25,7 @@ const CoursesPage = () => {
 
 
   const courses = [
+    /*
     {
       id: 1,
       name: 'Dhanurveda',
@@ -105,6 +106,7 @@ const CoursesPage = () => {
         'Relevance and Legacy'
       ]
     },
+    */
     {
       id: 4,
       name: 'Indian Knowledge System',
@@ -123,6 +125,7 @@ const CoursesPage = () => {
         'We will give the syllabus only to enrolled students at the beginning of each course.'
       ]
     },
+    /*
     {
       id: 5,
       name: 'Sristi and Samskritam',
@@ -280,6 +283,7 @@ const CoursesPage = () => {
         'We will give the syllabus only to enrolled students at the beginning of each course.'
       ]
     }
+    */
   ]
 
   // Open course details modal. Registration flow is triggered from inside the modal.

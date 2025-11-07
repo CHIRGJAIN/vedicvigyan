@@ -336,7 +336,7 @@ Her dedication to bridging ancient and contemporary science, combined with her e
                 </div>
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Dr. Madhuri Sharon</h3>
-                  <p className="text-sm text-indian-red font-semibold mb-2">Vice-President</p>
+                  <p className="text-sm text-indian-red font-semibold mb-2">Founder</p>
                   <p className="text-xs text-gray-600 line-clamp-3">Vedic Knowledge - Ancient wisdom for modern times</p>
                 </div>
               </motion.div>
@@ -784,7 +784,7 @@ const getLeadershipImage = (name: string) => {
 const getDesignation = (name: string) => {
   switch (name) {
     case 'Dr. Madhuri Sharon':
-      return 'Vice President';
+      return 'Founder';
     case 'Prof. (Dr.) Naresh Kumar Vats':
       return 'Secretary';
     case 'Dr. Sanjay Kumar Sharma':
