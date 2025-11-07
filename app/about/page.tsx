@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Users, BookOpen, Target, Eye, Calendar, MapPin, Phone, Mail, X, ChevronLeft, ChevronRight, ShieldCheck, HeartHandshake } from 'lucide-react'
+import { Users, BookOpen, Target, Eye, Calendar, MapPin, Phone, Mail, X, ChevronLeft, ChevronRight, ShieldCheck, HeartHandshake, Share2, Sparkles } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
@@ -687,7 +687,7 @@ Her dedication to bridging ancient and contemporary science, combined with her e
             <p className="text-xl text-gray-600">The principles that guide our work</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 icon: ShieldCheck,
@@ -708,6 +708,16 @@ Her dedication to bridging ancient and contemporary science, combined with her e
                 icon: Users,
                 title: 'Respect',
                 description: 'We honor diverse perspectives, traditions, and the dignity of every individual.'
+              },
+              {
+                icon: Share2,
+                title: 'Collaboration',
+                description: 'We work together across disciplines and backgrounds to enrich collective knowledge.'
+              },
+              {
+                icon: Sparkles,
+                title: 'Tradition with Innovation',
+                description: 'We respect our cultural and spiritual heritage while exploring its relevance in today\'s world.'
               }
             ].map((value, index) => (
               <motion.div
