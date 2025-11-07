@@ -140,11 +140,11 @@ Her dedication to bridging ancient and contemporary science, combined with her e
       title: 'International Recognition',
       description: 'Decided to form a group as a society with a mission to Explore, Interpret and Preserve the Vedic Science to Reinforce its Relevance and disseminate the knowledge in Modern Society'
     },
-    {
-      year: '2024',
-      title: 'Digital Library',
-      description: 'Launched comprehensive digital library with over 1000 Vedic texts'
-    },
+    // {
+    //   year: '2024',
+    //   title: 'Digital Library',
+    //   description: 'Launched comprehensive digital library with over 1000 Vedic texts'
+    // },
     {
       year: ' Jan 2025',
       title: 'Global Expansion',
