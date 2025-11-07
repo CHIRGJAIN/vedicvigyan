@@ -88,13 +88,11 @@ Educational Qualifications:
 • Post Grad. Dip. In Nanobiotechnology
 
 Her Contribution to Science:
-• Has written a Book - Mandelic Acid (2017), Partridge Publishers
+• Has written a Book - Mandelic Acid (2017), Partridge Publishers <br>
 • 4 Chapters in 4 books by Wiley, Elsevier & Springer
 • 16 International Paper Publications
 • 1 Indian Patent
 • Working as Research Associate and doing Ph D in Bionanotechnology
-
-THIS BEAUTIFUL GIRL IS A MOST FOCUSSED BRILLIANT RESEARCHER
 
 Her dedication to bridging ancient and contemporary science, combined with her extensive research experience and academic achievements, makes her a valuable asset to VVES. Her work in biotechnology and nanobiotechnology, along with her interest in Vimaan Vidya, demonstrates her commitment to exploring the intersection of traditional knowledge and modern scientific research.`,
       image: '/images/dr-sharon/image_3.png'
@@ -103,7 +101,7 @@ Her dedication to bridging ancient and contemporary science, combined with her e
       name: 'Mr. Vijay Khambete',
       designation: 'Executive Member',
       shortDescription: 'An IT professional with an MBA and multiple postgraduate diplomas, championing ancient Indian aeronautics.',
-      fullDescription: `An IT professional with an MBA and multiple postgraduate diplomas. He is the pillar of VVES, passionately advocating for ancient Indian aeronautics and demonstrating remarkable project-management and recruitment skills.`,
+      fullDescription: `An IT professional with an MBA and multiple postgraduate diplomas. Passionately advocating for ancient Indian aeronautics and demonstrating remarkable project-management and recruitment skills.`,
       image: '/images/dr-sharon/image_5.png'
     },
   ]
