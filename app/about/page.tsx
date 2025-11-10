@@ -22,7 +22,7 @@ export default function About() {
   const founders: Founder[] = [
     {
       name: 'Ashish Kumar',
-      designation: 'Treasurer',
+      designation: 'Founder & Treasurer',
       shortDescription: 'Innovation & Finance - Merging Vedic wisdom with modern technology initiatives.',
       fullDescription: `Engineering student specializing in Electronics and Communication with AI and ML at Gautam Buddha University.
 Treasurer of VVES, spearheading initiatives that merge traditional knowledge with modern technology.
@@ -32,14 +32,14 @@ Passionate about creating sustainable innovation pipelines that keep Vedic scien
     },
     {
       name: 'Mr. Venkat Rangan M.C.',
-      designation: 'Executive Member',
+      designation: 'Founder & Executive Member',
       shortDescription: 'B.E. Electronics and Communication with PMP certification, expert in automotive embedded software.',
       fullDescription: `B.E. Electronics and Communication with PMP certification, expert in embedded software applications in the automotive domain. A lifelong Vimaan enthusiast, he combines engineering expertise with a passion for Sanskrit and Puranas.`,
       image: '/images/dr-sharon/image_4.png'
     },
     {
       name: 'Dr. Anantha M.A',
-      designation: 'Executive Member',
+      designation: 'Founder & Executive Member',
       shortDescription: 'Ph.D. & M.A. (Nyaya Vidvat Uttama) - We cannot read Vimaan Shastra without him. Expert in Sanskrit and traditional knowledge.',
       fullDescription: `Ph.D. & M.A. (Nyaya Vidvat Uttama)
 
@@ -62,7 +62,7 @@ His exceptional expertise in Sanskrit and traditional knowledge systems makes hi
     },
     {
       name: 'Mr. Vijay Madhukar Vadnere',
-      designation: 'Executive Member',
+      designation: 'Founder & Executive Member',
       shortDescription: 'Veteran DOCSIS, CATV, and HFC network specialist with 39 years of experience driving large-scale telecom operations.',
       fullDescription: `Vijay Madhukar Vadnere has 39 years of experience in DOCSIS, CATV, CCTV, HFC and ISP network design, implementation and monitoring. As Assistant Vice President - Technical at Hathway Cable & Datacom, Pune, he managed over 6 lakh digital subscribers and 3 lakh DOCSIS subscribers.
 
@@ -75,33 +75,41 @@ He owns a wide range of test instruments and a digital music studio for testing 
     },
     {
       name: 'Ms. Anuradha Pandey-Dubey',
-      designation: 'Executive Member',
+      designation: 'Founder & Executive Member',
       shortDescription: 'Academician and researcher in both Ancient & Contemporary science. Served as Asst Prof. Biotechnology for 15yrs.',
-      fullDescription: `An academician and researcher in both Ancient & Contemporary science. 
-Served as Asst Prof. Biotechnology for 15yrs
+      fullDescription: `•An academician and researcher in both Ancient & Contemporary science for over 20 years.
 
-Member of - Royal Society of Chemistry (London).
+•Served as Asst Prof. Biotechnology.
 
-Educational Qualifications:
-• Certificate Course: Study of Vimaan Vidya
-• B.Ed
-• Post Grad. Dip. In Nanobiotechnology
+•Member of - Royal Society of Chemistry (London).
 
-Her Contribution to Science:
-• Has written a Book - Mandelic Acid (2017), Partridge Publishers <br>
-• 4 Chapters in 4 books by Wiley, Elsevier & Springer
-• 16 International Paper Publications
-• 1 Indian Patent
-• Working as Research Associate and doing Ph D in Bionanotechnology
+•M.Sc B.Ed 
+•Certificate Course: Study of Vimaan Vidya.
 
-Her dedication to bridging ancient and contemporary science, combined with her extensive research experience and academic achievements, makes her a valuable asset to VVES. Her work in biotechnology and nanobiotechnology, along with her interest in Vimaan Vidya, demonstrates her commitment to exploring the intersection of traditional knowledge and modern scientific research.`,
+•Post Grad. Dip. In Nanobiotechnology
+
+•Has written a Book - Mandelic Acid (2017), Partridge Publishers.
+
+•4 Chapters in 4 books by Wiley, Elsevier & Springer.
+
+•20 International Paper Publications.
+
+•1 Indian Patent.
+
+•Working as Research Associate and 
+
+•doing Ph D in Bionanotechnology.
+
+•Her dedication to bridging ancient and contemporary science, combined with her extensive research experience and academic achievements, makes her a valuable asset to VVES.
+
+•Her work in biotechnology and nanobiotechnology, along with her interest in Vimaan Vidya, demonstrates her commitment to exploring the intersection of traditional knowledge and modern scientific research.`,
       image: '/images/dr-sharon/image_3.png'
     },
     {
       name: 'Mr. Vijay Khambete',
-      designation: 'Executive Member',
+      designation: 'Founder & Executive Member',
       shortDescription: 'An IT professional with an MBA and multiple postgraduate diplomas, championing ancient Indian aeronautics.',
-      fullDescription: `An IT professional with an MBA and multiple postgraduate diplomas. Passionately advocating for ancient Indian aeronautics and demonstrating remarkable project-management and recruitment skills.`,
+      fullDescription: `An accomplished IT professional with over 30 years of experience across support, development, and project management. Prior to opting for voluntary retirement, he led a technology group dedicated to developing advanced analytics tools. He has also successfully established and managed a restaurant and a homestay. Academically, he holds an MBA in Supply Chain and Retail Management, a Postgraduate Diploma in Financial Management, and a Postgraduate Diploma in Systems Management and Programming. He is deeply passionate about validating the authenticity of Vimaan Vidya and showcasing the scientific and technological excellence of ancient India.`,
       image: '/images/dr-sharon/image_5.png'
     },
   ]
@@ -178,7 +186,7 @@ Her dedication to bridging ancient and contemporary science, combined with her e
             className="text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              About <span className="text-gradient">VVES</span>
+            <span className="text-gradient">Vedic Vigyanam Explorer Society</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Leading authority in the preservation and interpretation of Vedic Science, 
@@ -370,7 +378,7 @@ Her dedication to bridging ancient and contemporary science, combined with her e
                 </div>
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Prof. (Dr.) Naresh Kumar Vats</h3>
-                  <p className="text-sm text-indian-red font-semibold mb-2">Secretary</p>
+                  <p className="text-sm text-indian-red font-semibold mb-2">Founder & Secretary</p>
                   <p className="text-xs text-gray-600 line-clamp-3">Research Excellence - Bridging ancient and modern science</p>
                 </div>
               </motion.div>
@@ -406,7 +414,7 @@ Her dedication to bridging ancient and contemporary science, combined with her e
                 </div>
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Dr. Mrunal Yawalkar</h3>
-                  <p className="text-sm text-indian-red font-semibold mb-2">Joint Secretary</p>
+                  <p className="text-sm text-indian-red font-semibold mb-2">Founder & Joint Secretary</p>
                   <p className="text-xs text-gray-600 line-clamp-3">Ancient Aeronautics & Metallurgy - Championing research on Vedic sciences</p>
                 </div>
               </motion.div>
@@ -784,11 +792,11 @@ const getDesignation = (name: string) => {
     case 'Dr. Madhuri Sharon':
       return 'Founder';
     case 'Prof. (Dr.) Naresh Kumar Vats':
-      return 'Secretary';
+      return 'Founder & Secretary';
     case 'Dr. Sanjay Kumar Sharma':
       return 'President';
     case 'Dr. Mrunal Yawalkar':
-      return 'Joint Secretary';
+      return 'Founder & Joint Secretary';
     default:
       return '';
   }
@@ -825,15 +833,9 @@ Dean Academic & Finance Officer; Former Registrar, RGNUL, Punjab
 • M.B.A. (HR), PGDPM & Labour Welfare, Interpretership Diploma (Sinhala)
 • Honoured by Babu Jagjivan Ram Kala Sanskriti & Sahitya Academy, Delhi.`;
     case 'Dr. Mrunal Yawalkar':
-      return `Dr. Mrunal Yawalkar:
-Asst. Prof. at RTM Nagpur University for 8 years with a Certificate Course in Vimaan Vidya.
-Published 10 articles and a book chapter; regular participant in national and international conferences.
-Currently an independent researcher with deep focus on ancient aeronautics-related metallurgy.
-Honours include B.Ed Gold Medalist, National Merit Scholarship, and the Appreciation Prize from NCLA.
-Committed to translating Vedic science into actionable modern research as Joint Secretary of VVES.`;
+      return `Dr. Mrunal Yawalkar holds a Ph.D. in Physics and a Certificate Course in Vimaan Vidya. She has published ten research articles and a book chapter, and currently pursues independent research focused on ancient aeronautics-related metallurgy. Her honours include B.Ed Gold Medal from RTM Nagpur University. Committed to translating Vedic science into actionable modern research, she serves as the Joint Secretary of the VVES.`;
     case 'Mr. Vijay Madhukar Vadnere':
-      return `Mr. Vijay Madhukar Vadnere:
-Vijay Madhukar Vadnere has 39 years’ experience in DOCSIS, CATV, CCTV, HFC and ISP network design, implementation and monitoring. He is an expert in CATV headend design, HFC networks and reverse path network design for DOCSIS 3+. As Assistant Vice President – Technical at Hathway Cable & Datacom, Pune, he managed over 6 lakh digital subscribers and 3 lakh DOCSIS subscribers.
+      return `Vijay Madhukar Vadnere has 39 years’ experience in DOCSIS, CATV, CCTV, HFC and ISP network design, implementation and monitoring. He is an expert in CATV headend design, HFC networks and reverse path network design for DOCSIS 3+. As Assistant Vice President – Technical at Hathway Cable & Datacom, Pune, he managed over 6 lakh digital subscribers and 3 lakh DOCSIS subscribers.
 He designed structured networks for Magarpatta City and worked as consultant on HFC/Docsis networks, procurement, implementation and testing. He holds multiple professional certifications in Headend Architecture, Return Path and Fiber Optics and is a member of SCTE since 2002.
 His career began at Diamond Group (1985–1994) as Senior Technician, then S.V. Enterprises (1994–1998) on network design and automation, followed by 23 years at Hathway Cable & Datacom (1998–2021) heading HFC/Docsis/FTTH/Digital Cable operations. Since 2022 he is Director at S.V. Ved Yantra Pvt. Ltd. developing automation instruments and Ayurvedic engineering concepts.
 He owns a wide range of test instruments and a digital music studio for testing sound frequencies. His interests include reading, documentaries, collecting rare items and designing new gadgets. He is a Limca Book of Records holder and member of multiple organizations including Rotary Club of Pune Wisdom and ADMA.`;
