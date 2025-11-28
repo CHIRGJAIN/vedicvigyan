@@ -17,7 +17,7 @@ interface Founder {
 export default function About() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedFounder, setSelectedFounder] = useState<Founder | null>(null)
-  const [selectedLeadershipCard, setSelectedLeadershipCard] = useState<'Dr. Sanjay Kumar Sharma' | 'Dr. Madhuri Sharon' | 'Prof. (Dr.) Naresh Kumar Vats' | 'Dr. Mrunal Yawalkar' | null>(null)
+  const [selectedLeadershipCard, setSelectedLeadershipCard] = useState<'Dr. Sanjay Kumar Sharma' | 'Dr. Madhuri Sharon' | 'Prof. (Dr.) Naresh Kumar Vats' | 'Dr. Mrunal Yawalkar' | 'Ashish Kumar' | null>(null)
 
   const founders: Founder[] = [
     {
@@ -133,17 +133,17 @@ He owns a wide range of test instruments and a digital music studio for testing 
   const milestones = [
     {
       year: ' June 2023',
-      title: 'Foundation',
+      title: 'Inception of Knowledge',
       description: 'Main Core members had undergone Viman Vidya course conducted by Bhisma School of Indic Studies with Dr. Madhuri Sharon as leading faculty.'
     },
     {
       year: 'October 2023',
-      title: 'First Course Launch',
+      title: 'Genesis of research',
       description: 'Under the guidance of Dr. Madhuri Sharon this group of 8 students out of 50 who attended that course decided to carry forward this knowledge by doing R & D work with main focus on Maharshi Bharadwaj’s Vaimanik Shastra'
     },
     {
       year: 'June 2024',
-      title: 'International Recognition',
+      title: 'Mission Defined: The Birth of a Society',
       description: 'Decided to form a group as a society with a mission to Explore, Interpret and Preserve the Vedic Science to Reinforce its Relevance and disseminate the knowledge in Modern Society'
     },
     // {
@@ -153,12 +153,12 @@ He owns a wide range of test instruments and a digital music studio for testing 
     // },
     {
       year: ' Jan 2025',
-      title: 'Global Expansion',
+      title: 'Official Establishment',
       description: 'We officially registered as VEDIC VIGYANAM EXPLORER SOCIETY with office at Kurukshetra'
     },
     {
       year: ' September 2025',
-      title: 'Global Expansion',
+      title: 'Educational Outreach',
       description: 'VVES is now in an advanced stage of rolling out a few in-depth courses based on Vedic systems.'
     }
   ]
@@ -308,50 +308,67 @@ He owns a wide range of test instruments and a digital music studio for testing 
                 </div>
               </motion.div>
 
-              {/* Second Row - 3 Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-              {/* Card 2 - Vedic Knowledge */}
+              {/* Dr. Madhuri Sharon - Full Width Card */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-                className="bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                transition={{ duration: 0.8 }}
+                className="bg-white rounded-xl shadow-xl overflow-hidden transition-shadow duration-300 hover:shadow-2xl cursor-pointer"
                 onClick={() => setSelectedLeadershipCard('Dr. Madhuri Sharon')}
               >
-                <div className="aspect-[4/3] relative">
-                  <img
-                    src="/images/dr-sharon/portrait.jpg"
-                    alt="Dr. Madhuri Sharon"
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      const fallback = target.nextElementSibling as HTMLElement;
-                      if (fallback) fallback.style.display = 'flex';
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
-                    <span className="text-gray-500">Image not available</span>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
+                  {/* Image Section */}
+                  <div className="relative lg:col-span-1">
+                    <div className="relative h-64 sm:h-80 lg:h-full overflow-hidden">
+                      <img
+                        src="/images/dr-sharon/portrait.jpg"
+                        alt="Dr. Madhuri Sharon"
+                        className="absolute inset-0 w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const fallback = target.nextElementSibling as HTMLElement;
+                          if (fallback) fallback.style.display = 'flex';
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
+                        <span className="text-gray-500">Image not available</span>
+                      </div>
+                      <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div className="bg-white/90 rounded-full p-2">
+                          <Eye size={20} className="text-indian-red" />
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="bg-white/90 rounded-full p-2">
-                      <Eye size={20} className="text-indian-red" />
+                  
+                  {/* Text Section */}
+                  <div className="p-6 lg:p-8 flex flex-col justify-center lg:col-span-2">
+                    <div className="mb-4">
+                      <h4 className="text-2xl font-bold text-gray-900 mb-1">Dr. Madhuri Sharon</h4>
+                      <p className="text-lg font-bold text-indian-red mb-4">Founder</p>
+                    </div>
+                    <h3 className="text-lg font-normal text-gray-900 mb-4">Scientific Leadership & Vedic Wisdom</h3>
+                    <div className="space-y-3 text-gray-700 leading-relaxed">
+                      <p>
+                        An internationally acclaimed nanotechnologist and educator, Dr. Sharon bridges modern research with ancient Indian knowledge systems. Her work spans nanotechnology, biotechnology, Sanatana Dharma, and Vimaan Shastra, guiding scholars to explore Vedic sciences with academic rigor.
+                      </p>
+                      <p>
+                        At VVES she mentors research, curriculum, and collaborations, ensuring our initiatives unite scientific excellence with the depth of Vedic wisdom to inspire the next generation of explorers.
+                      </p>
                     </div>
                   </div>
                 </div>
-                <div className="p-4">
-                  <h3 className="text-lg font-bold text-gray-900 mb-1">Dr. Madhuri Sharon</h3>
-                  <p className="text-sm text-indian-red font-semibold mb-2">Founder</p>
-                  <p className="text-xs text-gray-600 line-clamp-3">Vedic Knowledge - Ancient wisdom for modern times</p>
-                </div>
               </motion.div>
+
+              {/* Leadership Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
               {/* Card 3 - Research Excellence */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
                 className="bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
                 onClick={() => setSelectedLeadershipCard('Prof. (Dr.) Naresh Kumar Vats')}
               >
@@ -387,7 +404,7 @@ He owns a wide range of test instruments and a digital music studio for testing 
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
                 className="bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
                 onClick={() => setSelectedLeadershipCard('Dr. Mrunal Yawalkar')}
               >
@@ -418,12 +435,48 @@ He owns a wide range of test instruments and a digital music studio for testing 
                   <p className="text-xs text-gray-600 line-clamp-3">Ancient Aeronautics & Metallurgy - Championing research on Vedic sciences</p>
                 </div>
               </motion.div>
+
+              {/* Card 5 - Innovation & Finance */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                onClick={() => setSelectedLeadershipCard('Ashish Kumar')}
+              >
+                <div className="aspect-[4/3] relative">
+                  <img
+                    src="/images/dr-sharon/image_8.png"
+                    alt="Ashish Kumar"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
+                    <span className="text-gray-500">Image not available</span>
+                  </div>
+                  <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="bg-white/90 rounded-full p-2">
+                      <Eye size={20} className="text-indian-red" />
+                    </div>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <h3 className="text-lg font-bold text-gray-900 mb-1">Ashish Kumar</h3>
+                  <p className="text-sm text-indian-red font-semibold mb-2">Founder & Treasurer</p>
+                  <p className="text-xs text-gray-600 line-clamp-3">Innovation & Finance - Merging Vedic wisdom with modern technology initiatives</p>
+                </div>
+              </motion.div>
               </div>
 
               {/* Additional Founder Cards */}
               <div className="mt-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {founders.map((founder, index) => (
+                  {founders.filter((founder) => founder.name !== 'Ashish Kumar').map((founder, index) => (
                     <motion.div
                       key={founder.name}
                       initial={{ opacity: 0, y: 30 }}
@@ -782,6 +835,8 @@ const getLeadershipImage = (name: string) => {
       return '/images/dr-sharon/image_7.png';
     case 'Dr. Mrunal Yawalkar':
       return '/images/dr-sharon/image_2.png';
+    case 'Ashish Kumar':
+      return '/images/dr-sharon/image_8.png';
     default:
       return '/images/dr-sharon/portrait.jpg';
   }
@@ -797,6 +852,8 @@ const getDesignation = (name: string) => {
       return 'President';
     case 'Dr. Mrunal Yawalkar':
       return 'Founder & Joint Secretary';
+    case 'Ashish Kumar':
+      return 'Founder & Treasurer';
     default:
       return '';
   }
@@ -835,10 +892,12 @@ Dean Academic & Finance Officer; Former Registrar, RGNUL, Punjab
     case 'Dr. Mrunal Yawalkar':
       return `Dr. Mrunal Yawalkar holds a Ph.D. in Physics and a Certificate Course in Vimaan Vidya. She has published ten research articles and a book chapter, and currently pursues independent research focused on ancient aeronautics-related metallurgy. Her honours include B.Ed Gold Medal from RTM Nagpur University. Committed to translating Vedic science into actionable modern research, she serves as the Joint Secretary of the VVES.`;
     case 'Mr. Vijay Madhukar Vadnere':
-      return `Vijay Madhukar Vadnere has 39 years’ experience in DOCSIS, CATV, CCTV, HFC and ISP network design, implementation and monitoring. He is an expert in CATV headend design, HFC networks and reverse path network design for DOCSIS 3+. As Assistant Vice President – Technical at Hathway Cable & Datacom, Pune, he managed over 6 lakh digital subscribers and 3 lakh DOCSIS subscribers.
+      return `Vijay Madhukar Vadnere has 39 years' experience in DOCSIS, CATV, CCTV, HFC and ISP network design, implementation and monitoring. He is an expert in CATV headend design, HFC networks and reverse path network design for DOCSIS 3+. As Assistant Vice President - Technical at Hathway Cable & Datacom, Pune, he managed over 6 lakh digital subscribers and 3 lakh DOCSIS subscribers.
 He designed structured networks for Magarpatta City and worked as consultant on HFC/Docsis networks, procurement, implementation and testing. He holds multiple professional certifications in Headend Architecture, Return Path and Fiber Optics and is a member of SCTE since 2002.
-His career began at Diamond Group (1985–1994) as Senior Technician, then S.V. Enterprises (1994–1998) on network design and automation, followed by 23 years at Hathway Cable & Datacom (1998–2021) heading HFC/Docsis/FTTH/Digital Cable operations. Since 2022 he is Director at S.V. Ved Yantra Pvt. Ltd. developing automation instruments and Ayurvedic engineering concepts.
+His career began at Diamond Group (1985-1994) as Senior Technician, then S.V. Enterprises (1994-1998) on network design and automation, followed by 23 years at Hathway Cable & Datacom (1998-2021) heading HFC/Docsis/FTTH/Digital Cable operations. Since 2022 he is Director at S.V. Ved Yantra Pvt. Ltd. developing automation instruments and Ayurvedic engineering concepts.
 He owns a wide range of test instruments and a digital music studio for testing sound frequencies. His interests include reading, documentaries, collecting rare items and designing new gadgets. He is a Limca Book of Records holder and member of multiple organizations including Rotary Club of Pune Wisdom and ADMA.`;
+    case 'Ashish Kumar':
+      return `Ashish Kumar is an engineering student specializing in Electronics and Communication with AI and ML at Gautam Buddha University. As Treasurer of VVES, he spearheads initiatives that merge traditional knowledge with modern technology, leading IoT, aerospace, and 3D printing projects to translate Vedic concepts into contemporary applications. Passionate about sustainable innovation, he focuses on keeping Vedic sciences relevant for future generations.`;
     default:
       return '';
   }
