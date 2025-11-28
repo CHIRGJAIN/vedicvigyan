@@ -158,7 +158,7 @@ He owns a wide range of test instruments and a digital music studio for testing 
     },
     {
       year: ' September 2025',
-      title: 'Educational Outreach',
+      title: 'Educational ',
       description: 'VVES is now in an advanced stage of rolling out a few in-depth courses based on Vedic systems.'
     }
   ]
