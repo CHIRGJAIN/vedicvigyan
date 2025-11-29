@@ -4,8 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import CountUp from 'react-countup'
-import ReactPlayer from 'react-player'
-import { Play, Users, BookOpen, Award, ArrowRight, Quote, Calendar, MapPin, Clock } from 'lucide-react'
+import { Users, BookOpen, Award, ArrowRight, Quote, Calendar, MapPin, Clock } from 'lucide-react'
 import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import { format } from 'date-fns'
@@ -13,7 +12,6 @@ import Footer from '@/components/Footer'
 
 export default function Home() {
   const [visitorCount, setVisitorCount] = useState(0)
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
   const [currentSubhashit, setCurrentSubhashit] = useState(0)
 
   const subhashits = [
@@ -165,26 +163,12 @@ export default function Home() {
           
           <div className="max-w-4xl mx-auto">
             <div className="relative bg-white rounded-xl shadow-xl overflow-hidden">
-              {!isVideoPlaying ? (
-                <div className="aspect-video bg-gray-900 flex items-center justify-center">
-                  <button
-                    onClick={() => setIsVideoPlaying(true)}
-                    className="flex items-center space-x-3 bg-indian-red text-white px-8 py-4 rounded-lg hover:bg-indian-deepRed transition-colors duration-300"
-                  >
-                    <Play size={24} />
-                    <span className="text-lg font-semibold">Watch Introduction</span>
-                  </button>
-                </div>
-              ) : (
-                <ReactPlayer
-                  url="/videos/intro.mp4"
-                  width="100%"
-                  height="100%"
-                  controls
-                  playing
-                  onEnded={() => setIsVideoPlaying(false)}
-                />
-              )}
+              <div className="aspect-video bg-gradient-to-br from-gray-900 via-indigo-900 to-gray-800 flex flex-col items-center justify-center text-white text-center p-6">
+                <p className="text-2xl font-semibold mb-2">Introduction video coming soon</p>
+                <p className="text-sm text-gray-200 max-w-xl">
+                  We are preparing a fresh welcome lecture from Dr. Madhuri Sharon. Check back shortly to watch it here.
+                </p>
+              </div>
             </div>
           </div>
         </div>
