@@ -13,7 +13,6 @@ export default function Contact() {
   // const [formData, setFormData] = useState({
   //   name: '',
   //   email: '',
-  //   phone: '',
   //   subject: '',
   //   message: ''
   // })
@@ -147,34 +146,19 @@ export default function Contact() {
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indian-red focus:border-transparent"
-                      placeholder="Enter your phone number"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Subject *
-                    </label>
-                    <input
-                      type="text"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indian-red focus:border-transparent"
-                      placeholder="Enter subject"
-                    />
-                  </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Subject *
+                  </label>
+                  <input
+                    type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indian-red focus:border-transparent"
+                    placeholder="Enter subject"
+                  />
                 </div>
                 
                 <div>
@@ -394,41 +378,6 @@ export default function Contact() {
           </div>
         </div>
       </section> */}
-
-      {/* COMMENTED OUT: Quick Contact / Immediate Assistance section - removed per request
-      <section className="section-padding bg-indian-maroon text-white">
-        <div className="container-custom">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold mb-6">Need Immediate Assistance?</h2>
-            <p className="text-xl mb-8 opacity-90">
-              For urgent inquiries or immediate support, please call us directly
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <a 
-                href="tel:+919876543210"
-                className="btn-accent text-lg px-8 py-4 flex items-center"
-              >
-                <Phone size={24} className="mr-2" />
-                Call Now: +91 98765 43210
-              </a>
-              
-              <a 
-                href="mailto:info@vves.in"
-                className="btn-secondary text-lg px-8 py-4 flex items-center"
-              >
-                <Mail size={24} className="mr-2" />
-                Email Us
-              </a>
-            </div>
-            
-            <p className="text-sm opacity-75 mt-6">
-              Office Hours: Mon-Fri 9:00 AM - 6:00 PM | Sat 9:00 AM - 2:00 PM
-            </p>
-          </div>
-        </div>
-      </section>
-      */}
 
       <Footer />
     </div>
