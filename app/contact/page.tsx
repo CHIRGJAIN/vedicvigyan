@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Phone, Mail, MapPin, Clock, MessageSquare, Send, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react'
+import { Mail, MapPin, Clock, MessageSquare, Send, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
@@ -226,13 +226,6 @@ export default function Contact() {
                     <Mail size={16} className="mr-2" />
                     Email Us
                   </a>
-                  <a 
-                    href="tel:+919845206819"
-                    className="btn-secondary flex items-center justify-center"
-                  >
-                    <Phone size={16} className="mr-2" />
-                    Call Us
-                  </a>
                 </div>
               </div>
             </motion.div>
@@ -246,23 +239,6 @@ export default function Contact() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h2>
               
               <div className="space-y-8">
-                {/* Phone */}
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-indian-red rounded-full flex items-center justify-center flex-shrink-0">
-                    <Phone size={24} className="text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
-                    <a 
-                      href="tel:+919845206819" 
-                      className="text-gray-700 hover:text-indian-red transition-colors duration-300"
-                    >
-                      +91 9845206819
-                    </a>
-                    <p className="text-sm text-gray-600 mt-1">Call us during office hours</p>
-                  </div>
-                </div>
-
                 {/* Email */}
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-indian-gold rounded-full flex items-center justify-center flex-shrink-0">
