@@ -113,8 +113,8 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <div className="mb-8">
-                <div className="w-30 h-30 rounded-full flex items-center justify-center mx-auto mb-6 overflow-hidden bg-transparent">
-                <Image src="/vves-logo(1).png" alt="VVES logo" width={190} height={96} className="object-contain" />
+              <div className="w-32 h-32 rounded-full flex items-center justify-center mx-auto mb-6 overflow-hidden bg-white/80 border border-white/70 shadow-2xl ring-2 ring-indian-gold/70 backdrop-blur">
+                <Image src="/vves-logo(1).png" alt="VVES logo" width={190} height={96} className="object-contain drop-shadow-lg" />
                 <span className="sr-only">Vedic Vigyanam Explorer Society</span>
               </div>
               <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)'}}>
