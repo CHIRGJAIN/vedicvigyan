@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin, Clock } from 'lucide-react'
+import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, MapPin, Clock } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -117,17 +117,7 @@ const Footer = () => {
                   </p>
                 </div>
               </div>
-              
-              <div className="flex items-center space-x-3">
-                <Phone size={20} className="text-indian-gold flex-shrink-0" />
-                <a 
-                  href="tel:+919876543210" 
-                  className="text-gray-300 hover:text-white transition-colors duration-300"
-                >
-                  +91 9845206819
-                </a>
-              </div>
-              
+
               <div className="flex items-center space-x-3">
                 <Mail size={20} className="text-indian-gold flex-shrink-0" />
                 <a 
