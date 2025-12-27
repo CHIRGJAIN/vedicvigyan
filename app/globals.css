@@ -186,14 +186,19 @@
 }
 
 .marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 24s linear infinite;
+}
+
+.marquee-group {
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
   gap: 2rem;
-  animation: marquee-left 14s linear infinite;
 }
 
 @keyframes marquee-left {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }

@@ -99,11 +99,15 @@ export default function Home() {
       <section className="bg-indian-maroon text-white">
         <div className="container-custom py-2">
           <div className="marquee-shell h-8 flex items-center">
-            <div className="marquee-track whitespace-nowrap">
-              {[...Array(3)].map((_, index) => (
-                <span key={index} className="uppercase tracking-[0.18em] text-sm font-semibold">
-                  VVES launches a new course
-                </span>
+            <div className="marquee-track">
+              {[...Array(2)].map((_, groupIndex) => (
+                <div key={groupIndex} className="marquee-group" aria-hidden={groupIndex === 1}>
+                  {[...Array(3)].map((_, index) => (
+                    <span key={`${groupIndex}-${index}`} className="uppercase tracking-[0.01em] text-sm font-semibold">
+                      VVES starting a New course on Indian Knowledge System by Prof. Sanjay Kumar Sharma
+                    </span>
+                  ))}
+                </div>
               ))}
             </div>
           </div>
@@ -181,15 +185,15 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="bg-white rounded-xl shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-3 gap-0 cursor-pointer"
+            className="bg-white rounded-xl shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-3 gap-0 cursor-pointer min-h-[22rem] lg:min-h-[26rem]"
             onClick={() => setShowFounderModal(true)}
           >
             <div className="relative lg:col-span-1">
-              <div className="relative h-64 sm:h-80 lg:h-full overflow-hidden">
+              <div className="relative h-72 sm:h-96 lg:h-full lg:min-h-[28rem] overflow-hidden">
                 <img
                   src="/images/dr-sharon/portrait.jpg"
                   alt="Dr. Madhuri Sharon"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover object-top"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement
                     target.style.display = 'none'
@@ -244,7 +248,7 @@ export default function Home() {
                       <img
                         src="/images/dr-sharon/portrait.jpg"
                         alt="Dr. Madhuri Sharon"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-top"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement
                           target.style.display = 'none'
