@@ -183,22 +183,28 @@
 .marquee-shell {
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee-left 24s linear infinite;
+  gap: 1.5rem;
+  animation: marquee-left 25s linear infinite;
+  will-change: transform;
 }
 
 .marquee-group {
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
-  gap: 2rem;
+  gap: 1.75rem;
+  padding-right: 1.75rem;
+  flex-shrink: 0;
 }
 
 @keyframes marquee-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% { transform: translateX(50%); }
 }

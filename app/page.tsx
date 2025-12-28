@@ -97,13 +97,13 @@ export default function Home() {
 
       {/* Announcement Ticker */}
       <section className="bg-indian-maroon text-white">
-        <div className="container-custom py-2">
+        <div className="w-full py-2">
           <div className="marquee-shell h-8 flex items-center">
             <div className="marquee-track">
               {[...Array(2)].map((_, groupIndex) => (
                 <div key={groupIndex} className="marquee-group" aria-hidden={groupIndex === 1}>
-                  {[...Array(3)].map((_, index) => (
-                    <span key={`${groupIndex}-${index}`} className="uppercase tracking-[0.01em] text-sm font-semibold">
+                  {[...Array(4)].map((_, index) => (
+                    <span key={`${groupIndex}-${index}`} className="uppercase tracking-[0.001em] text-sm font-semibold">
                       VVES starting a New course on Indian Knowledge System by Prof. Sanjay Kumar Sharma
                     </span>
                   ))}
