@@ -143,10 +143,7 @@ export default function Home() {
               <p className="text-xl md:text-2xl mb-6 text-white drop-shadow-lg" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.8)'}}>
                 Preserving and Interpreting Vedic Science
               </p>
-              <p className="text-lg mb-8 max-w-3xl mx-auto text-white drop-shadow-md" style={{textShadow: '1px 1px 2px rgba(0,0,0,0.8)'}}>
-                Leading authority in the preservation and interpretation of Vedic Science, 
-                integrating it into modern academic and cultural frameworks.
-              </p>
+               
             </div>
 
             {/* CTA Buttons */}
