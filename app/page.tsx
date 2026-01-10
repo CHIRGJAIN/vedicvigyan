@@ -141,12 +141,12 @@ export default function Home() {
                 Vedic Vigyanam Explorer Society
               </h1>
               <p className="text-xl md:text-2xl mb-6 text-white drop-shadow-lg" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.8)'}}>
-                Bridgning Ancient wisdom and modern Innovation
+                Preserving and Interpreting Vedic Science
               </p>
-              {/* <p className="text-lg mb-8 max-w-3xl mx-auto text-white drop-shadow-md" style={{textShadow: '1px 1px 2px rgba(0,0,0,0.8)'}}>
+              <p className="text-lg mb-8 max-w-3xl mx-auto text-white drop-shadow-md" style={{textShadow: '1px 1px 2px rgba(0,0,0,0.8)'}}>
                 Leading authority in the preservation and interpretation of Vedic Science, 
                 integrating it into modern academic and cultural frameworks.
-              </p> */}
+              </p>
             </div>
 
             {/* CTA Buttons */}
