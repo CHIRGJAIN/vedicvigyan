@@ -12,14 +12,14 @@ export default function Research() {
       description: 'A foundational study on Vedic science and its modern applications.',
       authors: 'VVES Research Team',
       href: '/research/Adrishya%20Vimaan.pdf',
-      tags: ['Vedic Science', 'IKS'],
+      tags: ['Vedic Science', 'Sanskrit','Traditional Knowledge'],
     },
     {
-      title: 'Gita-Arthashastra.pdf',
+      title: 'Gita & Arthashastra',
       description: 'Exploring interdisciplinary insights from Sanskrit and traditional knowledge systems.',
       authors: 'VVES Research Team',
       href: '/research/Gita-Arthashastra.pdf',
-      tags: ['Sanskrit', 'Traditional Knowledge'],
+      tags: ['Vedic Science', 'Sanskrit','Traditional Knowledge'],
     },
   ]
 

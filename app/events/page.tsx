@@ -20,7 +20,7 @@ export default function Events() {
             className="text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Events & <span className="text-gradient">Workshops</span>
+              Events
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Join our events, workshops, and conferences to explore Vedic sciences 

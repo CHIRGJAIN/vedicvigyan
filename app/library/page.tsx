@@ -20,7 +20,7 @@ export default function Library() {
             className="text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Digital <span className="text-gradient">Library</span>
+              <span className="text-gradient">Library</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Access our comprehensive collection of Vedic texts, research papers, 

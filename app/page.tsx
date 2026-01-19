@@ -210,7 +210,7 @@ export default function Home() {
           >
             <div className="mb-8">
               <div className="w-32 h-32 rounded-full flex items-center justify-center mx-auto mb-6 overflow-hidden bg-white border border-white/70 shadow-2xl">
-                <Image src="/vves-logo.png" alt="VVES logo" width={190} height={96} className="object-contain drop-shadow-lg" />
+                <Image src="/vves-logo.png" alt="VVES logo" width={190} height={96} className="object-contain w-full h-full p-2" />
                 <span className="sr-only">Vedic Vigyanam Explorer Society</span>
               </div>
               <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)'}}>

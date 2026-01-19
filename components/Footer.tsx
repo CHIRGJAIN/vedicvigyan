@@ -51,13 +51,10 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold">Vedic Vigyanam Explorer Society</h3>
-                <p className="text-sm text-gray-300">Preserving Vedic Wisdom</p>
+                <p className="text-sm text-gray-300">Bridging Ancient Wisdom and Modern Innovation</p>
               </div>
             </div>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              Leading authority in the preservation and interpretation of Vedic Science, 
-              integrating it into modern academic and cultural frameworks.
-            </p>
+        
             {/* <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <a
