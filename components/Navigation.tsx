@@ -18,12 +18,12 @@ const Navigation = () => {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
+    { name: 'About Us', href: '/about' },
     { name: 'Courses', href: '/courses' },
     { name: 'Events', href: '/events' },
     { name: 'Research', href: '/research' },
     { name: 'Library', href: '/library' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'Contact Us', href: '/contact' }
   ]
 
   const handleLogout = () => {
@@ -52,13 +52,15 @@ const Navigation = () => {
             className="flex items-center"
           >
             <a href="/" className="flex items-center">
-              <Image
-                src="/vves-logo.png"
-                alt="Vedic Vigyanam Explorer Society"
-                width={63}
-                height={105}
-                className="hover:opacity-80 transition-opacity"
-              />
+              <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm ring-1 ring-gray-200 overflow-hidden transition-opacity hover:opacity-80">
+                <Image
+                  src="/vves-logo.png"
+                  alt="Vedic Vigyanam Explorer Society"
+                  width={48}
+                  height={48}
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
             </a>
           </motion.div>
 
@@ -259,5 +261,4 @@ const Navigation = () => {
 }
 
 export default Navigation
-
 

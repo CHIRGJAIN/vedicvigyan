@@ -5,6 +5,7 @@ import { AuthProvider } from '../contexts/AuthContext'
 import { Toaster } from 'react-hot-toast'
 import { AdminProvider } from '../components/AdminContext'
 import { UserProvider } from '../components/UserContext'
+import PromoBannerModal from '../components/PromoBannerModal'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -34,6 +35,7 @@ export default function RootLayout({
           <AdminProvider>
             <UserProvider>
               {children}
+              <PromoBannerModal />
             </UserProvider>
           </AdminProvider>
         </AuthProvider>
@@ -65,6 +67,5 @@ export default function RootLayout({
     </html>
   )
 }
-
 
 

@@ -16,12 +16,13 @@ const Footer = () => {
   ]
 
   const quickLinks = [
+    { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
-    { name: 'Our Courses', href: '/courses' },
+    { name: 'Courses', href: '/courses' },
+    { name: 'Events', href: '/events' },
     { name: 'Research', href: '/research' },
     { name: 'Library', href: '/library' },
-    { name: 'Events', href: '/events' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Contact Us', href: '/contact' },
   ]
 
   const resources = [
@@ -183,7 +184,7 @@ const Footer = () => {
               />
             </div>
             <p className="hindi-text text-gray-300">
-              वेदिक विज्ञान आवेषक्क संस्था - वैदिकविज्ञान आवेषक्क वै प्रचार
+             वैदिक विज्ञान अनुसन्धान संस्था
             </p>
           </div>
         </div>

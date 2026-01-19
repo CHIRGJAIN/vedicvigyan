@@ -1,68 +1,98 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Search } from 'lucide-react'
+import { FileText, Download, ExternalLink } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 
 export default function Research() {
+  const researchPapers = [
+    {
+      title: 'Adrishya Vimaan',
+      description: 'A foundational study on Vedic science and its modern applications.',
+      authors: 'VVES Research Team',
+      href: '/research/Adrishya%20Vimaan.pdf',
+      tags: ['Vedic Science', 'IKS'],
+    },
+    {
+      title: 'Gita-Arthashastra.pdf',
+      description: 'Exploring interdisciplinary insights from Sanskrit and traditional knowledge systems.',
+      authors: 'VVES Research Team',
+      href: '/research/Gita-Arthashastra.pdf',
+      tags: ['Sanskrit', 'Traditional Knowledge'],
+    },
+  ]
+
   return (
     <div className="min-h-screen">
       <Navigation />
-      
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-indian-red/10 via-indian-maroon/20 to-indian-gold/10">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Research & <span className="text-gradient">Development</span>
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Advancing the understanding of Vedic sciences through rigorous research, 
-              innovative methodologies, and collaborative studies.
-            </p>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* Coming Soon Section */}
+      {/* Research Papers Section */}
       <section className="section-padding">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="max-w-4xl mx-auto text-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
           >
-            <div className="bg-white rounded-2xl shadow-xl p-12">
-              <div className="w-24 h-24 bg-indian-red/10 rounded-full flex items-center justify-center mx-auto mb-8">
-                <Search size={48} className="text-indian-red" />
-              </div>
-              
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Coming Soon
-              </h2>
-              
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                We're developing a comprehensive research platform that will showcase our 
-                ongoing studies, published papers, and collaborative research projects in 
-                Vedic sciences.
-              </p>
-              
-              <div className="bg-indian-red/5 rounded-lg p-6">
-                <p className="text-gray-700">
-                  <strong>What to expect:</strong> Research papers, ongoing projects, 
-                  collaboration opportunities, and access to our digital research library 
-                  with publications on Vedic mathematics, astronomy, medicine, and more.
-                </p>
-              </div>
-            </div>
+            <h2 className="text-4xl font-bold text-gray-900 mb-3">Research Papers</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Browse and download the latest research publications from VVES.
+            </p>
           </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {researchPapers.map((paper) => (
+              <motion.div
+                key={paper.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
+              >
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <div>
+                    <h3 className="text-2xl font-semibold text-gray-900">{paper.title}</h3>
+                    <p className="text-sm text-indian-red font-semibold mt-1">{paper.authors}</p>
+                  </div>
+                  <div className="w-12 h-12 rounded-full bg-indian-red/10 flex items-center justify-center">
+                    <FileText size={22} className="text-indian-red" />
+                  </div>
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-5">{paper.description}</p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {paper.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 rounded-full bg-gray-100 text-xs font-semibold text-gray-600"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href={paper.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-indian-red text-white font-semibold px-4 py-2 transition-colors hover:bg-indian-deepRed"
+                  >
+                    <ExternalLink size={16} />
+                    View PDF
+                  </a>
+                  <a
+                    href={paper.href}
+                    download
+                    className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 text-gray-700 font-semibold px-4 py-2 transition-colors hover:bg-gray-50"
+                  >
+                    <Download size={16} />
+                    Download
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -84,4 +114,3 @@ The original Research page contained:
 
 To restore the full Research page functionality, uncomment the entire content above this comment block.
 */
-

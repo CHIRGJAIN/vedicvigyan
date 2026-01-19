@@ -125,6 +125,28 @@ const CoursesPage = () => {
         'We will give the syllabus only to enrolled students at the beginning of each course.'
       ]
     },
+    {
+      id: 5,
+      name: 'Sukshma Jivanu in Veda',
+      instructor: 'Dr. Anuradha Dubey',
+      description: 'Online course on Sukshma Jivanu in Veda (Vedic Microbiology).',
+      duration: '4 days',
+      students: 50,
+      price: 1500,
+      online: true,
+      comingSoon: true,
+      category: 'Vedic Microbiology',
+      features: [
+        'Understand basic microbiological principles.',
+        'Identify Ayurvedic and Vedic references to subtle life forms.',
+        'Analyze ancient Indian texts on disease and health.',
+        'Compare ancient healing practices with modern microbiology insights.',
+        'Apply critical thinking to integrate traditional and modern knowledge.'
+      ],
+      curriculum: [
+        SYLLABUS_PLACEHOLDER_TEXT
+      ]
+    },
     /*
     {
       id: 5,
@@ -289,6 +311,9 @@ const CoursesPage = () => {
   // Open course details modal. Registration flow is triggered from inside the modal.
   const handleCourseSelect = (courseId: number) => {
     const course = courses.find(c => c.id === courseId) || null
+    if (!course || course.comingSoon) {
+      return
+    }
     setSelectedCourse(course)
   }
 
@@ -326,9 +351,15 @@ const CoursesPage = () => {
                     <h3 className="text-xl font-semibold text-gray-900">{course.name}</h3>
                     <p className="text-sm text-indian-red font-medium mt-1">Instructor: {course.instructor}</p>
                   </div>
-                  <span className="bg-indian-red/10 text-indian-red font-semibold text-sm px-3 py-1 rounded-full whitespace-nowrap">
-                    {formatPrice(course.price)}
-                  </span>
+                  {course.comingSoon ? (
+                    <span className="bg-amber-100 text-amber-800 font-semibold text-sm px-3 py-1 rounded-full whitespace-nowrap">
+                      Coming Soon
+                    </span>
+                  ) : (
+                    <span className="bg-indian-red/10 text-indian-red font-semibold text-sm px-3 py-1 rounded-full whitespace-nowrap">
+                      {formatPrice(course.price)}
+                    </span>
+                  )}
                 </div>
 
                 <p className="text-gray-600 mb-4 leading-relaxed">{course.description}</p>
@@ -368,10 +399,24 @@ const CoursesPage = () => {
 
                 <button
                   onClick={() => handleCourseSelect(course.id)}
-                  className="mt-auto inline-flex items-center justify-center gap-2 w-full rounded-lg bg-gradient-to-r from-indian-red to-indian-deepRed text-white font-semibold py-3 transition-all duration-300 hover:from-indian-deepRed hover:to-indian-maroon"
+                  disabled={course.comingSoon}
+                  className={`mt-auto inline-flex items-center justify-center gap-2 w-full rounded-lg font-semibold py-3 transition-all duration-300 ${
+                    course.comingSoon
+                      ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                      : 'bg-gradient-to-r from-indian-red to-indian-deepRed text-white hover:from-indian-deepRed hover:to-indian-maroon'
+                  }`}
                 >
-                  <UserPlus size={16} />
-                  <span>View Details</span>
+                  {course.comingSoon ? (
+                    <>
+                      <Clock size={16} />
+                      <span>Coming Soon</span>
+                    </>
+                  ) : (
+                    <>
+                      <UserPlus size={16} />
+                      <span>View Details</span>
+                    </>
+                  )}
                 </button>
               </div>
             </motion.div>

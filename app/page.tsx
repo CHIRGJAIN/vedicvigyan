@@ -4,11 +4,17 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
 import CountUp from 'react-countup'
-import { Users, BookOpen, Award, ArrowRight, Quote, Calendar, MapPin, Clock, X } from 'lucide-react'
+import { Users, BookOpen, Award, ArrowRight, Quote, Calendar, MapPin, Clock, X, Linkedin } from 'lucide-react'
 import Image from 'next/image'
 import Navigation from '@/components/Navigation'
 import { format } from 'date-fns'
 import Footer from '@/components/Footer'
+
+const SUBHASHIT_ROTATION_MS = 24 * 60 * 60 * 1000
+const VISITOR_COUNT_KEY = 'vves-visitor-count'
+const VISITOR_BASE_COUNT = 15450
+const SUBHASHIT_INDEX_KEY = 'vves-subhashit-index'
+const SUBHASHIT_UPDATED_KEY = 'vves-subhashit-updated'
 
 export default function Home() {
   const [visitorCount, setVisitorCount] = useState(0)
@@ -80,15 +86,85 @@ export default function Home() {
   ]
 
   useEffect(() => {
-    // Simulate visitor count
-    setVisitorCount(15450)
-    
-    // Rotate subhashit every 10 seconds
-    const interval = setInterval(() => {
-      setCurrentSubhashit((prev) => (prev + 1) % subhashits.length)
-    }, 10000)
+    let nextVisitorCount = VISITOR_BASE_COUNT + 1
+    try {
+      const storedCount = window.localStorage.getItem(VISITOR_COUNT_KEY)
+      const parsedCount = storedCount ? Number.parseInt(storedCount, 10) : VISITOR_BASE_COUNT
 
-    return () => clearInterval(interval)
+      if (Number.isFinite(parsedCount)) {
+        nextVisitorCount = Math.max(parsedCount, VISITOR_BASE_COUNT) + 1
+      }
+
+      window.localStorage.setItem(VISITOR_COUNT_KEY, String(nextVisitorCount))
+    } catch {
+    }
+
+    setVisitorCount(nextVisitorCount)
+
+    const now = Date.now()
+    let storedIndex = 0
+    let storedUpdated = now
+    let elapsed = 0
+
+    try {
+      const savedIndex = window.localStorage.getItem(SUBHASHIT_INDEX_KEY)
+      const savedUpdated = window.localStorage.getItem(SUBHASHIT_UPDATED_KEY)
+
+      storedIndex = savedIndex ? Number.parseInt(savedIndex, 10) : 0
+      storedUpdated = savedUpdated ? Number.parseInt(savedUpdated, 10) : now
+
+      if (!Number.isFinite(storedIndex) || storedIndex < 0) {
+        storedIndex = 0
+      }
+
+      storedIndex = storedIndex % subhashits.length
+
+      if (!Number.isFinite(storedUpdated) || storedUpdated <= 0) {
+        storedUpdated = now
+      }
+
+      elapsed = now - storedUpdated
+      if (elapsed >= SUBHASHIT_ROTATION_MS) {
+        const daysPassed = Math.floor(elapsed / SUBHASHIT_ROTATION_MS)
+        storedIndex = (storedIndex + daysPassed) % subhashits.length
+        storedUpdated = now
+        elapsed = 0
+      }
+
+      setCurrentSubhashit(storedIndex)
+      window.localStorage.setItem(SUBHASHIT_INDEX_KEY, String(storedIndex))
+      window.localStorage.setItem(SUBHASHIT_UPDATED_KEY, String(storedUpdated))
+    } catch {
+      setCurrentSubhashit(0)
+    }
+
+    const rotateSubhashit = () => {
+      setCurrentSubhashit((prev) => {
+        const nextIndex = (prev + 1) % subhashits.length
+
+        try {
+          window.localStorage.setItem(SUBHASHIT_INDEX_KEY, String(nextIndex))
+          window.localStorage.setItem(SUBHASHIT_UPDATED_KEY, String(Date.now()))
+        } catch {
+        }
+
+        return nextIndex
+      })
+    }
+
+    const delay = Math.max(0, SUBHASHIT_ROTATION_MS - elapsed)
+    let interval: ReturnType<typeof setInterval> | undefined
+    const timeout = setTimeout(() => {
+      rotateSubhashit()
+      interval = setInterval(rotateSubhashit, SUBHASHIT_ROTATION_MS)
+    }, delay)
+
+    return () => {
+      clearTimeout(timeout)
+      if (interval) {
+        clearInterval(interval)
+      }
+    }
   }, [subhashits.length])
 
   return (
@@ -133,15 +209,15 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <div className="mb-8">
-              <div className="w-32 h-32 rounded-full flex items-center justify-center mx-auto mb-6 overflow-hidden bg-white/80 border border-white/70 shadow-2xl backdrop-blur">
-                <Image src="/vves-logo(1).png" alt="VVES logo" width={190} height={96} className="object-contain drop-shadow-lg" />
+              <div className="w-32 h-32 rounded-full flex items-center justify-center mx-auto mb-6 overflow-hidden bg-white border border-white/70 shadow-2xl">
+                <Image src="/vves-logo.png" alt="VVES logo" width={190} height={96} className="object-contain drop-shadow-lg" />
                 <span className="sr-only">Vedic Vigyanam Explorer Society</span>
               </div>
               <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white drop-shadow-2xl" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5)'}}>
                 Vedic Vigyanam Explorer Society
               </h1>
               <p className="text-xl md:text-2xl mb-6 text-white drop-shadow-lg" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.8)'}}>
-                Preserving and Interpreting Vedic Science
+                Bridging Ancient Wisdom and Modern Innovation
               </p>
                
             </div>
@@ -174,8 +250,8 @@ export default function Home() {
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-10">
-            <h2 className="text-4xl font-bold text-gray-900 mb-3">Message from our founder</h2>
-            <p className="text-lg text-gray-600">A note from Dr. Madhuri Sharon</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-3">Founder</h2>
+            <p className="text-lg text-gray-600">Dr. Madhuri Sharon</p>
           </div>
 
           <motion.div
@@ -208,6 +284,17 @@ export default function Home() {
               <div className="mb-4">
                 <h3 className="text-2xl font-bold text-gray-900 mb-1">Dr. Madhuri Sharon</h3>
                 <p className="text-lg font-semibold text-indian-red">Founder</p>
+                <a
+                  href="https://www.linkedin.com/in/madhuri-sharon-4733b62/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(event) => event.stopPropagation()}
+                  className="mt-2 inline-flex items-center text-sm font-semibold text-indian-red hover:text-indian-deepRed transition-colors"
+                  aria-label="LinkedIn profile of Dr. Madhuri Sharon"
+                >
+                  <Linkedin size={16} className="mr-2" />
+                  LinkedIn
+                </a>
               </div>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
@@ -297,11 +384,15 @@ export default function Home() {
           
           <div className="max-w-4xl mx-auto">
             <div className="relative bg-white rounded-xl shadow-xl overflow-hidden">
-              <div className="aspect-video bg-gradient-to-br from-gray-900 via-indigo-900 to-gray-800 flex flex-col items-center justify-center text-white text-center p-6">
-                <p className="text-2xl font-semibold mb-2">Introduction video coming soon</p>
-                <p className="text-sm text-gray-200 max-w-xl">
-                  We are preparing a fresh welcome lecture from Dr. Madhuri Sharon. Check back shortly to watch it here.
-                </p>
+              <div className="aspect-video bg-black">
+                <video
+                  className="w-full h-full"
+                  controls
+                  preload="metadata"
+                >
+                  <source src="/videos/sharon_video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
           </div>

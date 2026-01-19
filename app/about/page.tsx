@@ -17,12 +17,12 @@ interface Founder {
 export default function About() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedFounder, setSelectedFounder] = useState<Founder | null>(null)
-  const [selectedLeadershipCard, setSelectedLeadershipCard] = useState<'Dr. Sanjay Kumar Sharma' | 'Dr. Madhuri Sharon' | 'Prof. (Dr.) Naresh Kumar Vats' | 'Dr. Mrunal Yawalkar' | 'Ashish Kumar' | null>(null)
+  const [selectedLeadershipCard, setSelectedLeadershipCard] = useState<'Prof. (Dr.) Sanjay Kumar Sharma' | 'Dr. Madhuri Sharon' | 'Prof. (Dr.) Naresh Kumar Vats' | 'Dr. Mrunal Yawalkar' | 'Ashish Kumar' | null>(null)
 
   const founders: Founder[] = [
     {
       name: 'Ashish Kumar',
-      designation: 'Founder Treasurer',
+      designation: 'Treasurer',
       shortDescription: 'Innovation & Finance - Merging Vedic wisdom with modern technology initiatives.',
       fullDescription: `Engineering student specializing in Electronics and Communication with AI and ML at Gautam Buddha University.
 Treasurer of VVES, spearheading initiatives that merge traditional knowledge with modern technology.
@@ -32,14 +32,14 @@ Passionate about creating sustainable innovation pipelines that keep Vedic scien
     },
     {
       name: 'Mr. Venkat Rangan M.C.',
-      designation: 'Founder Executive Member',
+      designation: 'Executive Member',
       shortDescription: 'B.E. Electronics and Communication with PMP certification, expert in automotive embedded software.',
       fullDescription: `B.E. Electronics and Communication with PMP certification, expert in embedded software applications in the automotive domain. A lifelong Vimaan enthusiast, he combines engineering expertise with a passion for Sanskrit and Puranas.`,
       image: '/images/dr-sharon/image_4.png'
     },
     {
       name: 'Dr. Anantha M.A',
-      designation: 'Founder Executive Member',
+      designation: 'Executive Member',
       shortDescription: 'Ph.D. & M.A. (Nyaya Vidvat Uttama) - We cannot read Vimaan Shastra without him. Expert in Sanskrit and traditional knowledge.',
       fullDescription: `Ph.D. & M.A. (Nyaya Vidvat Uttama)
 
@@ -62,7 +62,7 @@ His exceptional expertise in Sanskrit and traditional knowledge systems makes hi
     },
     {
       name: 'Mr. Vijay Madhukar Vadnere',
-      designation: 'Founder Executive Member',
+      designation: 'Executive Member',
       shortDescription: 'Veteran DOCSIS, CATV, and HFC network specialist with 39 years of experience driving large-scale telecom operations.',
       fullDescription: `Vijay Madhukar Vadnere has 39 years of experience in DOCSIS, CATV, CCTV, HFC and ISP network design, implementation and monitoring. As Assistant Vice President - Technical at Hathway Cable & Datacom, Pune, he managed over 6 lakh digital subscribers and 3 lakh DOCSIS subscribers.
 
@@ -75,7 +75,7 @@ He owns a wide range of test instruments and a digital music studio for testing 
     },
     {
       name: 'Ms. Anuradha Pandey-Dubey',
-      designation: 'Founder Executive Member',
+      designation: 'Executive Member',
       shortDescription: 'Academician and researcher in both Ancient & Contemporary science. Served as Asst Prof. Biotechnology for 15yrs.',
       fullDescription: `•An academician and researcher in both Ancient & Contemporary science for over 20 years.
 
@@ -107,7 +107,7 @@ He owns a wide range of test instruments and a digital music studio for testing 
     },
     {
       name: 'Mr. Vijay Khambete',
-      designation: 'Founder Executive Member',
+      designation: 'Executive Member',
       shortDescription: 'An IT professional with an MBA and multiple postgraduate diplomas, championing ancient Indian aeronautics.',
       fullDescription: `An accomplished IT professional with over 30 years of experience across support, development, and project management. Prior to opting for voluntary retirement, he led a technology group dedicated to developing advanced analytics tools. He has also successfully established and managed a restaurant and a homestay. Academically, he holds an MBA in Supply Chain and Retail Management, a Postgraduate Diploma in Financial Management, and a Postgraduate Diploma in Systems Management and Programming. He is deeply passionate about validating the authenticity of Vimaan Vidya and showcasing the scientific and technological excellence of ancient India.`,
       image: '/images/dr-sharon/image_5.png'
@@ -146,18 +146,13 @@ He owns a wide range of test instruments and a digital music studio for testing 
       title: 'Mission Defined: The Birth of a Society',
       description: 'Decided to form a group as a society with a mission to Explore, Interpret and Preserve the Vedic Science to Reinforce its Relevance and disseminate the knowledge in Modern Society'
     },
-    // {
-    //   year: '2024',
-    //   title: 'Digital Library',
-    //   description: 'Launched comprehensive digital library with over 1000 Vedic texts'
-    // },
     {
       year: ' Jan 2025',
       title: 'Official Establishment',
       description: 'We officially registered as VEDIC VIGYANAM EXPLORER SOCIETY with office at Kurukshetra'
     },
     {
-      year: ' September 2025',
+      year: ' January 2026',
       title: 'Educational ',
       description: 'VVES is now in an advanced stage of rolling out a few in-depth courses based on Vedic systems.'
     }
@@ -242,8 +237,8 @@ He owns a wide range of test instruments and a digital music studio for testing 
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Message from our founders</h2>
-            <p className="text-xl text-gray-600">A message from the visionary leaders behind VVES</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Founder Members</h2>
+            
           </div>
 
           <div className="max-w-6xl mx-auto">
@@ -254,7 +249,7 @@ He owns a wide range of test instruments and a digital music studio for testing 
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 className="bg-white rounded-xl shadow-xl overflow-hidden transition-shadow duration-300 hover:shadow-2xl cursor-pointer"
-                onClick={() => setSelectedLeadershipCard('Dr. Sanjay Kumar Sharma')}
+                onClick={() => setSelectedLeadershipCard('Prof. (Dr.) Sanjay Kumar Sharma')}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
                   {/* Image Section */}
@@ -274,19 +269,14 @@ He owns a wide range of test instruments and a digital music studio for testing 
                       <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
                         <span className="text-gray-500">Image not available</span>
                       </div>
-                      <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div className="bg-white/90 rounded-full p-2">
-                          <Eye size={20} className="text-indian-red" />
-                        </div>
-                      </div>
                     </div>
                   </div>
                   
                   {/* Text Section */}
                   <div className="p-6 lg:p-8 flex flex-col justify-center lg:col-span-2">
                     <div className="mb-4">
-                      <h4 className="text-2xl font-bold text-gray-900 mb-1">Dr. Sanjay Kumar Sharma</h4>
-                      <p className="text-lg font-bold text-indian-red mb-4">President</p>
+                      <h4 className="text-2xl font-bold text-gray-900 mb-1">Prof. (Dr.) Sanjay Kumar Sharma</h4>
+                      <p className="text-lg font-bold text-indian-red mb-4"> Message from the President</p>
                     </div>
                     <h3 className="text-lg font-normal text-gray-900 mb-4">Our Vision for Vedic Sciences</h3>
                     <div className="space-y-3 text-gray-700 leading-relaxed">
@@ -334,15 +324,10 @@ He owns a wide range of test instruments and a digital music studio for testing 
                   <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
                     <span className="text-gray-500">Image not available</span>
                   </div>
-                  <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="bg-white/90 rounded-full p-2">
-                      <Eye size={20} className="text-indian-red" />
-                    </div>
-                  </div>
                 </div>
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Prof. (Dr.) Naresh Kumar Vats</h3>
-                  <p className="text-sm text-indian-red font-semibold mb-2">Founder Secretary</p>
+                  <p className="text-sm text-indian-red font-semibold mb-2">Secretary</p>
                   <p className="text-xs text-gray-600 line-clamp-3">Research Excellence - Bridging ancient and modern science</p>
                 </div>
               </motion.div>
@@ -370,15 +355,10 @@ He owns a wide range of test instruments and a digital music studio for testing 
                   <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
                     <span className="text-gray-500">Image not available</span>
                   </div>
-                  <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="bg-white/90 rounded-full p-2">
-                      <Eye size={20} className="text-indian-red" />
-                    </div>
-                  </div>
                 </div>
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Dr. Mrunal Yawalkar</h3>
-                  <p className="text-sm text-indian-red font-semibold mb-2">Founder Joint Secretary</p>
+                  <p className="text-sm text-indian-red font-semibold mb-2">Joint Secretary</p>
                   <p className="text-xs text-gray-600 line-clamp-3">Ancient Aeronautics & Metallurgy - Championing research on Vedic sciences</p>
                 </div>
               </motion.div>
@@ -406,15 +386,10 @@ He owns a wide range of test instruments and a digital music studio for testing 
                   <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
                     <span className="text-gray-500">Image not available</span>
                   </div>
-                  <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="bg-white/90 rounded-full p-2">
-                      <Eye size={20} className="text-indian-red" />
-                    </div>
-                  </div>
                 </div>
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Ashish Kumar</h3>
-                  <p className="text-sm text-indian-red font-semibold mb-2">Founder Treasurer</p>
+                  <p className="text-sm text-indian-red font-semibold mb-2">Treasurer</p>
                   <p className="text-xs text-gray-600 line-clamp-3">Innovation & Finance - Merging Vedic wisdom with modern technology initiatives</p>
                 </div>
               </motion.div>
@@ -447,21 +422,11 @@ He owns a wide range of test instruments and a digital music studio for testing 
                         <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
                           <span className="text-gray-500">Image not available</span>
                         </div>
-                        {/* Hover overlay */}
-                        <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                          <div className="bg-white/90 rounded-full p-2">
-                            <Eye size={20} className="text-indian-red" />
-                          </div>
-                        </div>
                       </div>
                       <div className="p-4">
                         <h3 className="text-lg font-bold text-gray-900 mb-1">{founder.name}</h3>
                         <p className="text-sm text-indian-red font-semibold mb-2">{founder.designation}</p>
                         <p className="text-xs text-gray-600 line-clamp-3">{founder.shortDescription}</p>
-                        <div className="mt-2 flex items-center text-indian-red text-xs">
-                          <span>Click to read more</span>
-                          <Eye size={12} className="ml-1" />
-                        </div>
                       </div>
                     </motion.div>
                   ))}
@@ -776,7 +741,7 @@ const getLeadershipImage = (name: string) => {
       return '/images/dr-sharon/portrait.jpg';
     case 'Prof. (Dr.) Naresh Kumar Vats':
       return '/images/dr-sharon/image_6.png';
-    case 'Dr. Sanjay Kumar Sharma':
+    case 'Prof. (Dr.) Sanjay Kumar Sharma':
       return '/images/dr-sharon/academic.jpg';
     case 'Mr. Vijay Madhukar Vadnere':
       return '/images/dr-sharon/image_7.png';
@@ -794,13 +759,13 @@ const getDesignation = (name: string) => {
     case 'Dr. Madhuri Sharon':
       return 'Founder';
     case 'Prof. (Dr.) Naresh Kumar Vats':
-      return 'Founder Secretary';
-    case 'Dr. Sanjay Kumar Sharma':
+      return 'Secretary';
+    case 'Prof. (Dr.) Sanjay Kumar Sharma':
       return 'President';
     case 'Dr. Mrunal Yawalkar':
-      return 'Founder Joint Secretary';
+      return 'Joint Secretary';
     case 'Ashish Kumar':
-      return 'Founder Treasurer';
+      return 'Treasurer';
     default:
       return '';
   }
@@ -808,14 +773,13 @@ const getDesignation = (name: string) => {
 
 const getLeadershipDescription = (name: string) => {
   switch (name) {
-    case 'Dr. Sanjay Kumar Sharma':
-      return `Dr. Sanjay Kumar Sharma:
-"Formal Dean & Prof. Gautam Buddha University
+    case 'Prof. (Dr.) Sanjay Kumar Sharma':
+      return `Formal Dean & Prof. Gautam Buddha University
 A book-worm & Store of Knowledge - Our Library
 A researcher of Ancient & Contemporary science- AI to Electronics
 Multifarious Personality diverging from Academic, Research,
 Administration, holding umpteen position in Govt. (ISRO, CSIR, DRDO, MHRD, IUAC & MoEFCC). & Industry.
-A bank of Ancient Wisdom and most Sthit-Pragya Person I have come across.
+A bank of Ancient Wisdom and most Sthit-Pragya Person.
 If you ask me what I appreciate the best in him - It is the Aura that his personality emits"`;
     case 'Dr. Madhuri Sharon':
       return `Dr. Madhuri Sharon:
