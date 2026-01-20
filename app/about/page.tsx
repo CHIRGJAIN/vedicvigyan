@@ -388,7 +388,7 @@ He owns a wide range of test instruments and a digital music studio for testing 
                   </div>
                 </div>
                 <div className="p-4">
-                  <h3 className="text-lg font-bold text-gray-900 mb-1"> Mr. Ashish Kumar</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-1"> Mr. Aashish Kumar</h3>
                   <p className="text-sm text-indian-red font-semibold mb-2">Treasurer</p>
                   <p className="text-xs text-gray-600 line-clamp-3">Innovation & Finance - Merging Vedic wisdom with modern technology initiatives</p>
                 </div>
@@ -747,7 +747,7 @@ const getLeadershipImage = (name: string) => {
       return '/images/dr-sharon/image_7.png';
     case 'Dr. Mrunal Yawalkar':
       return '/images/dr-sharon/image_2.png';
-    case 'Mr. Ashish Kumar':
+    case 'Mr. Aashish Kumar':
       return '/images/dr-sharon/image_8.png';
     default:
       return '/images/dr-sharon/portrait.jpg';

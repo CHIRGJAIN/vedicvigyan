@@ -116,7 +116,7 @@ const CoursesPage = () => {
       students: 50,
       price: 1000,
       online: true,
-  formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSf4erNZJFboHZhB5vYgXWL2lO7f9ppxZgALppu-tU0c6yDlfw/viewform?usp=publish-editor',
+  formLink: 'https://docs.google.com/forms/d/e/1FAIpQLSf4erNZJFboHZhB5vYgXWL2lO7f9ppxZgALppu-tU0c6yDlfw/viewform?usp=header',
       // rating: 4.7,
       features: [
         'Need of the course, philosophy, present status of IKS-related literature, and areas to be explored.'
