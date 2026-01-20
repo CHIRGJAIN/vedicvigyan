@@ -328,7 +328,7 @@ He owns a wide range of test instruments and a digital music studio for testing 
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Prof. (Dr.) Naresh Kumar Vats</h3>
                   <p className="text-sm text-indian-red font-semibold mb-2">Secretary</p>
-                  <p className="text-xs text-gray-600 line-clamp-3">Member of Academic/Execution/Finance/Councils; Life Member Indian Law Institute, WIPO Academy Advanced Arbitration & Meditation</p>
+                  <p className="text-xs text-gray-600 line-clamp-3">Member of Academic/Execution/Finance/Councils; Life Member Indian Law Institute, WIPO Academy Advanced Arbitration & Mediation</p>
                 </div>
               </motion.div>
 
