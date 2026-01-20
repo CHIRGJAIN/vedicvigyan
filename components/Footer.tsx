@@ -115,8 +115,8 @@ const Footer = () => {
                 <MapPin size={20} className="text-indian-gold mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300">
-                    House No. 254 Sector-3<br />
-                    Urban Estate Kurukshetra<br />
+                    House No. 254, Sector-3,<br />
+                    Urban Estate, Kurukshetra<br />
                     Pin-136118, Haryana- India
                   </p>
                 </div>

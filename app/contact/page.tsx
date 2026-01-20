@@ -249,9 +249,9 @@ export default function Contact() {
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Office Address</h3>
                     <address className="text-gray-700 not-italic">
                       {/* VVES Office<br /> */}
-                      House No. 254 Sector-3
-                      Urban Estate<br /> Kurukshetra
-                      Pin-136118, Haryana- India
+                      House No. 254, Sector-3,
+                      Urban Estate,<br /> Kurukshetra,
+                      Pin-136118, Haryana, India
                     </address>
                   </div>
                 </div>

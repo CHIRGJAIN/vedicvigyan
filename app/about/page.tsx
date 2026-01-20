@@ -278,7 +278,7 @@ He owns a wide range of test instruments and a digital music studio for testing 
                       <h4 className="text-2xl font-bold text-gray-900 mb-1">Prof. (Dr.) Sanjay Kumar Sharma</h4>
                       <p className="text-lg font-bold text-indian-red mb-4">President</p>
                     </div>
-                    <h3 className="text-lg font-normal text-gray-900 mb-4">Message from the President</h3>
+                    <h2 className="text-lg font-bold text-gray-900 mb-4">Message from the President</h2>
                     <div className="space-y-3 text-gray-700 leading-relaxed">
                       <p>
                         The Vedic knowledge system represents one of humanity's most profound 
@@ -328,7 +328,7 @@ He owns a wide range of test instruments and a digital music studio for testing 
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Prof. (Dr.) Naresh Kumar Vats</h3>
                   <p className="text-sm text-indian-red font-semibold mb-2">Secretary</p>
-                  <p className="text-xs text-gray-600 line-clamp-3">Research Excellence - Bridging ancient and modern science</p>
+                  <p className="text-xs text-gray-600 line-clamp-3">Member of Academic/Execution/Finance/Councils; Life Member Indian Law Institute, WIPO Academy Advanced Arbitration & Meditation</p>
                 </div>
               </motion.div>
 
