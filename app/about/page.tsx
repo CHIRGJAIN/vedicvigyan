@@ -31,7 +31,7 @@ Passionate about creating sustainable innovation pipelines that keep Vedic scien
       image: '/images/dr-sharon/image_8.png'
     },
     {
-      name: 'Mr. Venkat Rangan M.C.',
+      name: 'Mr. Venkat Rangan M.C',
       designation: 'Executive Member',
       shortDescription: 'B.E. Electronics and Communication with PMP certification, expert in automotive embedded software.',
       fullDescription: `B.E. Electronics and Communication with PMP certification, expert in embedded software applications in the automotive domain. A lifelong Vimaan enthusiast, he combines engineering expertise with a passion for Sanskrit and Puranas.`,
@@ -74,7 +74,7 @@ He owns a wide range of test instruments and a digital music studio for testing 
       image: '/images/dr-sharon/image_7.png'
     },
     {
-      name: 'Ms. Anuradha Pandey-Dubey',
+      name: 'Ms. Anuradha Pandey Dubey',
       designation: 'Executive Member',
       shortDescription: 'Academician and researcher in both Ancient & Contemporary science. Served as Asst Prof. Biotechnology for 15yrs.',
       fullDescription: `•An academician and researcher in both Ancient & Contemporary science for over 20 years.
@@ -276,9 +276,9 @@ He owns a wide range of test instruments and a digital music studio for testing 
                   <div className="p-6 lg:p-8 flex flex-col justify-center lg:col-span-2">
                     <div className="mb-4">
                       <h4 className="text-2xl font-bold text-gray-900 mb-1">Prof. (Dr.) Sanjay Kumar Sharma</h4>
-                      <p className="text-lg font-bold text-indian-red mb-4"> Message from the President</p>
+                      <p className="text-lg font-bold text-indian-red mb-4">President</p>
                     </div>
-                    <h3 className="text-lg font-normal text-gray-900 mb-4">Our Vision for Vedic Sciences</h3>
+                    <h3 className="text-lg font-normal text-gray-900 mb-4">Message from the President</h3>
                     <div className="space-y-3 text-gray-700 leading-relaxed">
                       <p>
                         The Vedic knowledge system represents one of humanity's most profound 
@@ -388,7 +388,7 @@ He owns a wide range of test instruments and a digital music studio for testing 
                   </div>
                 </div>
                 <div className="p-4">
-                  <h3 className="text-lg font-bold text-gray-900 mb-1">Ashish Kumar</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-1"> Mr. Ashish Kumar</h3>
                   <p className="text-sm text-indian-red font-semibold mb-2">Treasurer</p>
                   <p className="text-xs text-gray-600 line-clamp-3">Innovation & Finance - Merging Vedic wisdom with modern technology initiatives</p>
                 </div>
@@ -747,7 +747,7 @@ const getLeadershipImage = (name: string) => {
       return '/images/dr-sharon/image_7.png';
     case 'Dr. Mrunal Yawalkar':
       return '/images/dr-sharon/image_2.png';
-    case 'Ashish Kumar':
+    case 'Mr. Ashish Kumar':
       return '/images/dr-sharon/image_8.png';
     default:
       return '/images/dr-sharon/portrait.jpg';

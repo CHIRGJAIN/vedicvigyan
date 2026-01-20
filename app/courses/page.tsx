@@ -110,7 +110,7 @@ const CoursesPage = () => {
     {
       id: 4,
       name: 'Indian Knowledge System',
-      instructor: 'Prof. Sanjay Kumar Sharma',
+      instructor: 'Prof. (Dr.) Sanjay Kumar Sharma',
       description: 'Comprehensive study of traditional Indian knowledge systems and their contemporary relevance.',
       duration: '4 hours',
       students: 50,
@@ -128,7 +128,7 @@ const CoursesPage = () => {
     {
       id: 5,
       name: 'Sukshma Jivanu in Veda',
-      instructor: 'Dr. Anuradha Dubey',
+      instructor: 'Ms. Anuradha Pandey Dubey',
       description: 'Will explore a multidisciplinary perspective—combining ancient Indian knowledge systems with modern microbiological science',
       duration: '4 hours',
       students: 50,

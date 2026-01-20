@@ -115,7 +115,7 @@ const CourseModal = ({ course, onClose, onRegister }: Props) => {
             </div>
 
             <div className="rounded-lg bg-gray-50 p-4">
-              <h4 className="mb-2 font-semibold text-gray-900">Course Metadata</h4>
+              <h4 className="mb-2 font-semibold text-gray-900">Course Profile</h4>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-center gap-2">
                   <Monitor size={14} />
