@@ -117,7 +117,7 @@ const Footer = () => {
                   <p className="text-gray-300">
                     House No. 254, Sector-3,<br />
                     Urban Estate, Kurukshetra<br />
-                    Pin-136118, Haryana- India
+                    Pin-136118, Haryana, India
                   </p>
                 </div>
               </div>
