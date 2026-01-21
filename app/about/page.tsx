@@ -21,7 +21,7 @@ export default function About() {
 
   const founders: Founder[] = [
     {
-      name: 'Ashish Kumar',
+      name: 'Mr. Aashish Kumar',
       designation: 'Treasurer',
       shortDescription: 'Innovation & Finance - Merging Vedic wisdom with modern technology initiatives.',
       fullDescription: `Engineering student specializing in Electronics and Communication with AI and ML at Gautam Buddha University.
@@ -363,74 +363,39 @@ He owns a wide range of test instruments and a digital music studio for testing 
                 </div>
               </motion.div>
 
-              {/* Card 5 - Innovation & Finance */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
-                onClick={() => setSelectedLeadershipCard('Ashish Kumar')}
-              >
-                <div className="aspect-[4/3] relative">
-                  <img
-                    src="/images/dr-sharon/image_8.png"
-                    alt="Ashish Kumar"
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                      const fallback = target.nextElementSibling as HTMLElement;
-                      if (fallback) fallback.style.display = 'flex';
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
-                    <span className="text-gray-500">Image not available</span>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <h3 className="text-lg font-bold text-gray-900 mb-1"> Mr. Aashish Kumar</h3>
-                  <p className="text-sm text-indian-red font-semibold mb-2">Treasurer</p>
-                  <p className="text-xs text-gray-600 line-clamp-3">Innovation & Finance - Merging Vedic wisdom with modern technology initiatives</p>
-                </div>
-              </motion.div>
-              </div>
-
               {/* Additional Founder Cards */}
-              <div className="mt-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {founders.filter((founder) => founder.name !== 'Ashish Kumar').map((founder, index) => (
-                    <motion.div
-                      key={founder.name}
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: index * 0.1 }}
-                      className="bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer hover:shadow-2xl transition-shadow duration-300"
-                      onClick={() => openModal(founder)}
-                    >
-                      <div className="aspect-[4/3] relative">
-                        <img
-                          src={founder.image}
-                          alt={founder.name}
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.style.display = 'none';
-                            const fallback = target.nextElementSibling as HTMLElement;
-                            if (fallback) fallback.style.display = 'flex';
-                          }}
-                        />
-                        <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
-                          <span className="text-gray-500">Image not available</span>
-                        </div>
-                      </div>
-                      <div className="p-4">
-                        <h3 className="text-lg font-bold text-gray-900 mb-1">{founder.name}</h3>
-                        <p className="text-sm text-indian-red font-semibold mb-2">{founder.designation}</p>
-                        <p className="text-xs text-gray-600 line-clamp-3">{founder.shortDescription}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
+              {founders.map((founder, index) => (
+                <motion.div
+                  key={founder.name}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="bg-white rounded-xl shadow-xl overflow-hidden cursor-pointer hover:shadow-2xl transition-shadow duration-300"
+                  onClick={() => openModal(founder)}
+                >
+                  <div className="aspect-[4/3] relative">
+                    <img
+                      src={founder.image}
+                      alt={founder.name}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const fallback = target.nextElementSibling as HTMLElement;
+                        if (fallback) fallback.style.display = 'flex';
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gray-200 flex items-center justify-center" style={{display: 'none'}}>
+                      <span className="text-gray-500">Image not available</span>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">{founder.name}</h3>
+                    <p className="text-sm text-indian-red font-semibold mb-2">{founder.designation}</p>
+                    <p className="text-xs text-gray-600 line-clamp-3">{founder.shortDescription}</p>
+                  </div>
+                </motion.div>
+              ))}
               </div>
             </div>
           </div>
@@ -764,7 +729,7 @@ const getDesignation = (name: string) => {
       return 'President';
     case 'Dr. Mrunal Yawalkar':
       return 'Joint Secretary';
-    case 'Ashish Kumar':
+    case 'Mr. Aashish Kumar':
       return 'Treasurer';
     default:
       return '';

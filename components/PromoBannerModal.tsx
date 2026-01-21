@@ -1,86 +1,165 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { X } from 'lucide-react'
 import Link from 'next/link'
 
-const BANNERS = [
-  {
-    src: '/images/iks-course-banner.jpg',
-    alt: 'Indian Knowledge System course announcement',
-  },
-  {
-    src: '/images/sukshma-jivanu-banner.jpg',
-    alt: 'Sukshma Jivanu in Veda course announcement',
-  },
-]
+const NEXT_BANNER_DELAY_MS = 2500
+const SESSION_COMPLETE_KEY = 'promo_banners_session_complete'
+const SUKSHMA_SEEN_KEY = 'promo_banner_sukshma_seen'
+const IKS_SEEN_KEY = 'promo_banner_iks_seen'
 
 const PromoBannerModal = () => {
-  const [isOpen, setIsOpen] = useState(true)
+  const [activePopup, setActivePopup] = useState<'sukshma' | 'iks' | null>(null)
+  const timeoutRef = useRef<number | null>(null)
+
+  const readSessionFlag = (key: string) => {
+    try {
+      return window.sessionStorage.getItem(key) === 'true'
+    } catch {
+      return false
+    }
+  }
+
+  const writeSessionFlag = (key: string) => {
+    try {
+      window.sessionStorage.setItem(key, 'true')
+    } catch {
+      // ignore storage errors
+    }
+  }
+
+  const clearScheduled = () => {
+    if (timeoutRef.current !== null) {
+      window.clearTimeout(timeoutRef.current)
+      timeoutRef.current = null
+    }
+  }
 
   useEffect(() => {
-    if (!isOpen) return
+    if (readSessionFlag(SESSION_COMPLETE_KEY)) return
+
+    if (!readSessionFlag(SUKSHMA_SEEN_KEY)) {
+      setActivePopup('sukshma')
+      return
+    }
+
+    if (!readSessionFlag(IKS_SEEN_KEY)) {
+      setActivePopup('iks')
+      return
+    }
+
+    writeSessionFlag(SESSION_COMPLETE_KEY)
+  }, [])
+
+  useEffect(() => {
+    if (!activePopup) return
     const previousOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     return () => {
       document.body.style.overflow = previousOverflow
     }
-  }, [isOpen])
+  }, [activePopup])
 
-  if (!isOpen) return null
+  useEffect(() => {
+    return () => {
+      clearScheduled()
+    }
+  }, [])
 
-  const handleClose = () => {
-    setIsOpen(false)
+  if (!activePopup) return null
+
+  const openIksAfterDelay = () => {
+    clearScheduled()
+    timeoutRef.current = window.setTimeout(() => {
+      setActivePopup('iks')
+    }, NEXT_BANNER_DELAY_MS)
   }
+
+  const handleCloseSukshma = () => {
+    writeSessionFlag(SUKSHMA_SEEN_KEY)
+    setActivePopup(null)
+
+    if (!readSessionFlag(IKS_SEEN_KEY)) {
+      openIksAfterDelay()
+    } else {
+      writeSessionFlag(SESSION_COMPLETE_KEY)
+    }
+  }
+
+  const handleCloseIks = () => {
+    writeSessionFlag(IKS_SEEN_KEY)
+    setActivePopup(null)
+    writeSessionFlag(SESSION_COMPLETE_KEY)
+  }
+
+  const isSukshma = activePopup === 'sukshma'
+  const isIks = activePopup === 'iks'
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div
         className="absolute inset-0 bg-black/60"
-        onClick={handleClose}
+        onClick={isSukshma ? handleCloseSukshma : handleCloseIks}
         aria-hidden="true"
       />
-      <div
-        className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white shadow-2xl"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Announcements"
-      >
-        <div className="flex items-start justify-between border-b border-gray-200 px-6 py-4">
-          <div>
-            <p className="text-sm uppercase tracking-wide text-indian-red font-semibold">Announcements</p>
-            <h2 className="text-2xl font-bold text-gray-900">Latest Course Updates</h2>
-          </div>
-          <button
-            onClick={handleClose}
-            className="rounded-full p-2 text-gray-500 transition-colors hover:bg-gray-100"
-            aria-label="Close announcements"
+      <div className="relative w-fit max-w-[92vw]">
+        {isSukshma && (
+          <div
+            className="relative w-fit max-w-[92vw] rounded-3xl border border-gray-100 bg-white p-3 shadow-2xl sm:p-4"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Sukshma Jivanu Announcement"
           >
-            <X size={20} />
-          </button>
-        </div>
-        <div className="px-6 pb-6 pt-4">
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-            {BANNERS.map((banner) => (
-              <div key={banner.src} className="rounded-xl border border-gray-200 bg-gray-50 p-3 shadow-sm">
-                <img
-                  src={banner.src}
-                  alt={banner.alt}
-                  className="h-full w-full rounded-lg object-contain"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-          <div className="mt-6 flex justify-end">
-            <Link
-              href="/courses"
-              className="inline-flex items-center justify-center rounded-lg bg-indian-red px-4 py-2 text-white font-semibold transition-colors hover:bg-indian-deepRed"
+            <button
+              onClick={handleCloseSukshma}
+              className="absolute right-3 top-3 z-10 rounded-full bg-white/90 p-2 text-gray-600 shadow-sm transition-colors hover:bg-white"
+              aria-label="Close announcement"
             >
-              Register Now
-            </Link>
+              <X size={20} />
+            </button>
+            <div className="rounded-2xl border border-gray-200 bg-white p-2">
+              <img
+                src="/images/sukshma-jivanu-banner.jpg"
+                alt="Sukshma Jivanu in Veda course banner"
+                className="block h-auto max-h-[70vh] w-auto max-w-[88vw] object-contain"
+                loading="eager"
+              />
+            </div>
+            <div className="mt-4 flex justify-center">
+              <Link
+                href="/courses"
+                className="inline-flex items-center justify-center rounded-full bg-indian-red px-6 py-3 text-sm font-semibold text-white shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-indian-deepRed"
+              >
+                Register Now
+              </Link>
+            </div>
           </div>
-        </div>
+        )}
+        {isIks && (
+          <div
+            className="relative w-fit max-w-[92vw] rounded-3xl border border-gray-100 bg-white p-3 shadow-2xl sm:p-4"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Indian Knowledge System Announcement"
+          >
+            <button
+              onClick={handleCloseIks}
+              className="absolute right-3 top-3 z-10 rounded-full bg-white/90 p-2 text-gray-600 shadow-sm transition-colors hover:bg-white"
+              aria-label="Close announcement"
+            >
+              <X size={20} />
+            </button>
+            <div className="rounded-2xl border border-gray-200 bg-white p-2">
+              <img
+                src="/images/iks-course-banner.jpg"
+                alt="Indian Knowledge System course banner"
+                className="block h-auto max-h-[70vh] w-auto max-w-[88vw] object-contain"
+                loading="eager"
+              />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
