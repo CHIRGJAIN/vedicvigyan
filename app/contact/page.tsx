@@ -204,6 +204,7 @@ export default function Contact() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a 
+                    id="email-us"
                     href="mailto:vveseducation@gmail.com"
                     className="btn-primary flex items-center justify-center"
                   >

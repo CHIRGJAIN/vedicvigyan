@@ -165,7 +165,7 @@ Update metadata in `app/layout.tsx`:
 ```typescript
 export const metadata: Metadata = {
   title: 'Vedic Vigyanam Explorer Society (VVES)',
-  description: 'Leading authority in preservation and interpretation of Vedic Science',
+  description: 'Bridging Ancient Wisdom and Modern Innovation',
   // ... other meta tags
 }
 ```

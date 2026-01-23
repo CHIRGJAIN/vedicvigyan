@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { X } from 'lucide-react'
 import Link from 'next/link'
 
@@ -10,6 +11,7 @@ const SUKSHMA_SEEN_KEY = 'promo_banner_sukshma_seen'
 const IKS_SEEN_KEY = 'promo_banner_iks_seen'
 
 const PromoBannerModal = () => {
+    const router = useRouter()
   const [activePopup, setActivePopup] = useState<'sukshma' | 'iks' | null>(null)
   const timeoutRef = useRef<number | null>(null)
 
@@ -127,12 +129,16 @@ const PromoBannerModal = () => {
               />
             </div>
             <div className="mt-4 flex justify-center">
-              <Link
-                href="/courses"
+              <button
+                type="button"
                 className="inline-flex items-center justify-center rounded-full bg-indian-red px-6 py-3 text-sm font-semibold text-white shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-indian-deepRed"
+                onClick={() => {
+                  handleCloseSukshma();
+                  router.push('/contact');
+                }}
               >
                 Register Now
-              </Link>
+              </button>
             </div>
           </div>
         )}

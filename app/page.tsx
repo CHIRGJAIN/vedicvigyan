@@ -180,7 +180,7 @@ export default function Home() {
                 <div key={groupIndex} className="marquee-group" aria-hidden={groupIndex === 1}>
                   {[...Array(4)].map((_, index) => (
                     <span key={`${groupIndex}-${index}`} className="uppercase tracking-[0.001em] text-sm font-semibold">
-                      VVES starting a New course on Indian Knowledge System by Prof. Sanjay Kumar Sharma
+                      VVES starting a New course on Indian Knowledge System by Prof. (Dr.) Sanjay Kumar Sharma 
                     </span>
                   ))}
                 </div>
@@ -231,6 +231,15 @@ export default function Home() {
                 Learn More
               </Link>
               <Link href="/contact" className="btn-accent text-lg px-8 py-4">
+                Join Us
+              </Link>
+              <style jsx>{`
+                /* Smooth scroll for anchor links */
+                html {
+                  scroll-behavior: smooth;
+                }
+              `}</style>
+              <Link href="/contact#email-us" className="btn-accent text-lg px-8 py-4">
                 Join Us
               </Link>
             </div>

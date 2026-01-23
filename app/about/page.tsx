@@ -147,7 +147,7 @@ He owns a wide range of test instruments and a digital music studio for testing 
       description: 'Decided to form a group as a society with a mission to Explore, Interpret and Preserve the Vedic Science to Reinforce its Relevance and disseminate the knowledge in Modern Society'
     },
     {
-      year: ' Jan 2025',
+      year: ' January 2025',
       title: 'Official Establishment',
       description: 'We officially registered as VEDIC VIGYANAM EXPLORER SOCIETY with office at Kurukshetra'
     },
@@ -184,8 +184,7 @@ He owns a wide range of test instruments and a digital music studio for testing 
             <span className="text-gradient">Vedic Vigyanam Explorer Society</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Leading authority in the preservation and interpretation of Vedic Science, 
-              integrating it into modern academic and cultural frameworks.
+              Bridging Ancient Wisdom and Modern Innovation
             </p>
           </motion.div>
         </div>
@@ -208,8 +207,7 @@ He owns a wide range of test instruments and a digital music studio for testing 
               </div>
             
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                To become a leading authority in the preservation and interpretation 
-                of Vedic Science, integrating it into modern academic and cultural frameworks.
+                To become a leading authority in the Bridging Ancient Wisdom and Modern Innovation, integrating it into modern academic and cultural frameworks.
               </p>
               
             </motion.div>
@@ -359,7 +357,7 @@ He owns a wide range of test instruments and a digital music studio for testing 
                 <div className="p-4">
                   <h3 className="text-lg font-bold text-gray-900 mb-1">Dr. Mrunal Yawalkar</h3>
                   <p className="text-sm text-indian-red font-semibold mb-2">Joint Secretary</p>
-                  <p className="text-xs text-gray-600 line-clamp-3">Ancient Aeronautics & Metallurgy - Championing research on Vedic sciences</p>
+                  <p className="text-xs text-gray-600 line-clamp-3">Metallurgy in Ancient aeronautics - Championing research on Vedic sciences</p>
                 </div>
               </motion.div>
 

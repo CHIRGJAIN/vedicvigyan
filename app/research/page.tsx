@@ -72,23 +72,38 @@ export default function Research() {
                   ))}
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href={paper.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-indian-red text-white font-semibold px-4 py-2 transition-colors hover:bg-indian-deepRed"
-                  >
-                    <ExternalLink size={16} />
-                    View PDF
-                  </a>
-                  <a
-                    href={paper.href}
-                    download
-                    className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 text-gray-700 font-semibold px-4 py-2 transition-colors hover:bg-gray-50"
-                  >
-                    <Download size={16} />
-                    Download
-                  </a>
+                  {/* PDF Link Section - Replace Download with DOI link */}
+                  {paper.title === 'Gita & Arthashastra' ? (
+                    <a
+                      href="https://doi.org/10.36713/epra25435"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-indian-red text-white font-semibold px-4 py-2 transition-colors hover:bg-indian-deepRed"
+                    >
+                      <ExternalLink size={16} />
+                      GITA AND THE ARTHASHASTRA (DOI)
+                    </a>
+                  ) : paper.title === 'Adrishya Vimaan' ? (
+                    <a
+                      href="https://doi.org/10.36713/epra25437"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-indian-red text-white font-semibold px-4 py-2 transition-colors hover:bg-indian-deepRed"
+                    >
+                      <ExternalLink size={16} />
+                      ADRISHYA VIMAAN (DOI)
+                    </a>
+                  ) : (
+                    <a
+                      href={paper.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-indian-red text-white font-semibold px-4 py-2 transition-colors hover:bg-indian-deepRed"
+                    >
+                      <ExternalLink size={16} />
+                      View PDF
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}
