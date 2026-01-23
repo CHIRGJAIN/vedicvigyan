@@ -239,9 +239,7 @@ export default function Home() {
                   scroll-behavior: smooth;
                 }
               `}</style>
-              <Link href="/contact#email-us" className="btn-accent text-lg px-8 py-4">
-                Join Us
-              </Link>
+            
             </div>
 
             {/* Visitor Counter */}
