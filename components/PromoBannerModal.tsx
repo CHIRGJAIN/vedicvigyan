@@ -1,17 +1,16 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { useRouter } from 'next/navigation'
 import { X } from 'lucide-react'
-import Link from 'next/link'
 
 const NEXT_BANNER_DELAY_MS = 2500
 const SESSION_COMPLETE_KEY = 'promo_banners_session_complete'
 const SUKSHMA_SEEN_KEY = 'promo_banner_sukshma_seen'
 const IKS_SEEN_KEY = 'promo_banner_iks_seen'
+const IKS_REGISTRATION_URL =
+  'https://docs.google.com/forms/d/e/1FAIpQLSf4erNZJFboHZhB5vYgXWL2lO7f9ppxZgALppu-tU0c6yDlfw/viewform?usp=header'
 
 const PromoBannerModal = () => {
-    const router = useRouter()
   const [activePopup, setActivePopup] = useState<'sukshma' | 'iks' | null>(null)
   const timeoutRef = useRef<number | null>(null)
 
@@ -134,7 +133,7 @@ const PromoBannerModal = () => {
                 className="inline-flex items-center justify-center rounded-full bg-indian-red px-6 py-3 text-sm font-semibold text-white shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-indian-deepRed"
                 onClick={() => {
                   handleCloseSukshma();
-                  router.push('/contact');
+                  window.open(IKS_REGISTRATION_URL, '_blank', 'noopener,noreferrer')
                 }}
               >
                 Register Now
