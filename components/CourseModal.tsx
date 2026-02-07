@@ -125,7 +125,7 @@ const CourseModal = ({ course, onClose, onRegister }: Props) => {
                 </li>
                 <li className="flex items-center gap-2">
                   <Calendar size={14} />
-                  <span className="font-medium">9th February(7pm-8pm)</span>
+                  <span className="font-medium">21st-25th February(7pm-8pm)</span>
                   
                 </li>
                 <li className="flex items-center gap-2">

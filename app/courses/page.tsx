@@ -112,7 +112,7 @@ const CoursesPage = () => {
       name: 'Indian Knowledge System',
       instructor: 'Prof. (Dr.) Sanjay Kumar Sharma',
       description: 'Comprehensive study of traditional Indian knowledge systems and their contemporary relevance.',
-      duration: '4 hours',
+      duration: '5 hours',
       students: 50,
       price: 1000,
       online: true,
